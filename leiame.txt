@@ -1,0 +1,13 @@
+Adicionar o Typescript e as tipagens do react e node
+yarn add typescript @types/react @types/node -D
+
+Adicionar import {AppProps} from 'next/app' na pagina _app.tsx = {Component, pageProps}: AppProps
+
+Adicionar o sass (https://sass-lang.com/)
+yarn add sass
+
+Adicionar o styles-components (https://styled-components.com/)
+yarn add styled-components
+
+Adicionar icone
+yarn add react-icons

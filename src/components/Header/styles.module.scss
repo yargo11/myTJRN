@@ -1,0 +1,114 @@
+.headerContainer {
+    width: 100%;
+}
+
+.headerContent {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+
+    padding: 0 2rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    img {
+        margin: 0 1rem;
+    }
+
+    div {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+
+        div {
+            display: flex;
+            flex-direction: row;
+            width: 100%;
+
+            margin: 35px 0px 22px 0px;
+
+            div {
+                display: flex;
+                flex-direction: column;
+                margin: 0px;
+
+                span {
+                    font-size: 1.5rem;
+                    font-weight: 800;
+
+                    &:nth-child(2) {
+                        font-size: 1rem;
+                        font-weight: 500;
+
+                        hr {
+                            width: 155px;
+                            height: 3px;
+                            background-color: #2498dc;
+                            border-top: 1px solid #fff200;
+                            border-bottom: 1px solid #229845;
+                            border-left: none;
+                            border-right: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        form {
+            border: 1px solid #d2d2dc;
+            width: 28.625rem;
+            height: 3rem;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            input {
+                border: none;
+                width: 90%;
+                font: 400;
+                padding: 10px 10px;
+            }
+
+            button {
+                display: flex;
+                flex: 1;
+                border: none;
+                background-color: #fff;
+                align-items: center;
+                justify-content: center;
+
+                transition: color 0.2s;
+
+                &:hover {
+                    color: #61dafb;
+                }
+            }
+        }
+    }
+
+    hr {
+        width: 100vw;
+        border: 2px solid #61dafb;
+    }
+
+    ul {
+        list-style-type: none;
+        width: 100%;
+        margin: 10px 0;
+
+        li {
+            float: left;
+            margin: 0.5rem;
+            font-size: 0.9375rem;
+            font-weight: 500;
+            height: 2rem;
+            transition: border-bottom 0.2s;
+
+            &:hover {
+                border-bottom: 3px solid #B8D272;
+            }
+        }
+    }
+}
