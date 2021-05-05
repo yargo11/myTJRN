@@ -1,0 +1,28 @@
+.Container {
+    max-width: 1130px;
+    margin: auto;
+}
+
+.Content {
+    margin-bottom: 40px;
+
+    p {
+        color: #191919;
+
+        &:first-child {
+            font: 600 2.25rem "Raleway", sans-serif;
+            line-height: 2.641rem;
+            margin-bottom: 12px;
+        }
+
+        font: 400 1.125rem "Raleway", sans-serif;
+        line-height: 1.705rem;
+    }
+}
+
+.informationsAndServices {
+    display: flex;
+    flex-direction: row;
+
+    flex-wrap: wrap;
+}

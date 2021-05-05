@@ -96,19 +96,34 @@
     ul {
         list-style-type: none;
         width: 100%;
-        margin: 10px 0;
+        height: 3rem;
+
+        // margin: 10px 0;
 
         li {
             float: left;
-            margin: 0.5rem;
+            height: 100%;
+            margin: 0 0.5rem;
             font-size: 0.9375rem;
             font-weight: 500;
-            height: 2rem;
-            transition: border-bottom 0.2s;
+
+            display: flex;
+            align-items: center;
+
+            transition: box-shadow 0.2s, color 0.2s;
 
             &:hover {
-                border-bottom: 3px solid #B8D272;
+                color: var(--cyan-500);
+                box-shadow: inset 0px -3px #b8d272;
             }
         }
     }
 }
+
+// .initialUlState {
+//     display: block;
+// }
+
+// .initialCollapsedState {
+//     display: none;
+// }

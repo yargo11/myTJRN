@@ -11,3 +11,7 @@ yarn add styled-components
 
 Adicionar icone
 yarn add react-icons
+
+Adicionar menu collapsavel (https://www.npmjs.com/package/react-collapse)
+yarn add react-collpase
+yarn add @types/react-collapse

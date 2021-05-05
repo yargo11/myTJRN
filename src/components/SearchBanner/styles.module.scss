@@ -15,12 +15,17 @@
     padding: 73px 0px;
 }
 
+.activeButton{
+    box-shadow: 0px 5px #ffffff, inset 0 3px #82a81a;
+}
+
 .categoryButtons {
     button {
         padding: 12px 10px;
         height: 53px;
         border: none;
-        font-size: 15px;
+        font-size: 0.938rem;
+        font-weight: 500;
         background: #ffffff;
 
         transition: box-shadow 0.2s;
@@ -30,7 +35,7 @@
         }
 
         &:hover {
-            box-shadow: inset 0 3px #b8d272;
+            box-shadow: 0px 5px #ffffff, inset 0 3px #b8d272;
         }
 
         &:last-child {
@@ -67,11 +72,18 @@
             background: var(--cyan-500);
             border: none;
             color: #ffffff;
+
+            transition: background 0.2s;
+
+            &:hover{
+                background: #2ca1cf;
+            }
         }
     }
 }
 
 .topSearched {
+    font-weight: 400;
     font-size: 0.85rem;
     margin: 10px 0px;
 

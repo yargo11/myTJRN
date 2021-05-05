@@ -1,8 +1,30 @@
 import styles from './styles.module.scss';
 
 import { FiSearch } from 'react-icons/fi';
+import { FaBars } from 'react-icons/fa';
+
+import { useCallback, useState } from 'react';
+
+import { Collapse } from 'react-collapse';
 
 export function Header() {
+    const accessibilityIds = {
+        checkbox: 'accessible-marker-example1',
+        button: 'accessible-marker-example2'
+    };
+
+    const [isButtonCollapseOpen, setIsButtonCollapseOpen] = useState(false);
+
+    const onClick = useCallback(
+        () => setIsButtonCollapseOpen(!isButtonCollapseOpen),
+        [isButtonCollapseOpen]
+    );
+
+    if (typeof window !== "undefined") {
+        const screenSize = window.screen.width;
+    }
+
+
     return (
         <header className={styles.headerContainer}>
             <div className={styles.headerContent}>
@@ -24,12 +46,13 @@ export function Header() {
                     <div>
                         <form>
                             <input type="text" placeholder="Buscar em todo site, processos, jurisprudência..."></input>
-                            <button type="submit"><FiSearch size={18}/></button>
+                            <button type="submit"><FiSearch size={18} /></button>
                         </form>
                     </div>
                 </div>
                 <hr />
-                <ul>
+
+                <ul className={styles.initialUlState}>
                     <li><a href="">Ínicio</a></li>
                     <li><a href="">Institucional</a></li>
                     <li><a href="">Legislação</a></li>
@@ -41,6 +64,22 @@ export function Header() {
                     <li><a href="">Comunicação</a></li>
                     <li><a href="">Contato</a></li>
                 </ul>
+                {/* <div className={styles.initialCollapsedState}>
+                    <button
+                        aria-controls={accessibilityIds.button}
+                        aria-expanded={isButtonCollapseOpen}
+                        onClick={onClick}
+                        type="button">
+                        <FaBars />
+                    </button>
+                    <Collapse
+                        isOpened={isButtonCollapseOpen}>
+                        <div id={accessibilityIds.button} className="blob">
+                            oidfspoifpos
+                            </div>
+                    </Collapse>
+                </div> */}
+
             </div>
         </header>
     )
