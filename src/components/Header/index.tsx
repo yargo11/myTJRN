@@ -6,8 +6,12 @@ import { FaBars } from 'react-icons/fa';
 import { useCallback, useState } from 'react';
 
 import { Collapse } from 'react-collapse';
+import TESTE from '../../tests/headertest.json';
 
 export function Header() {
+    console.log(TESTE);
+
+
     const accessibilityIds = {
         checkbox: 'accessible-marker-example1',
         button: 'accessible-marker-example2'
