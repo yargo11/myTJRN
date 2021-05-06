@@ -15,7 +15,7 @@ export function News() {
                             nesta segunda-feira (16) com o objetivo de reconhecer e valorizar personalidades que tem
                             atuação destacada em favor da coletividade.
                         </p>
-                        <p id={styles.p3}>Segunda, 16 Dezembro 2019 </p>
+                        <p id={styles.p3}>Segunda, 16 Dezembro 2019. </p>
                     </div>
                 </div>
 
