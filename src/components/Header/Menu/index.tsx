@@ -42,8 +42,8 @@ export function Menu() {
                 </button>
                 <Collapse
                     isOpened={isButtonCollapseOpen}>
-                    <div id={accessibilityIds.button} className={styles.hiddenMenu}>
-                        <ul>
+                    <div id={accessibilityIds.button} className="blob">
+                        <ul className={styles.hiddenMenu}>
                             <li><a href="http://tjrn.jus.br/">
                                 <img src="/images/Vector.svg" alt="TJRN" />
                             </a></li>

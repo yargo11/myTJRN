@@ -5,18 +5,20 @@ export function News() {
         <div className={styles.Container}>
             <div className={styles.Content}>
                 <div className={styles.spotlightNew}>
-                    <img src="/images/image25.svg" alt="Notícia em Destaque"></img>
+                    <a href="#">
+                        <img src="/images/image25.svg" alt="Notícia em Destaque"></img>
 
-                    <div>
-                        <p id={styles.p1}>Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN</p>
-                        <p id={styles.p2}>
-                            solenidade realizada nesta segunda-feira (16) com o objetivo de reconhecer e valorizar
-                            personalidades que tem atuação destacada em favor da coletividade. solenidade realizada
-                            nesta segunda-feira (16) com o objetivo de reconhecer e valorizar personalidades que tem
-                            atuação destacada em favor da coletividade.
+                        <div>
+                            <p id={styles.p1}>Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN</p>
+                            <p id={styles.p2}>
+                                solenidade realizada nesta segunda-feira (16) com o objetivo de reconhecer e valorizar
+                                personalidades que tem atuação destacada em favor da coletividade. solenidade realizada
+                                nesta segunda-feira (16) com o objetivo de reconhecer e valorizar personalidades que tem
+                                atuação destacada em favor da coletividade.
                         </p>
-                        <p id={styles.p3}>Segunda, 16 Dezembro 2019. </p>
-                    </div>
+                            <p id={styles.p3}>Segunda, 16 Dezembro 2019. </p>
+                        </div>
+                    </a>
                 </div>
 
                 <div className={styles.moreNews}>
@@ -44,10 +46,10 @@ export function News() {
 
                 <div className={styles.filters}>
                     <ul>
-                        <li><a href="">Decisões Judiciais</a></li>
-                        <li><a href="">Decisões Judiciais</a></li>
-                        <li><a href="">Decisões Judiciais</a></li>
-                        <li><a href="">Decisões Judiciais</a></li>
+                        <li><a href="">Decisões Judiciais1</a></li>
+                        <li><a href="">Decisões Judiciais2</a></li>
+                        <li><a href="">Decisões Judiciais3</a></li>
+                        <li><a href="">Decisões Judiciais4</a></li>
                         <li>|</li>
                         <li><a href="">Todas as notícias</a></li>
                     </ul>

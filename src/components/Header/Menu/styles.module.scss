@@ -1,72 +1,77 @@
 .initialUlState {
-    display: none;
-    // display: flex;
-    
+    display: flex;
+
     max-width: 1120px;
-    margin:auto;
+    margin: auto;
     list-style-type: none;
     width: 100%;
     height: 3rem;
-    
-        li {
-            float: left;
-            height: 100%;
-            margin: 0 0.5rem;
-            font-size: 0.9375rem;
-            font-weight: 500;
-    
-            display: flex;
-            align-items: center;
-    
-            transition: box-shadow 0.2s, color 0.2s;
-    
-            &:hover {
-                color: var(--cyan-500);
-                box-shadow: inset 0px -3px #b8d272;
-            }
+
+    @media (max-width: 768px) {
+        display: none;
+    }
+
+    li {
+        float: left;
+        height: 100%;
+        margin: 0 0.5rem;
+        font-size: 0.9375rem;
+        font-weight: 500;
+
+        display: flex;
+        align-items: center;
+
+        transition: box-shadow 0.2s, color 0.2s;
+
+        &:hover {
+            color: var(--cyan-500);
+            box-shadow: inset 0px -3px #b8d272;
         }
-    
+    }
 }
 
 .initialCollapsedState {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
 
     width: 100%;
 
-    button{
+    @media (max-width: 768px) {
+        display: flex;
+    }
+
+    button {
         width: 100%;
         border: none;
         background: var(--cyan-500);
         height: 2rem;
         color: #fff;
-        margin-bottom:1rem;
+        margin-bottom: 1rem;
     }
-
-    
 }
 
-.hiddenMenu{
-    display: none;
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100vh;
-        width: 35vw;
-        
-        background-color: rgba(0,0,0,0.85);
-        color: #fff;
-        display: flex;
-        justify-content: center;
-        padding-top: 5rem;
+.hiddenMenu {
+    // display: none;
+    // position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 50vw;
 
-        ul{
-            list-style: none;
+    background-color: rgba(0, 0, 0, 0.85);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 5rem;
 
-            li{
-                margin:1rem 0;
-            }
-        }
+    list-style: none;
 
+    padding: 1rem;
+
+    li {
+        margin: 0.5rem 0;
+        font-size: 1.25rem;
+    }
 }
