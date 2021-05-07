@@ -3,14 +3,33 @@ import styles from './styles.module.scss';
 import { FiSearch } from 'react-icons/fi';
 import { FaBars } from 'react-icons/fa';
 
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
 
 import { Collapse } from 'react-collapse';
-import TESTE from '../../tests/headertest.json';
+import TESTE from '../../../tests/headertest.json';
 
 export function Header() {
-    console.log(TESTE);
 
+    interface MenuItem {
+        id: Number;
+        nome: String;
+        descricao: String;
+        menuPai: any;
+        linkInterno: any;
+        paginaLink: any;
+        linkExterno: Boolean;
+        ordem: Number;
+    }
+    /*TODO Dropdown menu*/
+    const [menuItens, setMenuItens] = useState<MenuItem[]>([]);
+
+    const loadMenuItens = async () => {
+        setMenuItens(TESTE);
+    };
+
+    useEffect(() => {
+        loadMenuItens();
+    }, []);
 
     const accessibilityIds = {
         checkbox: 'accessible-marker-example1',
@@ -57,16 +76,11 @@ export function Header() {
                 <hr />
 
                 <ul className={styles.initialUlState}>
-                    <li><a href="">Ínicio</a></li>
-                    <li><a href="">Institucional</a></li>
-                    <li><a href="">Legislação</a></li>
-                    <li><a href="">Judicial</a></li>
-                    <li><a href="">Administrativo</a></li>
-                    <li><a href="">Precatórios</a></li>
-                    <li><a href="">Planejamento</a></li>
-                    <li><a href="">TIC</a></li>
-                    <li><a href="">Comunicação</a></li>
-                    <li><a href="">Contato</a></li>
+                    {menuItens
+                        .map(item => (
+                            <li><a href="">{item.nome}</a></li>
+                        )
+                    )}
                 </ul>
                 {/* <div className={styles.initialCollapsedState}>
                     <button
