@@ -1,10 +1,12 @@
+import { Pagina } from "./Pagina";
+
 export interface MenuItem {
     id: number;
     nome: string;
     descricao?: string;
     menuPai?: MenuItem;
     linkInterno: boolean;
-    paginaLink?: any;
+    paginaLink?: Pagina;
     linkExterno?: string;
     ordem: number;
 }
