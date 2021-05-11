@@ -1,12 +1,12 @@
-import { SearchBanner } from '../components/SearchBanner/index'
-import { News } from '../components/News/index'
-import { ServicesAndInformations } from '../components/ServicesAndInformations/index'
+import { SearchBanner } from '../components/HomeComponents/SearchBanner/index'
+import { HomeNews } from '../components/HomeComponents/HomeNews/index'
+import { ServicesAndInformations } from '../components/HomeComponents/ServicesAndInformations/index'
 
 export default function Home() {
   return (
     <>
       <SearchBanner />
-      <News />
+      <HomeNews />
       <ServicesAndInformations />
     </>
   )

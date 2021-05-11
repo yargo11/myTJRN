@@ -1,6 +1,6 @@
 import styles from './styles.module.scss'
 
-export function News() {
+export function HomeNews() {
     return (
         <div className={styles.Container}>
             <div className={styles.Content}>
