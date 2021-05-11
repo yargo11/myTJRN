@@ -1,10 +1,11 @@
 .Container {
-    max-width: 1130px;
+    max-width: 1140px;
     margin: auto;
 }
 
 .Content {
     padding: 0 10px;
+    margin: 0px 20px;
     margin-bottom: 40px;
 
     p {
@@ -24,9 +25,9 @@
 .informationsAndServices {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-evenly;
+    // justify-content: space-evenly;
 
-    @media(max-width:600px){
+    @media(max-width:768){
         justify-content: center;
     }
 }

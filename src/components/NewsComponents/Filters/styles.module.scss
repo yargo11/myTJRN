@@ -1,6 +1,6 @@
 .Hr {
     margin-top: 56px;
-    background: #E3E3E3;
+    background: #e3e3e3;
 }
 
 .Container {
@@ -8,15 +8,22 @@
     max-width: 1120px;
     margin: auto;
     display: flex;
+    padding: 0 10px;
 
     p {
         margin: 25px 0px;
         margin-right: 37px;
         font-size: 0.875rem;
         font-weight: 500;
+
+        transition: color 0.2s;
+
+        &:hover {
+            color: var(--cyan-900);
+        }
     }
 
-    img{
+    img {
         margin-left: auto;
     }
 }
