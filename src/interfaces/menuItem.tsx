@@ -1,4 +1,4 @@
-import { Pagina } from "./Pagina";
+import { Pagina } from "./pagina";
 
 export interface MenuItem {
     id: number;

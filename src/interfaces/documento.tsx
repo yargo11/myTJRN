@@ -1,7 +1,7 @@
-import { Pagina } from "./Pagina";
+import { Pagina } from "./pagina";
 import { Pasta } from "./pasta";
-import { TipoDeDocumento } from "./TipoDeDocumento";
-import { Usuario } from "./Usuario";
+import { TipoDeDocumento } from "./tipoDeDocumento";
+import { Usuario } from "./usuario";
 
 export interface Documento {
     id: number;
