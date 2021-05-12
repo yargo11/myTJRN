@@ -10,4 +10,7 @@ export interface Noticia {
     ativo: boolean;
     destaque: boolean;
     ordem: number;
+    imagemDoTitulo: File;
+    tamanhoDaImagem: number;
+    extensao: string;
 }

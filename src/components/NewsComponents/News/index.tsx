@@ -1,8 +1,15 @@
+import { useState, useEffect } from 'react';
+import { Noticia } from '../../../interfaces/noticia';
 import styles from './styles.module.scss';
 
 export function News() {
-    return (
+    const [news, setNews] = useState<Noticia[]>([]);
 
+    useEffect(() => {
+		fetch('https://api.github.com/orgs/spring-io/repos').then(response => response.json()).then(data => setNews(data));
+	}, []);
+
+    return (
         <div className={styles.Container}>
             <div className={styles.AllNews}>
                 <div className={styles.NewsFeed}>
