@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "titulo": "Título 1",
+        "titulo": "TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação",
         "corpo": "Blá blá blá",
         "publicacao": "2012-04-23T19:30:00.000Z",
         "autor": {
@@ -10,14 +10,12 @@
             "senha": null,
             "email": "f204@828@tjrn.jus.br",
             "ativo": true,
-            "nome": "Jandson Ribeiro",
+            "nome": "Jandson Ribeiro"
         },
         "quantidadeDeAcessos": 1,
         "ativo": true,
         "destaque": true,
         "ordem": 1,
-        "imagemDoTitulo": 
-        "tamanhoDaImagem": number;
-        "extensao": string;
+        "caminhoImagemDoTitulo":"/images/image4.svg"
     }
 ]

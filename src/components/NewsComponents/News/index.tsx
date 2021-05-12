@@ -1,12 +1,15 @@
 import { useState, useEffect } from 'react';
 import { Noticia } from '../../../interfaces/noticia';
 import styles from './styles.module.scss';
+import moment from 'moment';
+
+import TESTE from '../../../../test/newsIndexTest.json';
 
 export function News() {
     const [news, setNews] = useState<Noticia[]>([]);
 
     useEffect(() => {
-		fetch('https://api.github.com/orgs/spring-io/repos').then(response => response.json()).then(data => setNews(data));
+		setNews(TESTE);
 	}, []);
 
     return (
@@ -25,79 +28,17 @@ export function News() {
                         </a>
                     </p>
                 </div>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
-                <a href="#">
-                    <div className={styles.NewsCards}>
-                        <img src="/images/image4.svg" alt="Notícia 4" />
-                        <span>Sexta, 17 Janeiro 2020 </span>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                </a>
-
+                {news
+                    .map(newsElement => (
+                        <a href="#">
+                        <div className={styles.NewsCards}>
+                            <img src={newsElement.caminhoImagemDoTitulo} alt="Notícia 4" />
+                            <span>{new Date(newsElement.publicacao).toLocaleString()}</span>
+                            <p>{newsElement.titulo}</p>
+                        </div>
+                    </a>
+                    )
+                )}
             </div>
         </div>
 
