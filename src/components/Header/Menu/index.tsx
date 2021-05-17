@@ -2,9 +2,20 @@ import styles from './styles.module.scss';
 
 import { Collapse } from 'react-collapse';
 import { FaBars } from 'react-icons/fa';
-import { useCallback, useState } from 'react';
+import { useCallback, useState, useEffect } from 'react';
+
+import { MenuInterface } from '../../../interfaces/menuInterface';
+import { api } from '../../../../service/api';
+import { MenuItem } from './MenuItem';
+import MENUJSON from '../../../../test/menu.json';
 
 export function Menu() {
+    const [menuItem, setMenuItems] = useState<MenuInterface[]>([]);
+
+    useEffect(() => {
+        //api.get('/menu').then(response => console.log(response.data));
+        setMenuItems(MENUJSON);
+	}, []);
 
     const accessibilityIds = {
         checkbox: 'accessible-marker-example1',
@@ -21,16 +32,12 @@ export function Menu() {
     return (
         <>
             <ul className={styles.initialUlState}>
-                <li><a href="">Ínicio</a></li>
-                <li><a href="">Institucional</a></li>
-                <li><a href="">Legislação</a></li>
-                <li><a href="">Judicial</a></li>
-                <li><a href="">Administrativo</a></li>
-                <li><a href="">Precatórios</a></li>
-                <li><a href="">Planejamento</a></li>
-                <li><a href="">TIC</a></li>
-                <li><a href="">Comunicação</a></li>
-                <li><a href="">Contato</a></li>
+
+                <li>{menuItem
+                    .map(menuItemElement => (
+                        <MenuItem key={menuItemElement.id} menuItem={menuItemElement}/>
+                    )
+                )}</li>
             </ul>
             <nav className={styles.initialCollapsedState}>
                 <button
@@ -47,16 +54,6 @@ export function Menu() {
                             <li><a href="http://tjrn.jus.br/">
                                 <img src="/images/Vector.svg" alt="TJRN" />
                             </a></li>
-                            <li><a href="">Ínicio</a></li>
-                            <li><a href="">Institucional</a></li>
-                            <li><a href="">Legislação</a></li>
-                            <li><a href="">Judicial</a></li>
-                            <li><a href="">Administrativo</a></li>
-                            <li><a href="">Precatórios</a></li>
-                            <li><a href="">Planejamento</a></li>
-                            <li><a href="">TIC</a></li>
-                            <li><a href="">Comunicação</a></li>
-                            <li><a href="">Contato</a></li>
                         </ul>
                     </div>
                 </Collapse>

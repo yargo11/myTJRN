@@ -1,11 +1,11 @@
-import { Usuario } from "./usuario";
+import { UsuarioInterface } from "./usuarioInterface";
 
-export interface Noticia {
+export interface NoticiaInterface {
     id: number;
     titulo: string;
     corpo: string;
     publicacao: Date;
-    autor: Usuario;
+    autor: UsuarioInterface;
     quantidadeDeAcessos: number;
     ativo: boolean;
     destaque: boolean;

@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
-import { Noticia } from '../../../interfaces/noticia';
+import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import styles from './styles.module.scss';
-import moment from 'moment';
-
-import TESTE from '../../../../test/newsIndexTest.json';
+import { NewsCard } from '../NewsCard'
+import { api } from '../../../../service/api'
 
 export function News() {
-    const [news, setNews] = useState<Noticia[]>([]);
+    
+    const [news, setNews] = useState<NoticiaInterface[]>([]);
 
     useEffect(() => {
-		setNews(TESTE);
+        api.get('/noticias/listar').then(response => setNews(response.data.noticia));
 	}, []);
 
     return (
@@ -30,13 +30,7 @@ export function News() {
                 </div>
                 {news
                     .map(newsElement => (
-                        <a href="#">
-                        <div className={styles.NewsCards}>
-                            <img src={newsElement.caminhoImagemDoTitulo} alt="Notícia 4" />
-                            <span>{new Date(newsElement.publicacao).toLocaleString()}</span>
-                            <p>{newsElement.titulo}</p>
-                        </div>
-                    </a>
+                        <NewsCard key={newsElement.id} noticia={newsElement}/>
                     )
                 )}
             </div>
