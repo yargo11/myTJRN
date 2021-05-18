@@ -1,14 +1,10 @@
-import { UsuarioInterface } from "./usuarioInterface";
-
 export interface NoticiaInterface {
     id: number;
     titulo: string;
     corpo: string;
-    publicacao: Date;
-    autor: UsuarioInterface;
-    quantidadeDeAcessos: number;
+    dataPublicacao: Date;
+    dataCriacao: Date;
+    qtdAcessos: number;
     ativo: boolean;
     destaque: boolean;
-    ordem: number;
-    caminhoImagemDoTitulo: string;
 }
