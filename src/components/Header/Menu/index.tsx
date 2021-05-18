@@ -15,7 +15,7 @@ export function Menu() {
     useEffect(() => {
         //api.get('/menu').then(response => console.log(response.data));
         setMenuItems(MENUJSON);
-	}, []);
+    }, []);
 
     const accessibilityIds = {
         checkbox: 'accessible-marker-example1',
@@ -33,11 +33,11 @@ export function Menu() {
         <>
             <ul className={styles.initialUlState}>
 
-                <li>{menuItem
+                {menuItem
                     .map(menuItemElement => (
-                        <MenuItem key={menuItemElement.id} menuItem={menuItemElement}/>
+                        <li key={menuItemElement.id}><MenuItem menuItem={menuItemElement} /></li>
                     )
-                )}</li>
+                    )}
             </ul>
             <nav className={styles.initialCollapsedState}>
                 <button
@@ -54,6 +54,11 @@ export function Menu() {
                             <li><a href="http://tjrn.jus.br/">
                                 <img src="/images/Vector.svg" alt="TJRN" />
                             </a></li>
+                            {menuItem
+                                .map(menuItemElement => (
+                                    <li key={menuItemElement.id}><MenuItem menuItem={menuItemElement} /></li>
+                                )
+                                )}
                         </ul>
                     </div>
                 </Collapse>
