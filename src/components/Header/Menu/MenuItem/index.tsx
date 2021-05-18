@@ -6,5 +6,5 @@ interface MenuItemProps {
 }
 
 export function MenuItem(props: MenuItemProps) {
-	return (<Link href="#">{props.menuItem.nome}</Link>);
+	return (<a href="#">{props.menuItem.nome}</a>);
 }

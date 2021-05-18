@@ -9,7 +9,7 @@ export function HomeNews() {
     const [news, setNews] = useState<NoticiaInterface[]>([]);
 
     useEffect(() => {
-        api.get('/noticias/listar').then(response => setNews(response.data.noticia));
+        api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
 	}, []);
 
     return (
@@ -33,11 +33,11 @@ export function HomeNews() {
                 </div>
 
                 <div className={styles.moreNews}>
-                    {news
+                    {news ? news
                         .map(newsElement => (
                             <NewsCard key={newsElement.id} noticia={newsElement}/>
                         )
-                    )}
+                    ) : <></>}
                 </div>
 
                 <div className={styles.filters}>

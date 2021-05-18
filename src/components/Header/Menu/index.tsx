@@ -13,7 +13,7 @@ export function Menu() {
     const [menuItem, setMenuItems] = useState<MenuInterface[]>([]);
 
     useEffect(() => {
-        //api.get('/menu').then(response => console.log(response.data));
+        //api.get('/menu/listar').then(response => setMenuItems(response.data)).catch(error => console.log(error));
         setMenuItems(MENUJSON);
     }, []);
 
@@ -54,11 +54,11 @@ export function Menu() {
                             <li><a href="http://tjrn.jus.br/">
                                 <img src="/images/Vector.svg" alt="TJRN" />
                             </a></li>
-                            {menuItem
+                            {menuItem ? menuItem
                                 .map(menuItemElement => (
                                     <li key={menuItemElement.id}><MenuItem menuItem={menuItemElement}/></li>
                                 )
-                            )}
+                            ) : <></>}
                         </ul>
                     </div>
                 </Collapse>
