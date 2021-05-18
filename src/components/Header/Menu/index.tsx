@@ -15,7 +15,7 @@ export function Menu() {
     useEffect(() => {
         //api.get('/menu').then(response => console.log(response.data));
         setMenuItems(MENUJSON);
-	}, []);
+    }, []);
 
     const accessibilityIds = {
         checkbox: 'accessible-marker-example1',

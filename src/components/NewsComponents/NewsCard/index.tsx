@@ -9,7 +9,7 @@ export function NewsCard(props: NoticiaProps) {
 	return (
         <a href="#">
             <div className={styles.NewsCards}>
-                {/*<img src="../../../../public/images/image4.svg" alt="Notícia" />*/}
+                {/*<img src="../../../../public/images/image4.svg" alt={props.noticia.titulo} />*/}
                 <span>{new Date(props.noticia.dataPublicacao).toLocaleString()}</span>
                 <p>{props.noticia.titulo}</p>
             </div>
