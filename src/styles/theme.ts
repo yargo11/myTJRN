@@ -17,13 +17,26 @@ export const theme = extendTheme({
         }
     },
     fonts: {
-        heading: 'Inter, sans-serif',
-        body: 'Inter, sans-serif'
+        heading: 'Inter, Raleway',
+        body: 'Inter, Raleway'
     },
     styles: {
         global: {
-            button: {
-                cursor: 'pointer'
+            'body, input, textarea, select, button': {
+                bg: 'white',
+                fontSize: {
+                    'base': 'md',
+                    '720p':'87.5%',
+                    '1080p': '93.75%'
+                },
+                fontWeight: 'normal',
+                button: {
+                    cursor: 'pointer'
+                }
+            },
+            a: {
+                color: 'inherit',
+                textDecoration: 'none'
             }
         }
     }
