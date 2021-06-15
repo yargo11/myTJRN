@@ -19,25 +19,5 @@ export const theme = extendTheme({
     fonts: {
         heading: 'Inter, Raleway',
         body: 'Inter, Raleway'
-    },
-    styles: {
-        global: {
-            'body, input, textarea, select, button': {
-                bg: 'white',
-                fontSize: {
-                    'base': 'md',
-                    '720p':'87.5%',
-                    '1080p': '93.75%'
-                },
-                fontWeight: 'normal',
-                button: {
-                    cursor: 'pointer'
-                }
-            },
-            a: {
-                color: 'inherit',
-                textDecoration: 'none'
-            }
-        }
     }
 });
