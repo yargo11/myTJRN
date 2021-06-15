@@ -1,78 +1,22 @@
-.headerContainer {
-    width: 100%;
+.boxForm {
+    form {
+        border: 1px solid #d2d2dc;
+
+        input {
+            border: none;
+        }
+
+        button {
+            transition: color 0.2s;
+
+            &:hover {
+                color: #61dafb;
+            }
+        }
+    }
 }
 
-.headerContent {
-    // width: 100%;
-    max-width: 1120px;
-    margin: 0 auto;
-    // padding: 0 2rem;
-
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    img {
-        margin: 0 1rem;
-    }
-
-    div {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-
-        div {
-            // display: flex;
-            // flex-direction: row;
-            // width: 100%;
-
-            margin: 35px 0px 22px 0px;
-
-            &:last-child{
-                align-items: center;
-                justify-content: flex-end;
-            }
-        }
-
-        form {
-            display: flex;
-            border: 1px solid #d2d2dc;
-            max-width: 28.625rem;
-            width: 100%;
-            height: 3rem;
-            flex-direction: row;
-            align-items: center;
-            margin-right: 5px	;
-            // justify-content:flex-end;
-
-            input {
-                border: none;
-                width: 90%;
-                font: 400;
-                padding: 10px 10px;
-            }
-
-            button {
-                display: flex;
-                flex: 1;
-                border: none;
-                background-color: #fff;
-                align-items: center;
-                justify-content: center;
-
-                transition: color 0.2s;
-
-                &:hover {
-                    color: #61dafb;
-                }
-            }
-        }
-    }
-
-    hr {
-        width: 100vw;
-        border: 2px solid #61dafb;
-    }
-    
+.hrDivider {
+    width: 100vw;
+    border: 2px solid #61dafb;
 }

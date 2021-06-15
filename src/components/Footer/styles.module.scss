@@ -1,23 +1,13 @@
-.Container{
-    max-width: 1120px;
-    margin: auto;
-    margin-top: 150px;
-    padding: 10px;
+.listLiElements {
+    li {
+        font-weight: 600;
+        margin: 10px 0;
+        color: #191919;
 
-    ul{
-        list-style: none;
+        transition: color 0.2s;
 
-        li{
-            font-weight: 600;
-            font-size: 1.625rem;
-            margin:10px 0;
-            color: #191919;
-
-            transition: color 0.2s;
-
-            &:hover{
-                color: var(--cyan-500);
-            }
+        &:hover {
+            color: var(--cyan-500);
         }
     }
 }

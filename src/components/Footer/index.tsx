@@ -1,15 +1,16 @@
 import styles from './styles.module.scss';
 
+import { Flex, List, ListItem } from "@chakra-ui/react"
+
 export function Footer() {
     return (
-        <div className={styles.Container}>
-            <ul>
-                <li><a href="#">Membros</a></li>
-                <li><a href="#">Multimidia</a></li>
-                <li><a href="#">O que o tribunal faz</a></li>
-                <li><a href="#">Contato</a></li>
-            </ul>
-        </div>
-
+        <Flex maxW="1120px" margin="auto" mt={36} p={2.5}>
+            <List className={styles.listLiElements} fontSize="1.625rem">
+                <ListItem><a href="#">Membros</a></ListItem>
+                <ListItem><a href="#">Multimidia</a></ListItem>
+                <ListItem><a href="#">O que o tribunal faz</a></ListItem>
+                <ListItem><a href="#">Contato</a></ListItem>
+            </List>
+        </Flex>
     )
 }
