@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Flex, ButtonGroup, Button, InputGroup, Input, InputRightElement } from '@chakra-ui/react';
+import { Flex, ButtonGroup, Button, Input, UnorderedList, ListItem, Grid } from '@chakra-ui/react';
 import { SearchBannerButton } from './SearchBannerButton';
 
 export function SearchBanner() {
@@ -34,18 +34,31 @@ export function SearchBanner() {
                         onClick={() => setType(SearchBannerFunctions.pesquisaDeJurisprudencia)} />
                 </ButtonGroup>
 
-                <InputGroup h='118px' w='full' mt='5px' bg='white' >
-                    <Input
-                        borderRadius='0'
-                        type='text'
-                        placeholder="Enter password"
-                    />
-                    <InputRightElement width="4.5rem">
-                        <Button h="1.75rem" size="sm" onClick={() => {}}>
-                        show
+                <Flex h='118px' w='full' mt='5px' bg='white' padding='30px 20px' flexDirection='column'>
+                    <Flex minWidth='full'>
+                        <Input
+                            borderRadius='0'
+                            type='text'
+                            placeholder="Buscar no TJRN..."/>
+                        <Button borderRadius='0'
+                            colorScheme='cyan'
+                            color='white'
+                            transition= 'background 0.2s'
+                            _hover={{
+                                bg: '#2ca1cf'
+                            }}>
+                            Pesquisar
                         </Button>
-                    </InputRightElement>
-                </InputGroup>
+                    </Flex>
+                    <Flex fontWeight='normal' fontSize='0.85rem' mt='10px' flexDirection='row'>
+                        Mais buscados:
+                        <UnorderedList listStyleType='none'>
+                            <ListItem float='left' m='0px 5px'><a href="">Precatorios</a></ListItem>
+                            <ListItem float='left' m='0px 5px' _before={{ content: '"/ "'}}><a href="">Consulta processual</a></ListItem>
+                            <ListItem float='left' m='0px 5px' _before={{ content: '"/ "'}}><a href="">Estagio</a></ListItem>
+                        </UnorderedList>
+                    </Flex>
+                </Flex>
             </Flex>
         </Flex>
     )

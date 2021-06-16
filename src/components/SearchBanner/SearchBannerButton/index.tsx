@@ -1,4 +1,4 @@
-import { Button, ButtonProps, Text } from "@chakra-ui/react";
+import { Button, ButtonProps } from "@chakra-ui/react";
 
 interface SearchBannerButtonProps extends ButtonProps {
     name: string;
@@ -14,13 +14,15 @@ export function SearchBannerButton({name, actualFunction, ...others }: SearchBan
             borderRadius='0'
             fontSize='md'
             fontWeight='medium'
+            overflowWrap='break-word'
+            whiteSpace='normal'
             bg='white'
             transition='box-shadow 0.2s'
             { ...others }
             _hover={{
                 boxShadow: '0px 5px #ffffff, inset 0 3px #b8d272'
             }}>
-            <Text overflowWrap='break-word' maxW='full'>{name}</Text>
+                {name}
         </Button>
     );
 }
