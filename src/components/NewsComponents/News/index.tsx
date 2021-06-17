@@ -1,22 +1,22 @@
 import { useState, useEffect } from 'react';
-import { Noticia } from '../../../interfaces/noticia';
+import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import styles from './styles.module.scss';
-import moment from 'moment';
-
-import TESTE from '../../../../test/newsIndexTest.json';
+import { NewsCard } from '../NewsCard'
+import { api } from '../../../../service/api'
 
 export function News() {
-    const [news, setNews] = useState<Noticia[]>([]);
+    
+    const [news, setNews] = useState<NoticiaInterface[]>([]);
 
     useEffect(() => {
-		setNews(TESTE);
+        api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
 	}, []);
 
     return (
         <div className={styles.Container}>
             <div className={styles.AllNews}>
                 <div className={styles.NewsFeed}>
-                    <h1>Notítcias</h1>
+                    <h1>Notícias</h1>
                     <p>
                         Molestie elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut
                         dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet a arcu amet, erat.
@@ -28,17 +28,11 @@ export function News() {
                         </a>
                     </p>
                 </div>
-                {news
+                {news ? news
                     .map(newsElement => (
-                        <a href="#">
-                        <div className={styles.NewsCards}>
-                            <img src={newsElement.caminhoImagemDoTitulo} alt="Notícia 4" />
-                            <span>{new Date(newsElement.publicacao).toLocaleString()}</span>
-                            <p>{newsElement.titulo}</p>
-                        </div>
-                    </a>
+                        <NewsCard key={newsElement.id} noticia={newsElement}/>
                     )
-                )}
+                ): <></>}
             </div>
         </div>
 

@@ -1,6 +1,17 @@
 import styles from './styles.module.scss'
+import { useState, useEffect } from 'react';
+import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
+import { NewsCard } from '../../NewsComponents/NewsCard'
+import { api } from '../../../../service/api'
 
 export function HomeNews() {
+    
+    const [news, setNews] = useState<NoticiaInterface[]>([]);
+
+    useEffect(() => {
+        api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
+	}, []);
+
     return (
         <div className={styles.Container}>
             <div className={styles.Content}>
@@ -22,26 +33,11 @@ export function HomeNews() {
                 </div>
 
                 <div className={styles.moreNews}>
-                    <div>
-                        <img src="/images/image6.svg" alt="Mais Notícias" />
-                        <p>Segunda, 28 Dezembro 2019 </p>
-                        <p>CEJAI encessa ano de 2019 com recorde de adoções internacionais</p>
-                    </div>
-                    <div>
-                        <img src="/images/image3.svg" alt="Mais Notícias" />
-                        <p>Segunda, 20 Janeiro  2020</p>
-                        <p>Comarca de Touros seleciona estagiário de pós-graduação em Direito </p>
-                    </div>
-                    <div>
-                        <img src="/images/image4.svg" alt="Mais Notícias" />
-                        <p>Sexta, 17 Janeiro 2020 </p>
-                        <p>TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação</p>
-                    </div>
-                    <div>
-                        <img src="/images/image5.svg" alt="Mais Notícias" />
-                        <p>Segunda, 16 Dezembro 2019 </p>
-                        <p>Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN</p>
-                    </div>
+                    {news ? news
+                        .map(newsElement => (
+                            <NewsCard key={newsElement.id} noticia={newsElement}/>
+                        )
+                    ) : <></>}
                 </div>
 
                 <div className={styles.filters}>

@@ -1,4 +1,4 @@
-export interface TipoDeDocumento {
+export interface TipoDeDocumentoInterface {
     id: number;
     nome: string;
     descricao: string;
