@@ -17,9 +17,15 @@
 
 .activeButton{
     box-shadow: 0px 5px #ffffff, inset 0 3px #82a81a;
+
+    &:focus{
+        outline: none;
+    }
 }
 
 .categoryButtons {
+    display: flex;
+    
     button {
         height: 53px;
         border: none;

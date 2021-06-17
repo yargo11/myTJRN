@@ -1,0 +1,22 @@
+.Hr {
+    margin-top: 56px;
+    background: #E3E3E3;
+}
+
+.Container {
+    width: 100%;
+    max-width: 1120px;
+    margin: auto;
+    display: flex;
+
+    p {
+        margin: 25px 0px;
+        margin-right: 37px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    img{
+        margin-left: auto;
+    }
+}

@@ -4,6 +4,7 @@
 }
 
 .Content {
+    padding: 0 10px;
     margin-bottom: 40px;
 
     p {
@@ -22,7 +23,10 @@
 
 .informationsAndServices {
     display: flex;
-    flex-direction: row;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
 
-    flex-wrap: wrap;
+    @media(max-width:600px){
+        justify-content: center;
+    }
 }
