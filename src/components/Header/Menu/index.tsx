@@ -8,8 +8,10 @@ import { MenuInterface } from '../../../interfaces/menuInterface';
 import { api } from '../../../../src/service/api';
 import { MenuItem } from './MenuItem';
 import MENUJSON from '../../../../test/menu.json';
+import { Flex, useMediaQuery } from '@chakra-ui/react';
 
 export function Menu() {
+    const [isSmallerThan768] = useMediaQuery("(max-width: 768px)")
     const [menuItem, setMenuItems] = useState<MenuInterface[]>([]);
 
     useEffect(() => {
@@ -30,39 +32,16 @@ export function Menu() {
     );
 
     return (
+        isSmallerThan768 ?
         <>
-            <ul className={styles.initialUlState}>
+        </>:
+        <Flex
+            maxW='1192px'
+            m='auto'
+            listStyleType='none'
+            w='full'
+            h='3rem'>
 
-                {menuItem
-                    .map(menuItemElement => (
-                        <li key={menuItemElement.id}><MenuItem menuItem={menuItemElement}/></li>
-                    )
-                )}
-            </ul>
-            <nav className={styles.initialCollapsedState}>
-                <button
-                    aria-controls={accessibilityIds.button}
-                    aria-expanded={isButtonCollapseOpen}
-                    onClick={onClick}
-                    type="button">
-                    <FaBars />
-                </button>
-                <Collapse
-                    isOpened={isButtonCollapseOpen}>
-                    <div id={accessibilityIds.button} className="blob">
-                        <ul className={styles.hiddenMenu}>
-                            <li><a href="http://tjrn.jus.br/">
-                                <img src="/images/Vector.svg" alt="TJRN" />
-                            </a></li>
-                            {menuItem ? menuItem
-                                .map(menuItemElement => (
-                                    <li key={menuItemElement.id}><MenuItem menuItem={menuItemElement}/></li>
-                                )
-                            ) : <></>}
-                        </ul>
-                    </div>
-                </Collapse>
-            </nav>
-        </>
+        </Flex>
     )
 }

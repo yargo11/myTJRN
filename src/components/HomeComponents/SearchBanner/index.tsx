@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import { Flex, ButtonGroup, Button, Input, UnorderedList, ListItem, Grid } from '@chakra-ui/react';
+import { Flex, ButtonGroup, Button, Input, UnorderedList } from '@chakra-ui/react';
 import { SearchBannerButton } from './SearchBannerButton';
+import { TopSearchItems } from './TopSearchItems';
 
 export function SearchBanner() {
     enum SearchBannerFunctions {
@@ -13,8 +14,8 @@ export function SearchBanner() {
 
     return (
         <Flex m='auto' bgImage="url('/images/background.svg')">
-            <Flex h='80' w='100%' maxW='1120px' m='auto' p='73px 0px' flexDirection='column'>
-                <ButtonGroup spacing='5px'>
+            <Flex w='100%' maxW='1120px' m='auto' p='73px 0px' flexWrap='wrap'>
+                <ButtonGroup spacing='5px' w='full'>
                     <SearchBannerButton
                         actualFunction={type}
                         name={SearchBannerFunctions.buscarNoSite}
@@ -34,8 +35,8 @@ export function SearchBanner() {
                         onClick={() => setType(SearchBannerFunctions.pesquisaDeJurisprudencia)} />
                 </ButtonGroup>
 
-                <Flex h='118px' w='full' mt='5px' bg='white' padding='30px 20px' flexDirection='column'>
-                    <Flex minWidth='full'>
+                <Flex minH='118px' w='full' mt='5px' bg='white' flexWrap='wrap'>
+                    <Flex w='full' p='30px 20px'>
                         <Input
                             borderRadius='0'
                             type='text'
@@ -53,12 +54,12 @@ export function SearchBanner() {
                             Pesquisar
                         </Button>
                     </Flex>
-                    <Flex fontWeight='normal' fontSize='0.85rem' mt='10px' flexDirection='row'>
+                    <Flex fontWeight='normal' fontSize='0.85rem' mt='-25px' ml='20px'>
                         Mais buscados:
                         <UnorderedList listStyleType='none'>
-                            <ListItem float='left' m='0px 5px'><a href="">Precatorios</a></ListItem>
-                            <ListItem float='left' m='0px 5px' _before={{ content: '"/ "'}}><a href="">Consulta processual</a></ListItem>
-                            <ListItem float='left' m='0px 5px' _before={{ content: '"/ "'}}><a href="">Estagio</a></ListItem>
+                            <TopSearchItems name='Precatórios' link='#'/>
+                            <TopSearchItems name='Consulta processual' link='#'/>
+                            <TopSearchItems name='Estágio' link='#'/>
                         </UnorderedList>
                     </Flex>
                 </Flex>
