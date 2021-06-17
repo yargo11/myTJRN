@@ -1,4 +1,4 @@
-import { Usuario } from "./Usuario";
+import { Usuario } from "./usuario";
 
 export interface Pagina {
     id: number;

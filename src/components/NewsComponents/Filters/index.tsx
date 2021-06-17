@@ -6,8 +6,16 @@ export function Filters() {
             <hr className={styles.Hr} />
             <div className={styles.Container}>
 
-                <p>Todas</p>
-                <p>Decisões judiciais</p>
+                <p>
+                    <a href="#">
+                        Todas
+                    </a>
+                </p>
+                <p>
+                    <a href="#">
+                        Decisões judiciais
+                    </a>
+                </p>
                 <img src="/images/icons/options.svg" alt="Mais Opções" />
 
             </div>

@@ -51,7 +51,7 @@ export function HomeNews() {
                         <li><a href="">Decisões Judiciais3</a></li>
                         <li><a href="">Decisões Judiciais4</a></li>
                         <li>|</li>
-                        <li><a href="">Todas as notícias</a></li>
+                        <li><a href="/noticias">Todas as notícias</a></li>
                     </ul>
                 </div>
             </div>

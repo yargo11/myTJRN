@@ -1,5 +1,5 @@
-import { Pagina } from "./Pagina";
-import { Usuario } from "./Usuario";
+import { Pagina } from "./pagina";
+import { Usuario } from "./usuario";
 
 export interface Pasta {
     id: number;

@@ -1,3 +1,4 @@
+import { Breadcrumbs } from "../components/Breadcrumbs";
 import { Filters } from "../components/NewsComponents/Filters";
 import { News } from "../components/NewsComponents/News";
 import { NewsIntro } from "../components/NewsComponents/NewsIntro";
@@ -7,6 +8,7 @@ export default function Noticias() {
   return (
     <>
       <div className={styles.Container}>
+        <Breadcrumbs />
         <NewsIntro />
         <Filters />
         <News />
