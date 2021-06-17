@@ -41,11 +41,14 @@ export function SearchBanner() {
                             type='text'
                             placeholder="Buscar no TJRN..."/>
                         <Button borderRadius='0'
-                            colorScheme='cyan'
+                            bg='cyan.500'
                             color='white'
                             transition= 'background 0.2s'
                             _hover={{
                                 bg: '#2ca1cf'
+                            }}
+                            _active={{
+                                bg: 'cyan.500'
                             }}>
                             Pesquisar
                         </Button>
