@@ -5,7 +5,7 @@ import { FaBars } from 'react-icons/fa';
 import { useCallback, useState, useEffect } from 'react';
 
 import { MenuInterface } from '../../../interfaces/menuInterface';
-import { api } from '../../../../service/api';
+import { api } from '../../../../src/service/api';
 import { MenuItem } from './MenuItem';
 import MENUJSON from '../../../../test/menu.json';
 

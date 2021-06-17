@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import { MenuInterface } from '../../../../interfaces/menuInterface';
 
 interface MenuItemProps {

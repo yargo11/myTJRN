@@ -2,7 +2,7 @@ import styles from './styles.module.scss'
 import { useState, useEffect } from 'react';
 import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import { NewsCard } from '../../NewsComponents/NewsCard'
-import { api } from '../../../../service/api'
+import { api } from '../../../service/api';
 
 export function HomeNews() {
     
