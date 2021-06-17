@@ -5,7 +5,8 @@ import { FiSearch } from 'react-icons/fi';
 
 import { useCallback, useState, useEffect } from 'react';
 
-import TESTE from '../../../tests/headertest.json';
+import TESTE from '../../../test/headertest.json';
+
 import { Menu } from './Menu';
 
 export function Header() {

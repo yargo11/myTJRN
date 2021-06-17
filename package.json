@@ -13,8 +13,6 @@
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
     "@types/react-collapse": "^5.0.0",
-
-    "framer-motion": "^4.1.17",
     "axios": "^0.21.1",
     "framer-motion": "^4.1.17",
     "next": "10.1.3",
