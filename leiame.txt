@@ -15,3 +15,7 @@ yarn add react-icons
 Adicionar menu collapsavel (https://www.npmjs.com/package/react-collapse)
 yarn add react-collpase
 yarn add @types/react-collapse
+
+### Instalando o ChrakaUI ###
+https://chakra-ui.com/
+yarn add @chakra-ui/react @chakra-ui/core @emotion/react @emotion/styled framer-motion

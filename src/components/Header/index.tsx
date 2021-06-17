@@ -1,13 +1,12 @@
 import styles from './styles.module.scss';
+import { Flex, Spacer, Box, Input, Button, Image, WrapItem, Wrap } from "@chakra-ui/react"
 
 import { FiSearch } from 'react-icons/fi';
-import { FaBars } from 'react-icons/fa';
 
 import { useCallback, useState, useEffect } from 'react';
 
-import { Collapse } from 'react-collapse';
-
 import TESTE from '../../../tests/headertest.json';
+import { Menu } from './Menu';
 
 export function Header() {
 
@@ -49,32 +48,47 @@ export function Header() {
     }
 
     return (
-        <header className={styles.headerContainer}>
-            <div className={styles.headerContent}>
-                <div>
-                    <div>
-                        <a href="http://tjrn.jus.br/">
-                            <img src="/images/Vector.svg" alt="TJRN" />
-                        </a>
-                    </div>
-                    <div>
-                        <form>
-                            <input type="text" placeholder="Buscar em todo site, processos, jurisprudência..."></input>
-                            <button type="submit"><FiSearch size={18} /></button>
-                        </form>
-                    </div>
-                </div>
-                <hr />
+        <Flex w="100%" direction="column">
+            <Flex w="100%" maxWidth={1192} justify="center" align="center" margin="auto" direction="row" my={6} px={4}>
+                <Wrap w="100%" align="center">
+                    <WrapItem>
+                        <Box>
+                            <a href="http://tjrn.jus.br/">
+                                <Image src="/images/Vector.svg" alt="TJRN" />
+                            </a>
+                        </Box>
+                    </WrapItem>
+                    <Spacer />
+                    <WrapItem width="458px">
+                        <Box className={styles.boxForm}
+                            width="100%"
+                        >
+                            <Flex as="form"
+                                display="flex"
+                                height={12}
+                                align="center"
+                            >
+                                <Input
+                                    type="text"
+                                    _focus={{ borderColor: "0 0 0 0 #ffffff", }}
+                                    placeholder="Buscar em todo site, processos, jurisprudência..."
+                                />
+                                <Button
+                                    type="submit"
+                                    leftIcon={<FiSearch size={18} />}
+                                    bg="#fff"
+                                    _hover={{ bg: "#fff" }}
 
-                <ul className={styles.initialUlState}>
-                    {menuItens
-                        .map(item => (
-                            <li><a href="">{item.nome}</a></li>
-                        )
-                    )}
-                </ul>
-
-            </div>
-        </header>
+                                />
+                            </Flex>
+                        </Box>
+                    </WrapItem>
+                </Wrap>
+            </Flex>
+            <hr className={styles.hrDivider} />
+            <Flex w="100%" maxWidth={1192} justify="center" align="center" margin="auto" direction="row">
+                <Menu />
+            </Flex>
+        </Flex>
     )
 }
