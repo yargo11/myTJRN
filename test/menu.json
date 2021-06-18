@@ -1,6 +1,6 @@
 [{
     "id": 1,
-    "nome": "Ínicio",
+    "nome": "Início",
     "descricao": "Chama página de testes Início",
     "menuPai": null,
     "linkInterno": true,

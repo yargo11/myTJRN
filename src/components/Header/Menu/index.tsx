@@ -36,12 +36,23 @@ export function Menu() {
                         }}>
                         <FaBars />
                     </Button>
-                    <Drawer isOpen={isOpen} placement='top' onClose={onClose}>
+                    <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerCloseButton />
                             <DrawerBody>
-                                {menuItem ?menuItem.map(item => <MenuItem key={item.id} label={item.nome} link={item.linkExterno}/>) : <></>}
+                                <UnorderedList
+                                    mt='4rem'
+                                    spacing='1rem'
+                                    display='flex'
+                                    flexDirection='column'>
+                                        {menuItem ?menuItem.map(item =>
+                                            <MenuItem
+                                                key={item.id}
+                                                label={item.nome}
+                                                link={item.linkExterno}
+                                                isSmallerThan768={true}/>) : <></>}
+                                </UnorderedList>
                             </DrawerBody>
                         </DrawerContent>
                     </Drawer>
@@ -52,8 +63,15 @@ export function Menu() {
                     m='auto'
                     listStyleType='none'
                     w='full'
-                    h='3rem'>
-                        {menuItem ?menuItem.map(item => <MenuItem key={item.id} label={item.nome} link={item.linkExterno}/>) : <></>}
+                    h='3rem'
+                    display='flex'
+                    flexWrap='wrap'>
+                        {menuItem ?menuItem.map(item =>
+                            <MenuItem
+                                key={item.id}
+                                label={item.nome}
+                                link={item.linkExterno}
+                                isSmallerThan768={false}/>) : <></>}
                 </UnorderedList>}
         </Box>
     )
