@@ -1,15 +1,21 @@
 import styles from './styles.module.scss';
 
 import { Cards } from '../Cards/index';
+import { Heading, Flex, Box } from '@chakra-ui/react';
 
 export function ServicesAndInformations() {
     return (
-        <div className={styles.Container}>
-            <div className={styles.Content}>
-                <p id="title">Informações e serviços</p>
-                <p id="legend">Encontre informações e serviços do Poder Judiciario que você precisa</p>
-            </div>
-            <div className={styles.informationsAndServices}>
+        <Box maxW={1140} margin="auto">
+            <Flex p={[0, 10]} mx="20px" mb="40px" direction="column">
+                <Heading as="h1" fontSize="2.25rem" fontFamily="Raleway" fontWeight="600" color="#191919">
+                    Informações e serviços
+                </Heading>
+                <Heading as="h5" fontSize="1.125rem" fontFamily="Raleway" fontWeight="400" color="#191919">
+                    Encontre informações e serviços do Poder Judiciario que você precisa
+                </Heading>
+
+            </Flex>
+            <Flex flexFlow="row wrap" justifyContent="center">
 
                 <Cards
                     title="Consultas na Justiça"
@@ -86,7 +92,7 @@ export function ServicesAndInformations() {
                     a="#"
                 />
 
-            </div>
-        </div>
+            </Flex>
+        </Box>
     )
 }
