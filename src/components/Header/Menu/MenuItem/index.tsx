@@ -24,9 +24,6 @@ export function MenuItem({ label, link }: MenuItemProps) {
             _hover={{
                 textDecoration:'none'
             }}
-            _focus={{
-                boxShadow: '0'
-            }}
             href={link ? link : '#'}>
                 {label}
             </Link>
