@@ -14,24 +14,21 @@ export function SearchBanner() {
 
     return (
         <Flex m='auto' bgImage="url('/images/background.svg')">
-            <Flex w='100%' maxW='1120px' m='auto' p='73px 0px' flexWrap='wrap'>
+            <Flex w='100%' maxW='1120px' m='auto' p='73px 0' flexWrap='wrap'>
                 <ButtonGroup spacing='5px' w='full'>
                     <SearchBannerButton
                         actualFunction={type}
                         name={SearchBannerFunctions.buscarNoSite}
-                        boxShadow={SearchBannerFunctions.buscarNoSite === type ? '0px 5px #ffffff, inset 0 3px #82a81a' : ''}
                         onClick={() => setType(SearchBannerFunctions.buscarNoSite)} />
 
                     <SearchBannerButton
                         actualFunction={type}
                         name={SearchBannerFunctions.consultaProcessual}
-                        boxShadow={SearchBannerFunctions.consultaProcessual === type ? '0px 5px #ffffff, inset 0 3px #82a81a' : ''}
                         onClick={() => setType(SearchBannerFunctions.consultaProcessual)} />
                     
                     <SearchBannerButton
                         actualFunction={type}
                         name={SearchBannerFunctions.pesquisaDeJurisprudencia}
-                        boxShadow={SearchBannerFunctions.pesquisaDeJurisprudencia === type ? '0px 5px #ffffff, inset 0 3px #82a81a' : ''}
                         onClick={() => setType(SearchBannerFunctions.pesquisaDeJurisprudencia)} />
                 </ButtonGroup>
 

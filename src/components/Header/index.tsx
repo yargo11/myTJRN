@@ -1,12 +1,6 @@
 import styles from './styles.module.scss';
 import { Flex, Spacer, Box, Input, Button, Image, WrapItem, Wrap } from "@chakra-ui/react"
-
 import { FiSearch } from 'react-icons/fi';
-
-import { useCallback, useState, useEffect } from 'react';
-
-import TESTE from '../../../test/headertest.json';
-
 import { Menu } from './Menu';
 
 export function Header() {
@@ -20,32 +14,6 @@ export function Header() {
         paginaLink: any;
         linkExterno: Boolean;
         ordem: Number;
-    }
-    /*TODO Dropdown menu*/
-    const [menuItens, setMenuItens] = useState<MenuItem[]>([]);
-
-    const loadMenuItens = async () => {
-        setMenuItens(TESTE);
-    };
-
-    useEffect(() => {
-        loadMenuItens();
-    }, []);
-
-    const accessibilityIds = {
-        checkbox: 'accessible-marker-example1',
-        button: 'accessible-marker-example2'
-    };
-
-    const [isButtonCollapseOpen, setIsButtonCollapseOpen] = useState(false);
-
-    const onClick = useCallback(
-        () => setIsButtonCollapseOpen(!isButtonCollapseOpen),
-        [isButtonCollapseOpen]
-    );
-
-    if (typeof window !== "undefined") {
-        const screenSize = window.screen.width;
     }
 
     return (

@@ -18,10 +18,12 @@ export function SearchBannerButton({name, actualFunction, ...others }: SearchBan
             whiteSpace='normal'
             bg='white'
             transition='box-shadow 0.2s'
+            boxShadow={actualFunction === name ? '0 5px #ffffff, inset 0 3px #82a81a' : ''}
             { ...others }
             _hover={{
                 boxShadow: '0px 5px #ffffff, inset 0 3px #b8d272'
-            }}>
+            }}
+            _focus={{boxShadow: '0'}}>
                 {name}
         </Button>
     );
