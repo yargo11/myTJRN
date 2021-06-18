@@ -1,25 +1,40 @@
-import styles from './styles.module.scss';
+import { Divider, Flex, Heading, Link, Button } from "@chakra-ui/react";
+import { FiGrid } from 'react-icons/fi'
 
 export function Filters() {
     return (
-        <>
-            <hr className={styles.Hr} />
-            <div className={styles.Container}>
-
-                <p>
-                    <a href="#">
+        <Flex direction="column">
+            <Divider />
+            <Flex maxW="1120px" w="100%" px="10px" margin="auto">
+                <Heading as="h3" fontSize="0.875rem" my="25px" mr="35px"
+                    transition="0.2s color"
+                    _hover={{
+                        color: "cyan.900"
+                    }}
+                >
+                    <Link href="#" >
                         Todas
-                    </a>
-                </p>
-                <p>
-                    <a href="#">
+                    </Link>
+                </Heading>
+                <Heading as="h6" fontSize=" 0.875rem" my="25px" mr="35px"
+                    transition="0.2s color"
+                    _hover={{
+                        color: "cyan.900"
+                    }}
+                >
+                    <Link href="#" >
                         Decisões judiciais
-                    </a>
-                </p>
-                <img src="/images/icons/options.svg" alt="Mais Opções" />
+                    </Link>
+                </Heading>
+                <Flex ml="auto" align="center">
+                    <Button background="#fff">
+                        <FiGrid size={32} />
+                    </Button>
+                </Flex>
 
-            </div>
-            <hr />
-        </>
+
+            </Flex>
+            <Divider />
+        </Flex>
     );
 }
