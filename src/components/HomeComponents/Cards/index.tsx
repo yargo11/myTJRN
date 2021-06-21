@@ -1,5 +1,3 @@
-import styles from './styles.module.scss';
-
 import { Link, Box, Image, Text } from "@chakra-ui/react"
 
 interface CardProps {
