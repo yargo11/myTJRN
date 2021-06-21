@@ -28,9 +28,9 @@ export function Cards({ title, image, description, a }: CardProps) {
                 box-shadow="0 2px 30px rgba(0,0,0,0.02)"
                 transition="border 0.2s, transform 0.2s, color 0.2s"
                 _hover={{
-                    color: "var(--cyan-500)",
+                    color: "cyan.500",
                     transform: "translateY(-5px)",
-                    border: "1px solid var(--cyan-500)"
+                    border: "1px solid cyan.500"
                 }}
             >
 
@@ -45,7 +45,7 @@ export function Cards({ title, image, description, a }: CardProps) {
                     color="#2c2f2f"
                     transition="0.2s color"
                     _hover={{
-                        color: "var(--cyan-500)",
+                        color: "cyan.500",
                     }}
                 >
                     {title}
@@ -58,7 +58,7 @@ export function Cards({ title, image, description, a }: CardProps) {
                     color="#333333"
                     transition="0.2s color"
                     _hover={{
-                        color: "var(--cyan-500)",
+                        color: "cyan.500",
                     }}
                 >
                     {description}

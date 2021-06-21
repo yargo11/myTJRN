@@ -1,5 +1,3 @@
-import styles from './styles.module.scss';
-
 import { Cards } from '../Cards/index';
 import { Heading, Flex, Box } from '@chakra-ui/react';
 

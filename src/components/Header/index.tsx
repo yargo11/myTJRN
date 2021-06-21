@@ -1,20 +1,8 @@
-import styles from './styles.module.scss';
-import { Flex, Spacer, Box, Input, Button, Image, WrapItem, Wrap } from "@chakra-ui/react"
+import { Flex, Spacer, Box, Input, Button, Image, WrapItem, Wrap, Divider } from "@chakra-ui/react"
 import { FiSearch } from 'react-icons/fi';
 import { Menu } from './Menu';
 
 export function Header() {
-
-    interface MenuItem {
-        id: Number;
-        nome: String;
-        descricao: String;
-        menuPai: any;
-        linkInterno: any;
-        paginaLink: any;
-        linkExterno: Boolean;
-        ordem: Number;
-    }
 
     return (
         <Flex w="100%" direction="column">
@@ -29,8 +17,9 @@ export function Header() {
                     </WrapItem>
                     <Spacer />
                     <WrapItem width="458px">
-                        <Box className={styles.boxForm}
+                        <Box
                             width="100%"
+                            border='1px solid #d2d2dc'
                         >
                             <Flex as="form"
                                 display="flex"
@@ -40,13 +29,18 @@ export function Header() {
                                 <Input
                                     type="text"
                                     _focus={{ borderColor: "0 0 0 0 #ffffff", }}
+                                    border='none'
                                     placeholder="Buscar em todo site, processos, jurisprudência..."
                                 />
                                 <Button
                                     type="submit"
                                     leftIcon={<FiSearch size={18} />}
                                     bg="#fff"
-                                    _hover={{ bg: "#fff" }}
+                                    transition='color 0.2s'
+                                    _hover={{ 
+                                        bg: "#fff",
+                                        color: '#61dafb'
+                                    }}
 
                                 />
                             </Flex>
@@ -54,7 +48,7 @@ export function Header() {
                     </WrapItem>
                 </Wrap>
             </Flex>
-            <hr className={styles.hrDivider} />
+            <Divider orientation='horizontal' borderWidth='2px' opacity='100' borderColor='#61dafb' />
             <Flex w="100%" maxWidth={1192} justify="center" align="center" margin="auto" direction="row">
                 <Menu />
             </Flex>
