@@ -1,4 +1,4 @@
-import { Divider, Flex, Heading, Link, Button } from "@chakra-ui/react";
+import { Divider, Flex, Heading, Link, Button, Icon } from "@chakra-ui/react";
 import { FiGrid } from 'react-icons/fi'
 
 export function Filters() {
@@ -28,7 +28,7 @@ export function Filters() {
                 </Heading>
                 <Flex ml="auto" align="center">
                     <Button background="#fff">
-                        <FiGrid size={32} />
+                        <Icon as={FiGrid} fontSize={32}/>
                     </Button>
                 </Flex>
 
