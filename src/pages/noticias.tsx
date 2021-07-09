@@ -3,18 +3,17 @@ import { Breadcrumbs } from "../components/Breadcrumbs";
 import { Filters } from "../components/NewsComponents/Filters";
 import { News } from "../components/NewsComponents/News";
 import { NewsIntro } from "../components/NewsComponents/NewsIntro";
-import styles from '../styles/noticias.module.scss';
+
+import { Flex } from "@chakra-ui/react"
 
 export default function Noticias() {
   createApi();
   return (
-    <>
-      <div className={styles.Container}>
-        <Breadcrumbs />
-        <NewsIntro />
-        <Filters />
-        <News />
-      </div>
-    </>
+    <Flex direction="column">
+      <Breadcrumbs />
+      <NewsIntro />
+      <Filters />
+      <News />
+    </Flex>
   )
 }
