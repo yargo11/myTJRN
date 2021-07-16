@@ -1,6 +1,5 @@
-import { Link, Flex, Box, Text } from '@chakra-ui/react'
+import { Link, Flex, Box, Text, Image } from '@chakra-ui/react'
 import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
-import styles from './styles.module.scss';
 
 interface NoticiaProps {
     noticia: NoticiaInterface;
@@ -15,7 +14,7 @@ export function NewsCard(props: NoticiaProps) {
                     marginTop: '-5px'
                 }}
             >
-                {/*<img src="../../../../public/images/image4.svg" alt={props.noticia.titulo} />*/}
+                <Image src={props.noticia.imagemTitulo ?? '/images/infanciaJuventudeFamilia.svg'} alt={props.noticia.titulo} />
                 <Box fontSize='0.75rem' fontWeight='500' lineHeight='1.125rem' color='#626a6e' my='10px'>
                     {new Date(props.noticia.dataPublicacao).toLocaleString()}
                 </Box>

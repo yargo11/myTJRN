@@ -2,19 +2,20 @@ import styles from './styles.module.scss'
 import { useState, useEffect } from 'react';
 import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import { NewsCard } from '../../NewsComponents/NewsCard'
-import { api } from '../../../service/api';
+//import { api } from '../../../service/api';
 import { ButtonFilters } from './ButtonFilter';
 import { Flex, Box, Link, Image, Heading, Text, Wrap, WrapItem, useMediaQuery, List, ListItem } from '@chakra-ui/react'
-
+import NEWLIST from '../../../../test/noticia.json';
+    
 export function HomeNews() {
     const [isLargerThan1320] = useMediaQuery("(min-width: 768px)")
 
-    const [news, setNews] = useState<NoticiaInterface[]>([]);
-
+    const [news, setNews] = useState<NoticiaInterface[]>(NEWLIST);
+/*
     useEffect(() => {
         api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
     }, []);
-
+*/
     return (
         <Flex w='100%' maxW={1320} my={40} mx='auto'>
             <Flex direction='column'>

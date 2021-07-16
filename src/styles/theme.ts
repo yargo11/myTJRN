@@ -5,7 +5,15 @@ export const theme = extendTheme({
         Link:{
             baseStyle:{
                 _hover: {
-                    textDecoration: "none"
+                    textDecoration: "none",
+                    boxShadow: '0'
+                }
+            }
+        },
+        Button: {
+            baseStyle: {
+                _focus: {
+                    boxShadow: '0'
                 }
             }
         }
@@ -28,22 +36,5 @@ export const theme = extendTheme({
     fonts: {
         heading: 'Inter, Raleway',
         body: 'Inter, Raleway'
-    },
-    components: {
-        Button: {
-            baseStyle: {
-                _focus: {
-                    boxShadow: '0'
-                }
-            }
-        },
-        Link: {
-            baseStyle: {
-                _focus: {
-                    boxShadow: '0'
-                }
-            }
-        }
     }
-
 });
