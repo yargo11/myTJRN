@@ -15,9 +15,7 @@ export function ButtonFilters(props) {
             }}
         ><Link
         textDecoration="none"
-        _hover={{
-            textDecoration: 'none'
-        }}
+        
             href={props.link}
         >{props.text}</Link></ListItem>
     )

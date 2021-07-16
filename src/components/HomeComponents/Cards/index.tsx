@@ -13,9 +13,7 @@ export function Cards({ title, image, description, a }: CardProps) {
             href={a}
             isExternal
             textDecoration="none"
-            _hover={{
-                textDecoration: 'none'
-            }}
+            
         >
             <Box
                 display="block"
