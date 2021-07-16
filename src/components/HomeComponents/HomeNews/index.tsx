@@ -19,8 +19,7 @@ export function HomeNews() {
     return (
         <Flex w='100%' maxW={1320} my={40} mx='auto'>
             <Flex direction='column'>
-                <Box className={styles.spotlightNew}>
-                    {/* transition: color 0.2s; */}
+                <Box >
                     <Link href="#" display='flex' flexFlow='row wrap' justifyContent='center'
                         _hover={{
                             color: 'cyan.500'
