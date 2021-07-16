@@ -1,5 +1,4 @@
 import { Flex, Link, Image } from '@chakra-ui/react';
-import styles from './styles.module.scss';
 
 export function Breadcrumbs() {
     return (

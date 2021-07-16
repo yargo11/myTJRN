@@ -2,16 +2,16 @@ import styles from './styles.module.scss'
 import { useState, useEffect } from 'react';
 import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import { NewsCard } from '../../NewsComponents/NewsCard'
-import { api } from '../../../service/api';
-
+//import { api } from '../../../service/api';
+import NEWLIST from '../../../../test/noticia.json';
 export function HomeNews() {
     
-    const [news, setNews] = useState<NoticiaInterface[]>([]);
-
+    const [news, setNews] = useState<NoticiaInterface[]>(NEWLIST);
+/*
     useEffect(() => {
         api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
 	}, []);
-
+*/
     return (
         <div className={styles.Container}>
             <div className={styles.Content}>
