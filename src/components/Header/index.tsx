@@ -6,7 +6,7 @@ export function Header() {
 
     return (
         <Flex w="100%" direction="column">
-            <Flex w="100%" maxWidth={1192} justify="center" align="center" margin="auto" direction="row" my={6} px={4}>
+            <Flex w="100%" maxWidth={1320} justify="center" align="center" margin="auto" direction="row" my={6} px={4}>
                 <Wrap w="100%" align="center">
                     <WrapItem>
                         <Box>
@@ -49,7 +49,7 @@ export function Header() {
                 </Wrap>
             </Flex>
             <Divider orientation='horizontal' borderWidth='2px' opacity='100' borderColor='#61dafb' />
-            <Flex w="100%" maxWidth={1192} justify="center" align="center" margin="auto" direction="row">
+            <Flex w="100%" maxWidth={1320} justify="center" align="center" margin="auto" direction="row">
                 <MenuTJ />
             </Flex>
         </Flex>

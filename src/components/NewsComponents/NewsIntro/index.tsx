@@ -2,7 +2,7 @@ import { Flex, Box, Heading, Text } from '@chakra-ui/react';
 
 export function NewsIntro() {
     return (
-        <Box w="100%" maxW="1120px" mx="auto" my="40px">
+        <Box w="100%" maxW={1320} mx="auto" my="40px">
             <Flex w="100%" maxW="684px" px="10px" direction="column">
                 <Heading as="h1" fontSize="2.25rem" fontWeight="500" mt="41px" mb="17px">
                     Notícias

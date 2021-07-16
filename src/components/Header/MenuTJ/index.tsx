@@ -69,7 +69,7 @@ export function MenuTJ() {
                 </Box>
                 :
                 <UnorderedList
-                    maxW='1192px'
+                    maxW={1320}
                     m='auto'
                     listStyleType='none'
                     w='full'

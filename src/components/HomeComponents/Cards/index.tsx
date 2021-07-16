@@ -1,4 +1,4 @@
-import { Link, Box, Image, Text } from "@chakra-ui/react"
+import { Link, Box, Image, Text, useMediaQuery } from "@chakra-ui/react"
 
 interface CardProps {
     title: string;
@@ -8,20 +8,21 @@ interface CardProps {
 }
 
 export function Cards({ title, image, description, a }: CardProps) {
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
     return (
         <Link
             href={a}
             isExternal
             textDecoration="none"
-            
         >
             <Box
                 display="block"
                 flexDirection="column"
-                w="276px"
-                h="288px"
-                m={[3.5, 1]}
-                py={10} px={5}
+                maxW="276px"
+                w='100%'
+                h="298px"
+                m='auto'
+                py={isLargerThan768 ? 10 : 4} px={5}
                 border="1px solid #d8dbdf"
                 borderRadius="6px"
                 box-shadow="0 2px 30px rgba(0,0,0,0.02)"

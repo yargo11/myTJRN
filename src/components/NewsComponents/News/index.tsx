@@ -15,7 +15,7 @@ export function News() {
 */
 
     return (
-        <Flex maxW={1230} w='100%' m='auto' mt='52px'>
+        <Flex maxW={1320} w='100%' m='auto' mt='52px'>
             <Flex flexFlow='row wrap'>
                 <Flex
                     bg='#f5f5f5'

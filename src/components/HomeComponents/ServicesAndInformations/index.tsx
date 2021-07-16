@@ -1,20 +1,28 @@
 import { Cards } from '../Cards/index';
-import { Heading, Flex, Box } from '@chakra-ui/react';
+import { Heading, Flex, Box, SimpleGrid, useMediaQuery } from '@chakra-ui/react';
 
 export function ServicesAndInformations() {
+    const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
     return (
-        <Box maxW={1140} margin="auto">
-            <Flex p={[0, 10]} mx="20px" mb="40px" direction="column">
-                <Heading as="h1" fontSize="2.25rem" fontFamily="Raleway" fontWeight="600" color="#191919">
+        <Box maxW={1320} margin="auto">
+            <Flex mb="40px" direction="column">
+                <Heading as="h1" fontSize="2.25rem" fontFamily="Raleway" fontWeight="600" color="#191919"
+                    m={isLargerThan768 ? '' : 'auto'}
+                    mb='12px'>
                     Informações e serviços
                 </Heading>
-                <Heading as="h5" fontSize="1.125rem" fontFamily="Raleway" fontWeight="400" color="#191919">
+                <Heading as="h5" fontSize="1.125rem" fontFamily="Raleway" fontWeight="400" color="#191919"
+                    m={isLargerThan768 ? '' : 'auto'}
+                    textAlign={isLargerThan768 ? 'start' : 'center'}>
                     Encontre informações e serviços do Poder Judiciario que você precisa
                 </Heading>
 
             </Flex>
-            <Flex flexFlow="row wrap" justifyContent="center">
 
+            <SimpleGrid
+                columns={isLargerThan768 ? 4 : 2}
+                spacingX={isLargerThan768 ? '76px' : '5px'}
+                spacingY="30px">
                 <Cards
                     title="Consultas na Justiça"
                     image="consultasNaJustica"
@@ -42,6 +50,7 @@ export function ServicesAndInformations() {
                     description="Aliquet suspendisse neque vulputate sed nunc diam."
                     a="#"
                 />
+
                 <Cards
                     title="Transporte, Viagens e Trânsito"
                     image="transporteViagensTransito"
@@ -69,6 +78,7 @@ export function ServicesAndInformations() {
                     description="Aliquet suspendisse neque vulputate sed nunc diam."
                     a="#"
                 />
+
                 <Cards
                     title="Segurança, crimes e prisões"
                     image="segurancaCrimesPrisoes"
@@ -89,8 +99,7 @@ export function ServicesAndInformations() {
                     description="Imperdiet vitae volutpat adipiscing elit tellus commodo."
                     a="#"
                 />
-
-            </Flex>
-        </Box>
+            </SimpleGrid>
+        </Box >
     )
 }

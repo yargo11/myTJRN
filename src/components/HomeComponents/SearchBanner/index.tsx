@@ -14,7 +14,7 @@ export function SearchBanner() {
 
     return (
         <Flex m='auto' bgImage="url('/images/background.svg')">
-            <Flex w='100%' maxW='1120px' m='auto' p='73px 0' flexWrap='wrap'>
+            <Flex w='100%' maxW={1320} m='auto' p='73px 0' flexWrap='wrap'>
                 <ButtonGroup spacing='5px' w='full'>
                     <SearchBannerButton
                         actualFunction={type}

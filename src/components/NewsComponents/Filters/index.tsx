@@ -5,7 +5,7 @@ export function Filters() {
     return (
         <Flex direction="column">
             <Divider />
-            <Flex maxW="1120px" w="100%" px="10px" margin="auto">
+            <Flex maxW={1320} w="100%" px="10px" margin="auto">
                 <Heading as="h3" fontSize="0.875rem" my="25px" mr="35px"
                     transition="0.2s color"
                     _hover={{

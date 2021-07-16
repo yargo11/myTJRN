@@ -3,7 +3,7 @@ import { FooterListItems } from './FooterListItems';
 
 export function Footer() {
     return (
-        <Flex maxW="1120px" margin="auto" mt={36} p={2.5}>
+        <Flex maxW={1320} margin="auto" mt={36} p={2.5}>
             <List 
                 fontSize="1.625rem"
                 display='flex'
