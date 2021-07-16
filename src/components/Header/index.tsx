@@ -1,6 +1,6 @@
 import { Flex, Spacer, Box, Input, Button, Image, WrapItem, Wrap, Divider } from "@chakra-ui/react"
 import { FiSearch } from 'react-icons/fi';
-import { Menu } from './Menu';
+import { MenuTJ } from './MenuTJ';
 
 export function Header() {
 
@@ -37,7 +37,7 @@ export function Header() {
                                     leftIcon={<FiSearch size={18} />}
                                     bg="#fff"
                                     transition='color 0.2s'
-                                    _hover={{ 
+                                    _hover={{
                                         bg: "#fff",
                                         color: '#61dafb'
                                     }}
@@ -50,7 +50,7 @@ export function Header() {
             </Flex>
             <Divider orientation='horizontal' borderWidth='2px' opacity='100' borderColor='#61dafb' />
             <Flex w="100%" maxWidth={1192} justify="center" align="center" margin="auto" direction="row">
-                <Menu />
+                <MenuTJ />
             </Flex>
         </Flex>
     )
