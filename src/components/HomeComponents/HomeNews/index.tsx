@@ -1,20 +1,15 @@
-import { useState, useEffect } from 'react';
 import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import { NewsCard } from '../../NewsComponents/NewsCard'
-//import { api } from '../../../service/api';
 import { ButtonFilters } from './ButtonFilter';
 import { Flex, Box, Link, Image, Heading, Text, Wrap, WrapItem, useMediaQuery, List, ListItem, SimpleGrid } from '@chakra-ui/react'
-import NEWLIST from '../../../../test/noticia.json';
 
-export function HomeNews() {
-    const [isLargerThan768] = useMediaQuery("(min-width: 768px)")
+export interface NoticiaListProps {
+    noticias: NoticiaInterface[];
+}
 
-    const [news, setNews] = useState<NoticiaInterface[]>(NEWLIST);
-    /*
-        useEffect(() => {
-            api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
-        }, []);
-    */
+export function HomeNews({ noticias }: NoticiaListProps) {
+    const [isLargerThan1320] = useMediaQuery("(min-width: 768px)")
+
     return (
         <Flex w='100%' maxW={1320} my='40px' mx='auto'>
             <Flex direction='column'>
@@ -44,15 +39,14 @@ export function HomeNews() {
                 </Box>
 
                 <SimpleGrid minChildWidth="276px" spacingX="72px" spacingY="30px">
-                    {news ? news
-                        .map(newsElement => (
+                    {noticias ? noticias
+                        .map(noticia => (
                             <WrapItem>
-                                <NewsCard key={newsElement.id} noticia={newsElement} />
+                                <NewsCard key={noticia.id} noticia={noticia} />
                             </WrapItem>
                         )
                         ) : <></>}
                 </SimpleGrid>
-
 
                 <Flex justify='flex-end' mt='60px' fontSize='1rem' fontWeight='400'>
                     <List display='flex' alignItems='center' color="#343434">
@@ -68,7 +62,7 @@ export function HomeNews() {
                             _hover={{
                                 background: '#2d3667'
                             }}
-                        ><Link href="/noticias">Todas as notícias</Link></ListItem>
+                        ><Link href="/noticia">Todas as notícias</Link></ListItem>
                     </List>
                 </Flex>
             </Flex>
