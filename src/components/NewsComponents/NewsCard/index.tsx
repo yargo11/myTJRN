@@ -7,7 +7,7 @@ interface NoticiaProps {
 
 export function NewsCard(props: NoticiaProps) {
     return (
-        <Link href="#">
+        <Link href={`/noticia/view/${props.noticia.id}`}>
             <Flex flexDir='column' w={276} h='auto' mx='15px' mb='60px'
                 transition='margin-top 0.2s'
                 _hover={{

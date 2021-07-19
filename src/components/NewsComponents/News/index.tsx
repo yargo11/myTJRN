@@ -1,19 +1,12 @@
-import { useState, useEffect } from 'react';
 import { Flex, Text, Heading, Image, Link } from '@chakra-ui/react';
 import { NoticiaInterface } from '../../../interfaces/noticiaInterface';
 import { NewsCard } from '../NewsCard'
-//import { api } from '../../../../src/service/api';
-import NEWLIST from '../../../../test/noticia.json';
-export function News() {
 
-    const [news, setNews] = useState<NoticiaInterface[]>(NEWLIST);
+export interface NoticiaListProps {
+    noticias: NoticiaInterface[];
+}
 
-/*
-    useEffect(() => {
-        api.get('/noticias/listar').then(response => setNews(response.data)).catch(error => console.log(error));
-	}, []);
-*/
-
+export function News({ noticias }: NoticiaListProps) {
     return (
         <Flex maxW={1230} w='100%' m='auto' mt='52px'>
             <Flex flexFlow='row wrap'>
@@ -43,9 +36,9 @@ export function News() {
                         </Link>
                     </Text>
                 </Flex>
-                {news ? news
-                    .map(newsElement => (
-                        <NewsCard key={newsElement.id} noticia={newsElement} />
+                {noticias ? noticias
+                    .map(noticia => (
+                        <NewsCard key={noticia.id} noticia={noticia} />
                     )
                     ) : <></>}
             </Flex>
