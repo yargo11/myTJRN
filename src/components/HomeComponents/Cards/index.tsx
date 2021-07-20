@@ -18,7 +18,7 @@ export function Cards({ title, image, description, a }: CardProps) {
             <Box
                 display="block"
                 flexDirection="column"
-                maxW="276px"
+                maxW="275px"
                 w='100%'
                 h="298px"
                 m='auto'

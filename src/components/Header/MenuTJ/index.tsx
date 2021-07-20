@@ -46,7 +46,7 @@ export function MenuTJ() {
                         }}>
                         <FaBars />
                     </Button>
-                    <Drawer isOpen={isOpen} placement='right' onClose={onClose}>
+                    <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
                         <DrawerOverlay />
                         <DrawerContent>
                             <DrawerCloseButton />
