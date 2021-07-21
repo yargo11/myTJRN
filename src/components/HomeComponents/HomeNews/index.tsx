@@ -41,8 +41,8 @@ export function HomeNews({ noticias }: NoticiaListProps) {
                 <SimpleGrid minChildWidth="276px" spacingX="72px" spacingY="30px">
                     {noticias ? noticias
                         .map(noticia => (
-                            <WrapItem>
-                                <NewsCard key={noticia.id} noticia={noticia} />
+                            <WrapItem key={noticia.id}>
+                                <NewsCard noticia={noticia} />
                             </WrapItem>
                         )
                         ) : <></>}

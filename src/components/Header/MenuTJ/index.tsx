@@ -58,9 +58,8 @@ export function MenuTJ() {
                                     flexDirection='column'>
                                     {menuItem ? menuItem.map(item =>
                                         <MenuItemTJ
-                                            key={item.id}
-                                            label={item.nome}
-                                            link={item.linkExterno}
+                                            key={item.link}
+                                            menu={item}
                                             isSmallerThan768={true} />) : <></>}
                                 </UnorderedList>
                             </DrawerBody>
@@ -78,9 +77,8 @@ export function MenuTJ() {
                     flexWrap='wrap'>
                     {menuItem ? menuItem.map(item =>
                         <MenuItemTJ
-                            key={item.id}
-                            label={item.nome}
-                            link={item.linkExterno}
+                            key={item.link}
+                            menu={item}
                             isSmallerThan768={false} />) : <></>}
                 </UnorderedList>}
         </Box>

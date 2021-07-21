@@ -17,7 +17,9 @@ export function NewsCard(props: NoticiaProps) {
             >
                 <Image src={props.noticia.imagemTitulo ?? '/images/infanciaJuventudeFamilia.svg'} alt={props.noticia.titulo} />
                 <Box fontSize='0.75rem' fontWeight='500' lineHeight='1.125rem' color='#626a6e' my='10px'>
-                    {new Date(props.noticia.dataPublicacao).toLocaleString()}
+                    {new Intl.DateTimeFormat('pt-BR', {
+                        dateStyle: 'full'
+                    }).format(new Date(props.noticia.dataPublicacao))}
                 </Box>
                 <Text
                     fontWeight='500' lineHeight='1.4rem' color='#2b70b9'

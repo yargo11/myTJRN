@@ -4,6 +4,9 @@ export const theme = extendTheme({
     components:{
         Link:{
             baseStyle:{
+                _focus: {
+                    boxShadow: '0'
+                },
                 _hover: {
                     textDecoration: "none",
                     boxShadow: '0'

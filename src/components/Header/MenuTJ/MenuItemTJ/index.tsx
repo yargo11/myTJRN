@@ -1,26 +1,19 @@
 import {
     Link,
     ListItem,
-    Button,
     Menu,
     MenuButton,
     MenuList,
     MenuItem,
-    MenuItemOption,
-    MenuGroup,
-    MenuOptionGroup,
-    MenuIcon,
-    MenuCommand,
-    MenuDivider,
 } from '@chakra-ui/react';
+import { MenuInterface } from '../../../../interfaces/menuInterface';
 
 interface MenuItemProps {
-    label: string;
-    link: string;
+    menu: MenuInterface;
     isSmallerThan768: boolean;
 }
 
-export function MenuItemTJ({ label, link, isSmallerThan768 }: MenuItemProps) {
+export function MenuItemTJ({ menu, isSmallerThan768 }: MenuItemProps) {
     return (
         <ListItem
             float='left'
@@ -36,28 +29,21 @@ export function MenuItemTJ({ label, link, isSmallerThan768 }: MenuItemProps) {
                 color: 'cyan.500',
                 boxShadow: isSmallerThan768 ? 'none' : 'inset 0px -3px #b8d272',
             }}>
-            {/* <Link
-            _hover={{
-                textDecoration:'none'
-            }}
-            href={link ? link : '#'}>
-                {label}
-            </Link> */}
             <Menu>
-                {/* <MenuButton as={Button} > */}
                 <Link
                     as={MenuButton}
                     fontSize='1rem'
                     fontWeight='semibold'
-                    _hover={{
-                        textDecoration: 'none'
-                    }}
-                    href={link ? link : '#'}>
-                    {label}
+                    href={menu.link ? menu.link : '#'}>
+                    {menu.nome}
                 </Link>
-                {/* </MenuButton> */}
+                {/*menu.menuFilhos ?
+                    <MenuList>
+                        {menu.menuFilhos.map(item => <MenuItem key={item.id}><Link href={item.link}>{item.nome}</Link></MenuItem>)}
+                    </MenuList>
+                : <></>*/}
                 <MenuList>
-                    <MenuItem>História</MenuItem>
+                    <MenuItem><Link href='#'>História</Link></MenuItem>
                     <MenuItem>Competências e Responsabilidades</MenuItem>
                     <MenuItem>Organograma</MenuItem>
                     <MenuItem>Dirigentes</MenuItem>
