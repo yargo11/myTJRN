@@ -49,7 +49,7 @@ export function HomeNews({ noticias }: NoticiaListProps) {
                 </SimpleGrid>
 
                 <Flex justify='flex-end' mt='60px' fontSize='1rem' fontWeight='400'>
-                    <List display='flex' alignItems='center' color="#343434">
+                    <List display='flex' alignItems='center' color="#343434" flexWrap='wrap'>
                         <ButtonFilters link='#' text='Filtro1' />
                         <ButtonFilters link='#' text='Filtro2' />
                         <ButtonFilters link='#' text='Filtro3' />
