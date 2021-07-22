@@ -58,7 +58,7 @@ export function MenuTJ() {
                                     flexDirection='column'>
                                     {menuItem ? menuItem.map(item =>
                                         <MenuItemTJ
-                                            key={item.link}
+                                            key={item.id}
                                             menu={item}
                                             isSmallerThan768={true} />) : <></>}
                                 </UnorderedList>
@@ -77,7 +77,7 @@ export function MenuTJ() {
                     flexWrap='wrap'>
                     {menuItem ? menuItem.map(item =>
                         <MenuItemTJ
-                            key={item.link}
+                            key={item.id}
                             menu={item}
                             isSmallerThan768={false} />) : <></>}
                 </UnorderedList>}

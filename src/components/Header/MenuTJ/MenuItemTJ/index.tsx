@@ -37,23 +37,12 @@ export function MenuItemTJ({ menu, isSmallerThan768 }: MenuItemProps) {
                     href={menu.link ? menu.link : '#'}>
                     {menu.nome}
                 </Link>
-                {/*menu.menuFilhos ?
+                {menu.menuFilhos ?
                     <MenuList>
                         {menu.menuFilhos.map(item => <MenuItem key={item.id}><Link href={item.link}>{item.nome}</Link></MenuItem>)}
                     </MenuList>
-                : <></>*/}
-                <MenuList>
-                    <MenuItem><Link href='#'>História</Link></MenuItem>
-                    <MenuItem>Competências e Responsabilidades</MenuItem>
-                    <MenuItem>Organograma</MenuItem>
-                    <MenuItem>Dirigentes</MenuItem>
-                    <MenuItem>Ex-Presidentes</MenuItem>
-                    <MenuItem>Vice-presidência</MenuItem>
-                    <MenuItem>Composição</MenuItem>
-                    <MenuItem>Memorial</MenuItem>
-                    <MenuItem>Biblioteca</MenuItem>
-                    <MenuItem>Juiz de Cooperação</MenuItem>
-                </MenuList>
+                : <></>}
+
             </Menu>
         </ListItem>);
 }
