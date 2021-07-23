@@ -5,6 +5,12 @@ import {
     MenuButton,
     MenuList,
     MenuItem,
+    AccordionItem,
+    Accordion,
+    AccordionButton,
+    Box,
+    AccordionIcon,
+    AccordionPanel,
 } from '@chakra-ui/react';
 import { MenuInterface } from '../../../../interfaces/menuInterface';
 
@@ -14,6 +20,7 @@ interface MenuItemProps {
 }
 
 export function MenuItemTJ({ menu, isSmallerThan768 }: MenuItemProps) {
+    console.log(!menu.menuFilhos)
     return (
         <ListItem
             float='left'
@@ -29,20 +36,34 @@ export function MenuItemTJ({ menu, isSmallerThan768 }: MenuItemProps) {
                 color: 'cyan.500',
                 boxShadow: isSmallerThan768 ? 'none' : 'inset 0px -3px #b8d272',
             }}>
-            <Menu>
-                <Link
-                    as={MenuButton}
-                    fontSize='1rem'
-                    fontWeight='semibold'
-                    href={menu.link ? menu.link : '#'}>
-                    {menu.nome}
-                </Link>
-                {menu.menuFilhos ?
-                    <MenuList>
-                        {menu.menuFilhos.map(item => <MenuItem key={item.id}><Link href={item.link}>{item.nome}</Link></MenuItem>)}
-                    </MenuList>
-                : <></>}
-
-            </Menu>
+            {!isSmallerThan768 || !menu.menuFilhos ?   
+                <Menu>
+                    <Link
+                        as={MenuButton}
+                        fontSize='1rem'
+                        fontWeight='semibold'
+                        href={menu.link ? menu.link : '#'}>
+                        {menu.nome}
+                    </Link>
+                    {menu.menuFilhos ?
+                        <MenuList>
+                            {menu.menuFilhos.map(item => <MenuItem key={item.id}><Link href={item.link}>{item.nome}</Link></MenuItem>)}
+                        </MenuList>
+                    : <></>}
+                </Menu> : 
+                <Accordion allowMultiple  maxW='full'>
+                <AccordionItem borderStyle='none'>
+                  <h2>
+                    <AccordionButton pl={0} pt={2}>
+                      <Box flex="1" textAlign="left" fontSize='1rem' fontWeight='semibold'>
+                        {menu.nome}
+                      </Box>
+                      <AccordionIcon />
+                    </AccordionButton>
+                  </h2>
+                  {menu.menuFilhos.map(item => <AccordionPanel pb={2} key={item.id} fontSize='1rem'><Link href={item.link}>{item.nome}</Link></AccordionPanel>)}
+                </AccordionItem>
+                </Accordion>
+            }
         </ListItem>);
 }
