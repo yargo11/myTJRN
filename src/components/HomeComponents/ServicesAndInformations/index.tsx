@@ -19,10 +19,11 @@ export function ServicesAndInformations() {
 
             </Flex>
 
-            <SimpleGrid
+            {/* <SimpleGrid
                 columns={isLargerThan768 ? 4 : 2}
                 spacingX={isLargerThan768 ? '76px' : '5px'}
-                spacingY="30px">
+                spacingY="30px"> */}
+            <SimpleGrid minChildWidth="276px" spacingX="72px" spacingY="30px">
                 <Cards
                     title="Consultas na Justiça"
                     image="consultasNaJustica"
