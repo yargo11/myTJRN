@@ -1,6 +1,6 @@
 import { Flex, Spacer, Box, Input, Button, Image, WrapItem, Wrap, Divider } from "@chakra-ui/react"
 import { FiSearch } from 'react-icons/fi';
-import { MenuTJ } from './MenuTJ';
+import { Menu } from './Menu';
 
 export function Header() {
 
@@ -50,7 +50,7 @@ export function Header() {
             </Flex>
             <Divider orientation='horizontal' borderWidth='2px' opacity='100' borderColor='#61dafb' />
             <Flex w="100%" maxWidth={1320} justify="center" align="center" margin="auto" direction="row">
-                <MenuTJ />
+                <Menu />
             </Flex>
         </Flex>
     )

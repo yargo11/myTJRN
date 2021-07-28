@@ -14,8 +14,7 @@ export function ButtonFilters(props) {
                 color: 'cyan.500'
             }}
         ><Link
-        textDecoration="none"
-        
+            textDecoration="none"
             href={props.link}
         >{props.text}</Link></ListItem>
     )

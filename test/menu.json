@@ -2,7 +2,7 @@
     "id": 1,
     "nome": "Início",
     "descricao": "Chama página de testes Início",
-    "link": "#",
+    "link": "/",
     "ordem": 1
 }, {
     "id": 2,
