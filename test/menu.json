@@ -14,13 +14,13 @@
         "id": 10,
         "nome": "História",
         "descricao": "Chama página de testes História",
-        "link": "#",
+        "link": "/institucional/historia",
         "ordem": 1
     }, {
         "id": 11,
         "nome": "Competências e Responsabilidades",
         "descricao": "Chama página de testes Competências e Responsabilidades",
-        "link": "#",
+        "link": "/institucional/competencias-e-responsabilidades",
         "ordem": 2
     }, {
         "id": 12,
@@ -32,13 +32,13 @@
         "id": 13,
         "nome": "Dirigentes",
         "descricao": "Chama página de testes Dirigentes",
-        "link": "#",
+        "link": "/institucional/dirigentes",
         "ordem": 4
     }, {
         "id": 14,
         "nome": "Ex-Presidentes",
         "descricao": "Chama página de testes Ex-Presidentes",
-        "link": "#",
+        "link": "/institucional/ex-presidentes",
         "ordem": 5
     }, {
         "id": 15,
@@ -50,7 +50,7 @@
         "id": 16,
         "nome": "Composição",
         "descricao": "Chama página de testes Composição",
-        "link": "#",
+        "link": "/institucional/composicao",
         "ordem": 7
     }, {
         "id": 17,
