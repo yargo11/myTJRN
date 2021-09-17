@@ -1,34 +1,91 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Front-end do portal do TJRN
 
-## Getting Started
+[Figma do projeto](https://www.figma.com/file/FAq48zzu45PsgzBo8myhu8/Novo-Site-do-TJRN?node-id=948%3A40)
 
-First, run the development server:
+[Documentação do pm2](https://pm2.keymetrics.io/docs/usage/process-management/)
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+## Requisitos
+* node 14
+* yarn
+* pm2
+* O ambiente deve ser capaz de se comunicar com o servidor intranet afim de consumir o serviço de notícias
+	* Link da api de notícias: http://intranet.tjrn.jus.br/apinoticia/
+	* Caminho do serviço de notícias no servidor intranet: /var/www/intranet.intrajus.tjrn/web/apinoticia/
+	
+## Deploy
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+	1. Através do git
+		1.1 Conetar ao servidor usando ssh:
+			ssh -p {porta} {usuário}@{servidor}
+            
+            Atualmente por padrão, o TJ utiliza porta 2022.
+            O usuário nos é informado junto com o servidor quando os servidores são criados.
+            
+		1.2 Entrar em modo de super usuário:
+			sudo su
+            
+		1.3 Ir até a pasta onde o projeto clonado ficará
+			cd {caminho do projeto clonado}
+            
+		1.4 Realizar o clone ou pull
+			git clone {link do projeto}
+            git pull origin main
+            
+	2. Através de SCP
+		2.1. Rodar o comando SCP
+			scp -P {porta} (-r caso o que for enviado seja uma pasta) {origem} {destino}
+        	
+            2.1.1. Origem local e destino remoto
+				Destino seria {usuário}@{servidor}:{caminho da pasta para onde serão copiados os arquivos}
+            	Atualmente, só podemos passar os arquivos diretamente para a pasta "/var/www/html/"
+                Ou seja, teria que ser: {usuário}@{servidor}:/var/www/html/
+                Origem seria o caminho local da pasta ou do arquivo
+                
+			2.1.2 Origem remota e destino local
+				Origem seria {usuário}@{servidor}:{caminho da pasta para onde serão copiados os arquivos}
+                Destino seria o caminho local da pasta ou do arquivo
+                
+	3. Preparando o projeto
+		ESSA PARTE SÓ SERÁ NECESSÁRIA CASO O CONTEÚDO ENVIADO AO SERVIDOR SEJA O PROJETO INTEIRO,
+        pois o conteúdo realmente necessário será somente:
+        
+		* .next/ (contém o código mesmo da aplicação. Normalmente, esta pasta será substituída EM TODAS VERSÕES)
+		* node_modules/ (contém as bibliotecas do projeto. Essa pasta só será atualizada quando houver alteração nas dependências do projeto)
+    	* package.json (informa as bibliotecas do projeto. Esse arquivo deverá ser atualizado junto com a pasta node modules)
+    	* public/ (contém arquivos públicos. Imagens, PDF's, etc. Deverá ser atualizado quando houver algum novo arquivo a ser disponibilizado)
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+		3.1. Apagar, caso haja, arquivos referentes a gerações antigas, pois ELES NÂO SERÃO ATUALIZADOS COM PULLS
+    	
+          3.1.1. Apague as pastas .next/, node_modules e o arquivo yarn.lock rodando os comandos:
+              rm -r .next/
+              rm -r node_modules/
+              rm yarn lock
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+          3.1.2. Ou tudo em um comando só:
+              rm -r .next/ node_modules/ yarn.lock
+            
+		3.2. Gerar novamente o que foi apagado anteriormente:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+			3.2.1. Baixar novamente as dependências:
+				yarn install
+			3.2.2. Gerar o código de homologação/produção
+				yarn build
 
-## Learn More
+	4. Rodando o projeto
+		Atualmente, para gerênciar o projeto, estamos utilizando o pm2.
+		Após subir qualquer alteração na aplicação, a mesma deverá ser reiniciada.
 
-To learn more about Next.js, take a look at the following resources:
+		4.1. Iniciar aplicação em modo de homologação/produção:
+			pm2 start "yarn start -p {porta}"
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+		4.2. Listar aplicações:
+			pm2 list
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+		4.3. Parar aplicação:
+			pm2 stop {aplicação ou id do processo}
 
-## Deploy on Vercel
+		4.4. Reiniciar aplicação:
+			pm2 restart {aplicação}
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## Criar tag
+git tag -a {tag} -m “{comment}” //não criar tag com mesmo nome de branch // é importante fazer push da tag
