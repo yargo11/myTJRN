@@ -3,6 +3,7 @@ import { ListItem, UnorderedList, Link } from '@chakra-ui/react';
 export default function PagesList () {
     return (
         <UnorderedList
+            float='left'
             display='flex'
             flexWrap='wrap'
             h='35px'
@@ -11,7 +12,7 @@ export default function PagesList () {
             fontWeight='medium'
             lineHeight='19,36px'
             marginTop='10px'
-            px='2rem'
+            pl='2rem'
             mx='0'>
             <ListItem
                 mr='0.75rem'

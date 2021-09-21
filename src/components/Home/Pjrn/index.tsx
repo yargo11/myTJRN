@@ -1,11 +1,13 @@
 import { Flex, Text } from "@chakra-ui/layout";
+import AreaTitle from "../AreaTitle";
 
 export default function Pjrn () {
     return (
-        <Flex w='full' maxW='81rem' justifyContent='center' flexDirection='column'>
-            <Text fontSize='2.25rem' fontFamily='Inter' fontWeight='bold' color='#00384D' lineHeight='2.87rem'>Conheça o PJRN</Text>
-            <Text>Veja como funciona o Poder Judiciário</Text>
-
+        <Flex h='32.375rem' w='full' maxW='82.5rem' px='0.75rem' justifyContent='center' flexDirection='column' m='auto'>
+            <AreaTitle title='Conheça o PJRN' subtitle='Veja como funciona o Poder Judiciário'/>
+            <Flex w='full' border='1px' alignItems='center' justifyContent='space-between' borderColor='#D8DBDF'>
+                <Text fontSize='1.5rem' fontWeight='bold' textDecoration='underline' lineHeight='2.5rem'>Presidência e Vice-presidência</Text>
+            </Flex>
         </Flex>
     );
 }

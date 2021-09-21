@@ -3,6 +3,7 @@ import { ListItem, UnorderedList, Link, Flex } from '@chakra-ui/react';
 export default function FuncionalityList() {
     return (
         <UnorderedList
+            float='right'
             display='flex'
             flexWrap='wrap'
             h='35px'

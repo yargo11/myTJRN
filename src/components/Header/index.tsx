@@ -1,15 +1,19 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import PagesList from "./PagesList";
 import FuncionalityList from './FuncionalityList'
 
+//Precisa melhorar responsividade
 export default function Header() {
     return (
-        <Flex
-            maxW='81rem'
-            h='11.1rem'
-            m='auto'
+        <Box
+            maxW='82.5rem'
+            minH='11.1rem'
+            mx='auto'
+            pt='4rem'
+            px='0.75rem'
             alignItems='center'>
             <Text
+                float='left'
                 fontFamily='Inter'
                 fontWeight='bold'
                 fontSize='2.5rem'
@@ -17,10 +21,8 @@ export default function Header() {
                 lineHeight='55px'
                 as='a'
                 href='/'>TJRN.jus.br</Text>
-            <Flex w='full' maxW='66.87rem' justifyContent='space-between'>
                 <PagesList />
                 <FuncionalityList />
-            </Flex>
-        </Flex>
+        </Box>
     );
 }
