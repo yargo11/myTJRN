@@ -8,8 +8,7 @@ export default function Header() {
             maxW='81rem'
             h='11.1rem'
             m='auto'
-            alignItems='center'
-            flexWrap='wrap'>
+            alignItems='center'>
             <Text
                 fontFamily='Inter'
                 fontWeight='bold'
@@ -18,8 +17,10 @@ export default function Header() {
                 lineHeight='55px'
                 as='a'
                 href='/'>TJRN.jus.br</Text>
-            <PagesList />
-            <FuncionalityList />
+            <Flex w='full' maxW='66.87rem' justifyContent='space-between'>
+                <PagesList />
+                <FuncionalityList />
+            </Flex>
         </Flex>
     );
 }
