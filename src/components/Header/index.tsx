@@ -1,4 +1,4 @@
-import { Box, Flex, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import PagesList from "./PagesList";
 import FuncionalityList from './FuncionalityList'
 
@@ -10,8 +10,7 @@ export default function Header() {
             minH='11.1rem'
             mx='auto'
             pt='4rem'
-            px='0.75rem'
-            alignItems='center'>
+            px='0.75rem'>
             <Text
                 float='left'
                 fontFamily='Inter'

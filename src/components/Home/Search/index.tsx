@@ -1,4 +1,4 @@
-import { Flex, Input, Button, Text, UnorderedList, ListItem } from '@chakra-ui/react';
+import { Box, Flex, Input, Button, Text, UnorderedList, ListItem } from '@chakra-ui/react';
 import { useState } from 'react';
 import SearchButton from './SearchButton';
 
@@ -14,13 +14,11 @@ export default function Search () {
     const [type, setType] = useState(SearchBannerFunctions.buscarNoSite);
 
     return (
-        <Flex
+        <Box
             w='full'
-            h='353px'
             px='0.75rem'
-            alignItems='center'
-            justifyContent='center'
-            background='linear-gradient(95.7deg, #20A0CE 8.83%, #B8D272 145.52%)' flexDirection='column'>
+            py='5.063rem'
+            background='linear-gradient(95.7deg, #20A0CE 8.83%, #B8D272 145.52%)' display='inline-block'>
 
             <Flex w='full' maxW='82.5rem'>
                 <SearchButton actualFunction={type} name={SearchBannerFunctions.buscarNoSite} onClick={() => {setType(SearchBannerFunctions.buscarNoSite)}}/>
@@ -29,8 +27,8 @@ export default function Search () {
                 <SearchButton actualFunction={type} name={SearchBannerFunctions.etc} onClick={() => {setType(SearchBannerFunctions.etc)}}/>
             </Flex>
 
-            <Flex w='full' maxW='82.5rem' h='7.87rem' bgColor='white' alignItems='center' justifyContent='center' flexDirection='column'>
-                <Flex w='full' px='1rem' py='0.5rem'>
+            <Box w='full' maxW='82.5rem' bgColor='white' pt='1.5rem' pb='1rem'>
+                <Flex w='full' px='1rem'>
                     <Input placeholder="O que você está procurando hoje?" h='3.125rem'/>
                     <Button
                         h='3.125rem'
@@ -44,7 +42,7 @@ export default function Search () {
                         _hover={{ filter: 'brightness(145%)' }}
                         _active={{ filter: 'brightness(75%)' }}>Pesquisar</Button>
                 </Flex>
-                <Flex w='full' px='1rem' py='0.5rem' flexWrap='wrap' alignItems='center'>
+                <Flex w='full' px='1rem' mt='1rem' flexWrap='wrap'>
                     <Text lineHeight='1.06rem' fontSize='0.75rem'>Mais buscados:</Text>
                     <UnorderedList display='flex' flexWrap='wrap' listStyleType='none' lineHeight='1.06rem' fontSize='0.75rem'>
                         <ListItem mx='0.2rem'>Precatórios</ListItem>
@@ -52,7 +50,7 @@ export default function Search () {
                         <ListItem mx='0.2rem'>Estágio</ListItem>
                     </UnorderedList>
                 </Flex>
-            </Flex>
-        </Flex>
+            </Box>
+        </Box>
     );
 }

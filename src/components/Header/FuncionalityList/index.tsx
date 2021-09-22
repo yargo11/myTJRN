@@ -1,4 +1,4 @@
-import { ListItem, UnorderedList, Link, Flex } from '@chakra-ui/react';
+import { ListItem, UnorderedList, Link } from '@chakra-ui/react';
 
 export default function FuncionalityList() {
     return (
