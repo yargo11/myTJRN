@@ -1,27 +1,26 @@
-import { Box, Text } from "@chakra-ui/react";
-import PagesList from "./PagesList";
-import FuncionalityList from './FuncionalityList'
+import { Link, Flex } from "@chakra-ui/react";
+import ContainerBox from "../ContainerBox";
+import AreaList from "./AreaList";
+import ApplicationList from "./ApplicationList";
 
 //Precisa melhorar responsividade
 export default function Header() {
     return (
-        <Box
-            maxW='82.5rem'
-            minH='11.1rem'
-            mx='auto'
-            pt='4rem'
-            px='0.75rem'>
-            <Text
-                float='left'
-                fontFamily='Inter'
-                fontWeight='bold'
-                fontSize='2.5rem'
-                color='#14697F'
-                lineHeight='55px'
-                as='a'
-                href='/'>TJRN.jus.br</Text>
-                <PagesList />
-                <FuncionalityList />
-        </Box>
+        <ContainerBox as={Flex}
+            h='11.188rem'
+            justifyContent='space-between'
+            alignItems='center' flexWrap='wrap'>
+            <Flex flexWrap='wrap'>
+                <Link
+                    fontFamily='Inter'
+                    fontWeight='bold'
+                    fontSize='2.5rem'
+                    color='#14697F'
+                    lineHeight='3.438rem'
+                    href='#'>TJRN.jus.br</Link>
+                <AreaList />
+            </Flex>
+            <ApplicationList />
+        </ContainerBox>
     );
 }

@@ -1,39 +1,46 @@
 import { ListItem, UnorderedList, Link } from '@chakra-ui/react';
 
-export default function PagesList () {
+export default function AreaList () {
     return (
         <UnorderedList
-            float='left'
             display='flex'
             flexWrap='wrap'
             h='35px'
             listStyleType='none'
             fontFamily='Inter'
             fontWeight='medium'
-            lineHeight='19,36px'
-            marginTop='10px'
+            lineHeight='1.21rem'
+            marginTop='15px'
             pl='2rem'
             mx='0'>
             <ListItem
+                as={Link}
+                href='#'
                 mr='0.75rem'
                 _hover={{
                     'boxShadow': '0px 3px #b8d272'
-                }}><Link href='#'>Início</Link></ListItem>
+                }}>Início</ListItem>
             <ListItem
+                as={Link}
+                href='#'
                 mx='0.75rem'
                 _hover={{
                     'boxShadow': '0px 3px #b8d272'
-                }}><Link href='#'>Institucional</Link></ListItem>
+                }}>Institucional</ListItem>
             <ListItem
+                as={Link}
+                href='#'
                 mx='0.75rem'
                 _hover={{
                     'boxShadow': '0px 3px #b8d272'
-                }}><Link href='#'>Legislação</Link></ListItem>
+                }}>Legislação</ListItem>
             <ListItem
+                as={Link}
+                href='#'
                 ml='0.75rem'
                 _hover={{
                     'boxShadow': '0px 3px #b8d272'
-                }}><Link href='#'>Transparência</Link></ListItem>
+                }}>Transparência</ListItem>
         </UnorderedList>
     );
 }
