@@ -39,7 +39,7 @@ export default function Search () {
                         color='white'
                         bgColor='#00384D'
                         transition='filter 0.2s'
-                        _hover={{ filter: 'brightness(145%)' }}
+                        _hover={{ filter: 'brightness(120%)' }}
                         _active={{ filter: 'brightness(75%)' }}>Pesquisar</Button>
                 </Flex>
                 <Flex px='1rem' py='1rem' flexWrap='wrap' bgColor='white'>

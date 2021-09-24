@@ -1,4 +1,4 @@
-import { Box, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Button, HStack, Link, Wrap, WrapItem } from "@chakra-ui/react";
 import ContainerBox from "../../ContainerBox";
 import AreaTitle from "../AreaTitle";
 import NewsCard from "./NewsCard.tsx";
@@ -22,6 +22,23 @@ export default function News () {
                             <NewsCard date={news.date} title={news.title} link={news.link}/>
                         </WrapItem>)}
                 </Wrap>
+
+                <HStack mt='2.087rem' justify='end' wrap='wrap' spacing='2rem'>
+                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Decisões Judiciais</Link>
+                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Seleções</Link>
+                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Notas à Imprensa</Link>
+                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Mulher</Link>
+                    <Button
+                        h='2.375rem'
+                        w='10.438rem'
+                        fontWeight='semibold'
+                        lineHeight='1.375rem'
+                        color='white'
+                        bgColor='#00384D'
+                        transition='filter 0.2s'
+                        _hover={{ filter: 'brightness(120%)' }}
+                        _active={{ filter: 'brightness(75%)' }}>Todas as notícias</Button>
+                </HStack>
             </ContainerBox>
         </Box>
     );

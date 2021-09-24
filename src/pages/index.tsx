@@ -1,5 +1,5 @@
 import News from "../components/Home/News"
-import Pjrn from "../components/Home/Pjrn"
+import NewsLetter from "../components/Home/NewsLetter"
 import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
 export default function Home() {
@@ -8,7 +8,7 @@ export default function Home() {
       <Search />
       <ServiceAndInformation />
       <News />
-      <Pjrn />
+      <NewsLetter />
     </>
   )
 }
