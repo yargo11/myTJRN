@@ -1,5 +1,5 @@
 import { Wrap, WrapItem } from "@chakra-ui/layout";
-import NewsCard, { NewsCardProps } from "../NewsCard";
+import NewsCard, { NewsCardProps } from "./NewsCard";
 
 interface NewsListProps {
     newsList: Array<NewsCardProps>;
