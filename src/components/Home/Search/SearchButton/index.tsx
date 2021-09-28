@@ -8,7 +8,7 @@ interface SearchButtonProps extends ButtonProps {
 export default function SearchButton ({ name, actualFunction, ...others }: SearchButtonProps) {
     return (
         <Button
-                bgColor='#ffffff'
+                bgColor='white'
                 h='3.06rem'
                 p='1rem'
                 mr='0.5rem'

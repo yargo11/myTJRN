@@ -1,11 +1,12 @@
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import ContainerBox from '../ContainerBox';
+import GradientBorder from '../GradientBorder';
 import PolicyFuncionalityList from './PolicyFuncionalityList';
 import SocialMediaList from './SocialMediaList';
 
 export default function Footer () {
     return (
-        <Box w='full' h='14.188rem' bgColor='#00384D'>
+        <Box w='full' h='14.188rem' bgColor='tj_dark_blue'>
             <ContainerBox as={Flex}
                 h='full'
                 justifyContent='space-between'
@@ -32,6 +33,7 @@ export default function Footer () {
                         <SocialMediaList />
                 </Box>
             </ContainerBox>
+            <GradientBorder />
         </Box>
     );
 }

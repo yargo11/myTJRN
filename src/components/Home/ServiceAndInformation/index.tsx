@@ -33,7 +33,7 @@ export default function ServiceAndInformation () {
         <ContainerBox py='4rem'>
             <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
                 <AreaTitle title='Informações e serviços' subtitle='Encontre informações e serviços do Poder Judiciario'/>
-                <Select placeholder="Seu perfil" border='1px solid #333333' icon={SelectIcon} iconSize='34' w='10rem'>
+                <Select placeholder="Seu perfil" borderColor='tj_dark_blue' icon={SelectIcon} iconSize='34' w='10rem' _hover={{ borderColor: 'tj_dark_blue'}}>
                     <option value="option1">Option 1</option>
                     <option value="option2">Option 2</option>
                     <option value="option3">Option 3</option>

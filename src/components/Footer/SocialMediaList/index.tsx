@@ -6,10 +6,6 @@ export default function SocialMediaList () {
             display='flex'
             flexWrap='wrap'
             listStyleType='none'
-            color='#F2F2F2'
-            fontFamily='Inter'
-            fontWeight='normal'
-            lineHeight='1.21rem'
             mt='0.5rem'
             mx='0'>
             <ListItem as={Link} href='#'><Image src='icons/FacebookLogo.svg'/></ListItem>

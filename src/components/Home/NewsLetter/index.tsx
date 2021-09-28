@@ -3,7 +3,7 @@ import ContainerBox from '../../ContainerBox';
 
 export default function NewsLetter () {
     return (
-        <Flex w='full' minH='10.938rem' py='1rem' bgColor='#14697F'>
+        <Flex w='full' minH='10.938rem' py='1rem' bgColor='tj_light_blue'>
             <ContainerBox as={Flex}
                 h='full'
                 justifyContent='space-between'
@@ -14,14 +14,14 @@ export default function NewsLetter () {
                         fontFamily='Inter'
                         fontWeight='bold'
                         fontSize='2rem'
-                        color='#FAFBFC'
+                        color='tj_light_gray'
                         lineHeight='2.5rem'
                         href='#'>Assine para receber nossa newsletter</Text>
                     <Text
                         fontFamily='Inter'
                         fontWeight='normal'
                         fontSize='1rem'
-                        color='#FAFBFC'
+                        color='tj_light_gray'
                         lineHeight='1.375'
                         href='#'>Seus dados estão seguros conosco, leia nossa política de privacidade.</Text>
                 </Box>
@@ -35,7 +35,7 @@ export default function NewsLetter () {
                             h='2.813rem'
                             fontWeight='medium'
                             lineHeight='1.375'
-                            bgColor='#00384D'
+                            bgColor='tj_dark_blue'
                             color='white'
                             transition='filter 0.2s'
                             _hover={{ filter: 'brightness(120%)' }}

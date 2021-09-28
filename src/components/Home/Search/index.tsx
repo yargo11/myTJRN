@@ -37,7 +37,7 @@ export default function Search () {
                         fontWeight='medium'
                         lineHeight='1.37rem'
                         color='white'
-                        bgColor='#00384D'
+                        bgColor='tj_dark_blue'
                         transition='filter 0.2s'
                         _hover={{ filter: 'brightness(120%)' }}
                         _active={{ filter: 'brightness(75%)' }}>Pesquisar</Button>

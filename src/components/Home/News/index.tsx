@@ -1,29 +1,24 @@
-import { Box, Button, HStack, Link, Wrap, WrapItem } from "@chakra-ui/react";
+import { Box, Button, HStack, Link } from "@chakra-ui/react";
 import ContainerBox from "../../ContainerBox";
 import AreaTitle from "../AreaTitle";
-import NewsCard from "./NewsCard.tsx";
+import NewsList from "../../NewsList";
 
 export default function News () {
 
-    const NewsList = [];
+    const list = [];
 
-    NewsList.push(item0);
-    NewsList.push(item1);
-    NewsList.push(item2);
-    NewsList.push(item3);
+    list.push(item0);
+    list.push(item1);
+    list.push(item2);
+    list.push(item3);
 
     return (
-        <Box w='full' py='3.938rem' bgColor='#FAFBFC'>
+        <Box w='full' py='3.938rem' bgColor='tj_light_gray'>
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
-                <Wrap mt='2.5rem' spacing='1.5rem' justify='center'>
-                    {NewsList.map(news =>
-                        <WrapItem key={news.id}>
-                            <NewsCard date={news.date} title={news.title} link={news.link}/>
-                        </WrapItem>)}
-                </Wrap>
+                <NewsList newsList={list}/>
 
-                <HStack mt='2.087rem' justify='end' wrap='wrap' spacing='2rem'>
+                <HStack mt='3.125rem' justify='end' wrap='wrap' spacing='2rem'>
                     <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Decisões Judiciais</Link>
                     <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Seleções</Link>
                     <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Notas à Imprensa</Link>
@@ -34,7 +29,7 @@ export default function News () {
                         fontWeight='semibold'
                         lineHeight='1.375rem'
                         color='white'
-                        bgColor='#00384D'
+                        bgColor='tj_dark_blue'
                         transition='filter 0.2s'
                         _hover={{ filter: 'brightness(120%)' }}
                         _active={{ filter: 'brightness(75%)' }}>Todas as notícias</Button>

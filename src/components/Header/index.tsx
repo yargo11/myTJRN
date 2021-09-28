@@ -15,9 +15,9 @@ export default function Header() {
                     fontFamily='Inter'
                     fontWeight='bold'
                     fontSize='2.5rem'
-                    color='#14697F'
+                    color='tj_light_blue'
                     lineHeight='3.438rem'
-                    href='#'>TJRN.jus.br</Link>
+                    href='/'>TJRN.jus.br</Link>
                 <AreaList />
             </Flex>
             <ApplicationList />
