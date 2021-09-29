@@ -28,7 +28,7 @@ export default function Search () {
                     <SearchButton actualFunction={type} name={SearchBannerFunctions.etc} onClick={() => {setType(SearchBannerFunctions.etc)}}/>
                 </Flex>
 
-                <Flex px='1rem' pt='1.5rem' bgColor='white'>
+                <Flex px='1rem' pt='1.5rem' bgColor='white' borderRadius='0 6px 0 0'>
                     <Input placeholder="O que você está procurando hoje?" h='3.125rem'/>
                     <Button
                         h='3.125rem'
@@ -42,7 +42,7 @@ export default function Search () {
                         _hover={{ filter: 'brightness(120%)' }}
                         _active={{ filter: 'brightness(75%)' }}>Pesquisar</Button>
                 </Flex>
-                <Flex px='1rem' py='1rem' flexWrap='wrap' bgColor='white'>
+                <Flex px='1rem' py='1rem' flexWrap='wrap' bgColor='white' borderRadius='0 0 6px 6px'>
                     <Text lineHeight='1.06rem' fontSize='0.75rem'>Mais buscados:</Text>
                     <UnorderedList display='flex' flexWrap='wrap' listStyleType='none' lineHeight='1.06rem' fontSize='0.75rem'>
                         <ListItem mx='0.2rem'>Precatórios</ListItem>

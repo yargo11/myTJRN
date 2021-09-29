@@ -24,8 +24,10 @@ export default function News () {
                     <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Notas à Imprensa</Link>
                     <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Mulher</Link>
                     <Button
+                        as={Link}
                         h='2.375rem'
                         w='10.438rem'
+                        href='/noticias'
                         fontWeight='semibold'
                         lineHeight='1.375rem'
                         color='white'
