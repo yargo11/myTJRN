@@ -1,4 +1,4 @@
-import { Box, Button, HStack, Link } from "@chakra-ui/react";
+import { Box, Button, Link, Wrap, WrapItem } from "@chakra-ui/react";
 import ContainerBox from "../../ContainerBox";
 import AreaTitle from "../AreaTitle";
 import NewsList from "../../NewsList";
@@ -16,26 +16,30 @@ export default function News () {
         <Box w='full' py='3.938rem' bgColor='tj_light_gray'>
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
-                <NewsList newsList={list}/>
+                <Box w='full' mt='2.5rem'>
+                    <NewsList newsList={list}/>
+                </Box>
 
-                <HStack mt='3.125rem' justify='end' wrap='wrap' spacing='2rem'>
-                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Decisões Judiciais</Link>
-                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Seleções</Link>
-                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Notas à Imprensa</Link>
-                    <Link fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}}>Mulher</Link>
-                    <Button
-                        as={Link}
-                        h='2.375rem'
-                        w='10.438rem'
-                        href='/noticias'
-                        fontWeight='semibold'
-                        lineHeight='1.375rem'
-                        color='white'
-                        bgColor='tj_dark_blue'
-                        transition='filter 0.2s'
-                        _hover={{ filter: 'brightness(120%)' }}
-                        _active={{ filter: 'brightness(75%)' }}>Todas as notícias</Button>
-                </HStack>
+                <Wrap justify='end' mt='3.125rem' wrap='wrap' spacing='2rem'>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Mulher</WrapItem>
+                    <WrapItem>
+                        <Button
+                            as={Link}
+                            h='2.375rem'
+                            w='10.438rem'
+                            href='/noticias'
+                            fontWeight='semibold'
+                            lineHeight='1.375rem'
+                            color='white'
+                            bgColor='tj_dark_blue'
+                            transition='filter 0.2s'
+                            _hover={{ filter: 'brightness(120%)' }}
+                            _active={{ filter: 'brightness(75%)' }}>Todas as notícias</Button>
+                    </WrapItem>
+                </Wrap>
             </ContainerBox>
         </Box>
     );

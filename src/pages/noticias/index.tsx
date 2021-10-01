@@ -1,4 +1,4 @@
-import { Divider, Flex, Link } from "@chakra-ui/layout";
+import { Divider, Flex, Link } from "@chakra-ui/react";
 import ContainerBox from "../../components/ContainerBox";
 import NewsList from "../../components/NewsList";
 import PageTitle from "../../components/PageTitle";

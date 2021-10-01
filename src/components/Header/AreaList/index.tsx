@@ -3,7 +3,6 @@ import { Link, Flex } from '@chakra-ui/react';
 export default function AreaList () {
     return (
         <Flex
-            flexWrap='wrap'
             h='35px'
             fontFamily='Inter'
             fontWeight='medium'

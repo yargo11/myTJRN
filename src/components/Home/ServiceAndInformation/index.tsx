@@ -1,8 +1,9 @@
-import { Flex, Select, Wrap, WrapItem } from "@chakra-ui/react";
+import { Flex, Select, SimpleGrid } from "@chakra-ui/react";
 import AreaTitle from "../AreaTitle";
 import { SelectIcon } from './SelectIcon';
 import ContainerBox from "../../ContainerBox";
 import ServiceAndInformationCard from "./ServiceAndInformationCard";
+import { useMediaQuery } from '@chakra-ui/react'
 
 export default function ServiceAndInformation () {
 
@@ -27,24 +28,39 @@ export default function ServiceAndInformation () {
     TopicList.push(item14);
     TopicList.push(item15);
 
+    const [isThinnerThan330] = useMediaQuery("(max-width: 661px)")
+    const [isThinnerThan660] = useMediaQuery("(max-width: 991px)")
+    const [isThinnerThan990] = useMediaQuery("(max-width: 1321px)")
 
+    function getActualWidth () {
+        if(isThinnerThan330) {
+            return 1;
+        } else if (isThinnerThan660) {
+            return 2;
+        } else if (isThinnerThan990) {
+            return 3;
+        } else {
+            return 4;
+        }
+    }
 
     return (
         <ContainerBox py='4rem'>
-            <Flex justifyContent='space-between' alignItems='center' wrap='wrap'>
+            <Flex justifyContent='space-between' wrap='wrap'>
                 <AreaTitle title='Informações e serviços' subtitle='Encontre informações e serviços do Poder Judiciario'/>
-                <Select placeholder="Seu perfil" borderColor='tj_dark_blue' icon={SelectIcon} iconSize='34' w='10rem' _hover={{ borderColor: 'tj_dark_blue'}}>
+                <Select mt='1rem' placeholder="Seu perfil" borderColor='tj_dark_blue' icon={SelectIcon} iconSize='34' w='10rem' _hover={{ borderColor: 'tj_dark_blue'}}>
                     <option value="option1">Option 1</option>
                     <option value="option2">Option 2</option>
                     <option value="option3">Option 3</option>
                 </Select>
             </Flex>
-            <Wrap mt='2.5rem' spacing='1.5rem' justify='center'>
-                {TopicList.map(topic =>
-                    <WrapItem key={topic.id}>
-                        <ServiceAndInformationCard label={topic.label} description={topic.description} link={topic.link}/>
-                    </WrapItem>)}
-            </Wrap>
+
+            <Flex w='full' justifyContent='center' mt='2.5rem'>
+                <SimpleGrid spacing='1.5rem' columns={getActualWidth()}>
+                    {TopicList.map(topic =>
+                            <ServiceAndInformationCard key={topic.link} label={topic.label} description={topic.description} link={topic.link}/>)}
+                </SimpleGrid>
+            </Flex>
         </ContainerBox>
     );
 }
