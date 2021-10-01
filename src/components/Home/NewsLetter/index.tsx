@@ -7,9 +7,9 @@ export default function NewsLetter () {
             <ContainerBox as={Flex}
                 h='full'
                 justifyContent='space-between'
-                alignItems='center' flexWrap='wrap'>
-
-                <Box>
+                alignItems='center'
+                flexWrap='wrap'>
+                <Box my='1rem'>
                     <Text
                         fontFamily='Inter'
                         fontWeight='bold'
@@ -25,7 +25,7 @@ export default function NewsLetter () {
                         lineHeight='1.375'
                         href='#'>Seus dados estão seguros conosco, leia nossa política de privacidade.</Text>
                 </Box>
-                <Wrap spacing='0.5rem'>
+                <Wrap spacing='0.5rem' >
                     <WrapItem>
                         <Input w='full' maxW='24.25rem' h='2.813rem' display='flex' placeholder='Digite seu email' bgColor='white'/>
                     </WrapItem>
