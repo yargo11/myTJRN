@@ -1,13 +1,12 @@
-import { Flex, Select, SimpleGrid } from "@chakra-ui/react";
+import { Flex, Select } from "@chakra-ui/react";
 import AreaTitle from "../AreaTitle";
 import { SelectIcon } from './SelectIcon';
 import ContainerBox from "../../ContainerBox";
 import ServiceAndInformationCard from "./ServiceAndInformationCard";
-import { useMediaQuery } from '@chakra-ui/react'
+import CardList from "../../CardList";
+import getColumnNumber from "../../CardList/DefaultColumnNumber";
 
 export default function ServiceAndInformation () {
-
-
 
     const TopicList = [];
 
@@ -28,22 +27,6 @@ export default function ServiceAndInformation () {
     TopicList.push(item14);
     TopicList.push(item15);
 
-    const [isThinnerThan330] = useMediaQuery("(max-width: 661px)")
-    const [isThinnerThan660] = useMediaQuery("(max-width: 991px)")
-    const [isThinnerThan990] = useMediaQuery("(max-width: 1321px)")
-
-    function getActualWidth () {
-        if(isThinnerThan330) {
-            return 1;
-        } else if (isThinnerThan660) {
-            return 2;
-        } else if (isThinnerThan990) {
-            return 3;
-        } else {
-            return 4;
-        }
-    }
-
     return (
         <ContainerBox py='4rem'>
             <Flex justifyContent='space-between' wrap='wrap'>
@@ -55,19 +38,14 @@ export default function ServiceAndInformation () {
                 </Select>
             </Flex>
 
-            <Flex w='full' justifyContent='center' mt='2.5rem'>
-                <SimpleGrid spacing='1.5rem' columns={getActualWidth()}>
-                    {TopicList.map(topic =>
-                            <ServiceAndInformationCard key={topic.link} label={topic.label} description={topic.description} link={topic.link}/>)}
-                </SimpleGrid>
-            </Flex>
+            <CardList mt='2.5rem' columnNumber={getColumnNumber}>
+                {TopicList ? TopicList.map(topic =>
+                    <ServiceAndInformationCard key={topic.link} label={topic.label} description={topic.description} link={topic.link}/>
+                ) : <></>}
+            </CardList>
         </ContainerBox>
     );
 }
-
-
-
-
 
 
 const item0 = {id:0, label: 'Consultas na justiça', description: 'Conheça seus direitos, processos legais, tribunais e mais', link: '#'}
