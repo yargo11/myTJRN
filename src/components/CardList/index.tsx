@@ -6,9 +6,9 @@ interface CardListProps extends SimpleGridProps {
     columnNumber: () => 1 | 2 | 3 | 4;
 }
 
-export default function CardList ({children, columnNumber, ...others}: CardListProps) {
+export default function CardList ({children, columnNumber, ...attrs}: CardListProps) {
     return (
-        <SimpleGrid w='full' justifyContent='center' spacing='1.5rem' columns={columnNumber()}>
+        <SimpleGrid w='full' justifyContent='center' spacing='1.5rem' columns={columnNumber()} {...attrs}>
             { children }
         </SimpleGrid>
     );

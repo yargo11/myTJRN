@@ -1,10 +1,11 @@
-import { Button, Divider, Flex, Link, Text } from "@chakra-ui/react";
+import { Button, Flex, Link, Text } from "@chakra-ui/react";
 import ContainerBox from "../ContainerBox";
+import GrayBorder from "../GrayBorder";
 
 export default function AboutContent () {
     return (
         <>
-            <Divider border='1px solid #D8DBDF'/>
+            <GrayBorder/>
             <ContainerBox as={Flex} minH='1.313rem' py='1rem' alignItems='center' justifyContent='space-between'>
                 <Flex alignItems='center' flexWrap='wrap'>
                     <Text mr='1.469rem' fontSize='0,875rem' >Esse conteúdo foi útil para você?</Text>
