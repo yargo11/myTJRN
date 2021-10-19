@@ -27,7 +27,6 @@ export default function noticias () {
             <ContainerBox as={Flex} h='3.313rem' alignItems='center' justifyContent='space-between'>
                 <Link textDecor='underline' _hover={{textDecor:'underline'}}>Todas</Link>
             </ContainerBox>
-            />
             <ContainerBox mt='3.5rem' mb='9.375rem'>
                 <NewsList newsList={list}/>
             </ContainerBox>
