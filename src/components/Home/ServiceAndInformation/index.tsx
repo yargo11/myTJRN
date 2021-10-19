@@ -4,7 +4,6 @@ import { SelectIcon } from './SelectIcon';
 import ContainerBox from "../../ContainerBox";
 import ServiceAndInformationCard from "./ServiceAndInformationCard";
 import CardList from "../../CardList";
-import getColumnNumber from "../../CardList/DefaultColumnNumber";
 
 export default function ServiceAndInformation () {
 
@@ -38,7 +37,7 @@ export default function ServiceAndInformation () {
                 </Select>
             </Flex>
 
-            <CardList mt='2.5rem' columnNumber={getColumnNumber}>
+            <CardList mt='2.5rem'>
                 {TopicList ? TopicList.map(topic =>
                     <ServiceAndInformationCard key={topic.link} label={topic.label} description={topic.description} link={topic.link}/>
                 ) : <></>}
