@@ -16,7 +16,7 @@ export default function AboutContent () {
                             w='66px'
                             h='26px'
                             mr='15px'
-                            fontSize='75%'
+                            fontSize='12px'
                             fontWeight='medium'
                             lineHeight='112.5%'
                             color='white'
@@ -27,7 +27,7 @@ export default function AboutContent () {
                         <Button
                             w='66px'
                             h='26px'
-                            fontSize='75%'
+                            fontSize='12px'
                             fontWeight='medium'
                             lineHeight='112.5%'
                             color='white'
