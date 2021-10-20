@@ -1,5 +1,6 @@
 import { Divider, Flex, Link } from "@chakra-ui/react";
 import ContainerBox from "../../components/ContainerBox";
+import GrayBorder from "../../components/GrayBorder";
 import NewsList from "../../components/NewsList";
 import PageTitle from "../../components/PageTitle";
 
@@ -24,10 +25,11 @@ export default function noticias () {
                 description='Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
                 Vivamus eget fringilla dui, ut varius est. Maecenas ac leo arcu. Nunc ut porta lectus. 
                 Nulla sollicitudin eu nisi non dapibus. Aliquam erat volutpat. Vivamus ornare lorem vel vehicula tempor.'/>
-            <ContainerBox as={Flex} h='3.313rem' alignItems='center' justifyContent='space-between'>
+            <ContainerBox as={Flex} h='53px' alignItems='center' justifyContent='space-between'>
                 <Link textDecor='underline' _hover={{textDecor:'underline'}}>Todas</Link>
             </ContainerBox>
-            <ContainerBox mt='3.5rem' mb='9.375rem'>
+            <GrayBorder/>
+            <ContainerBox mt='56px' mb='150px'>
                 <NewsList newsList={list}/>
             </ContainerBox>
         </>

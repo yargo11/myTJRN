@@ -27,17 +27,17 @@ export default function ServiceAndInformation () {
     TopicList.push(item15);
 
     return (
-        <ContainerBox py='4rem'>
+        <ContainerBox py='64px'>
             <Flex justifyContent='space-between' wrap='wrap'>
                 <AreaTitle title='Informações e serviços' subtitle='Encontre informações e serviços do Poder Judiciario'/>
-                <Select mt='1rem' placeholder="Seu perfil" borderColor='tj_dark_blue' icon={SelectIcon} iconSize='34' w='10rem' _hover={{ borderColor: 'tj_dark_blue'}}>
+                <Select mt='16px' placeholder="Seu perfil" borderColor='tj_dark_blue' icon={SelectIcon} iconSize='34' w='160px' _hover={{ borderColor: 'tj_dark_blue'}}>
                     <option value="option1">Option 1</option>
                     <option value="option2">Option 2</option>
                     <option value="option3">Option 3</option>
                 </Select>
             </Flex>
 
-            <CardList mt='2.5rem'>
+            <CardList mt='40px'>
                 {TopicList ? TopicList.map(topic =>
                     <ServiceAndInformationCard key={topic.link} label={topic.label} description={topic.description} link={topic.link}/>
                 ) : <></>}

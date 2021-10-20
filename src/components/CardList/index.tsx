@@ -7,7 +7,7 @@ interface CardListProps extends SimpleGridProps {
 
 export default function CardList ({children, ...attrs}: CardListProps) {
     return (
-        <SimpleGrid w='full' justifyContent='center' spacing='1.5rem' sx={{
+        <SimpleGrid w='full' justifyContent='center' spacing='24px' sx={{
             "@media(min-width: 1320px)": {
                 "gridTemplateColumns": "repeat(4, minmax(0, 1fr))"
             },

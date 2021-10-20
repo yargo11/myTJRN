@@ -8,8 +8,8 @@ interface areaTitleProps {
 export default function AreaTitle ({title, subtitle}:areaTitleProps) {
     return (
         <Box>
-            <Text fontSize='2.25rem' fontWeight='bold' color='tj_dark_blue' lineHeight='2.87rem'>{title}</Text>
-            <Text fontSize='1.125rem' color='#555555' lineHeight='1.563rem'>{subtitle}</Text>
+            <Text fontSize='225%' fontWeight='bold' color='tj_dark_blue' lineHeight='46px'>{title}</Text>
+            <Text fontSize='112.5%' color='#555555' lineHeight='25px'>{subtitle}</Text>
         </Box>
     );
 }

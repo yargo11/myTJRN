@@ -3,38 +3,36 @@ import ContainerBox from '../../ContainerBox';
 
 export default function NewsLetter () {
     return (
-        <Flex w='full' minH='10.938rem' py='1rem' bgColor='tj_light_blue'>
+        <Flex w='full' minH='175px' py='16px' bgColor='tj_light_blue'>
             <ContainerBox as={Flex}
                 h='full'
                 justifyContent='space-between'
                 alignItems='center'
                 flexWrap='wrap'>
-                <Box my='1rem'>
+                <Box my='16px'>
                     <Text
-                        fontFamily='Inter'
                         fontWeight='bold'
-                        fontSize='2rem'
+                        fontSize='200%'
                         color='tj_light_gray'
-                        lineHeight='2.5rem'
+                        lineHeight='40px'
                         href='#'>Assine para receber nossa newsletter</Text>
                     <Text
-                        fontFamily='Inter'
+                        mt='12px'
                         fontWeight='normal'
-                        fontSize='1rem'
                         color='tj_light_gray'
-                        lineHeight='1.375'
+                        lineHeight='22px'
                         href='#'>Seus dados estão seguros conosco, leia nossa política de privacidade.</Text>
                 </Box>
-                <Wrap spacing='0.5rem' >
+                <Wrap spacing='8px' >
                     <WrapItem>
-                        <Input w='full' maxW='24.25rem' h='2.813rem' display='flex' placeholder='Digite seu email' bgColor='white'/>
+                        <Input w='full' maxW='388px' h='45px' display='flex' placeholder='Digite seu email' bgColor='white'/>
                     </WrapItem>
                     <WrapItem>
                         <Button
-                            w='7.5rem'
-                            h='2.813rem'
+                            w='120px'
+                            h='45px'
                             fontWeight='medium'
-                            lineHeight='1.375'
+                            lineHeight='22px'
                             bgColor='tj_dark_blue'
                             color='white'
                             transition='filter 0.2s'

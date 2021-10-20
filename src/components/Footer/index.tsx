@@ -6,7 +6,7 @@ import SocialMediaList from './SocialMediaList';
 
 export default function Footer () {
     return (
-        <Box w='full' h='14.188rem' bgColor='tj_dark_blue'>
+        <Box w='full' h='227px' bgColor='tj_dark_blue'>
             <ContainerBox as={Flex}
                 h='full'
                 justifyContent='space-between'
@@ -14,22 +14,20 @@ export default function Footer () {
 
                 <Box>
                     <Link
-                        fontFamily='Inter'
                         fontWeight='bold'
-                        fontSize='1.5rem'
+                        fontSize='150%'
                         color='#59C4EA'
-                        lineHeight='1.816rem'
+                        lineHeight='29.05px'
                         href='#'>TJRN.jus.br</Link>
                         <PolicyFuncionalityList />
                 </Box>
 
                 <Box>
                     <Text
-                        fontFamily='Inter'
                         fontWeight='normal'
-                        fontSize='0.75rem'
+                        fontSize='75%'
                         color='#F2F2F2'
-                        lineHeight='0.908rem'>Siga-nos nas redes sociais</Text>
+                        lineHeight='14.52px'>Siga-nos nas redes sociais</Text>
                         <SocialMediaList />
                 </Box>
             </ContainerBox>

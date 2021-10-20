@@ -13,26 +13,26 @@ export default function News () {
     list.push(item3);
 
     return (
-        <Box w='full' py='3.938rem' bgColor='tj_light_gray'>
+        <Box w='full' py='63px' bgColor='tj_light_gray'>
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
-                <Box w='full' mt='2.5rem'>
+                <Box w='full' mt='40px'>
                     <NewsList newsList={list}/>
                 </Box>
 
-                <Wrap justify='end' mt='3.125rem' wrap='wrap' spacing='2rem'>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='1.21' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Mulher</WrapItem>
+                <Wrap justify='end' mt='350px' wrap='wrap' spacing='32px'>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Mulher</WrapItem>
                     <WrapItem>
                         <Button
                             as={Link}
-                            h='2.375rem'
-                            w='10.438rem'
+                            h='38px'
+                            w='167px'
                             href='/noticias'
                             fontWeight='semibold'
-                            lineHeight='1.375rem'
+                            lineHeight='22px'
                             color='white'
                             bgColor='tj_dark_blue'
                             transition='filter 0.2s'

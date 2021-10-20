@@ -17,7 +17,7 @@ export default function Search () {
     return (
         <Box
             w='full'
-            py='5.063rem'
+            py='81px'
             background='linear-gradient(95.7deg, #20A0CE 8.83%, #B8D272 145.52%)' display='inline-block'>
 
             <ContainerBox>
@@ -28,26 +28,26 @@ export default function Search () {
                     <SearchButton actualFunction={type} name={SearchBannerFunctions.etc} onClick={() => {setType(SearchBannerFunctions.etc)}}/>
                 </Flex>
 
-                <Flex px='1rem' pt='1.5rem' bgColor='white' borderRadius='0 6px 0 0'>
-                    <Input placeholder="O que você está procurando hoje?" h='3.125rem'/>
+                <Flex px='16px' pt='24px' bgColor='white' borderRadius='0 6px 0 0'>
+                    <Input placeholder="O que você está procurando hoje?" h='50px'/>
                     <Button
-                        h='3.125rem'
-                        w='10.43rem'
-                        ml='1rem'
+                        h='50px'
+                        w='167px'
+                        ml='16px'
                         fontWeight='medium'
-                        lineHeight='1.37rem'
+                        lineHeight='19.36px'
                         color='white'
                         bgColor='tj_dark_blue'
                         transition='filter 0.2s'
                         _hover={{ filter: 'brightness(120%)' }}
                         _active={{ filter: 'brightness(75%)' }}>Pesquisar</Button>
                 </Flex>
-                <Flex px='1rem' py='1rem' flexWrap='wrap' bgColor='white' borderRadius='0 0 6px 6px'>
-                    <Text lineHeight='1.06rem' fontSize='0.75rem'>Mais buscados:</Text>
-                    <UnorderedList display='flex' flexWrap='wrap' listStyleType='none' lineHeight='1.06rem' fontSize='0.75rem'>
-                        <ListItem mx='0.2rem'>Precatórios</ListItem>
-                        <ListItem mx='0.2rem'>Consulta Processual</ListItem>
-                        <ListItem mx='0.2rem'>Estágio</ListItem>
+                <Flex px='16px' py='16px' flexWrap='wrap' bgColor='white' borderRadius='0 0 6px 6px'>
+                    <Text lineHeight='17px' fontSize='75%'>Mais buscados:</Text>
+                    <UnorderedList display='flex' flexWrap='wrap' listStyleType='none' lineHeight='17px' fontSize='75%'>
+                        <ListItem mx='4px'>Precatórios</ListItem>
+                        <ListItem mx='4px'>Consulta Processual</ListItem>
+                        <ListItem mx='4px'>Estágio</ListItem>
                     </UnorderedList>
                 </Flex>
             </ContainerBox>

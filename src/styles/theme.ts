@@ -29,5 +29,13 @@ export const theme = extendTheme({
     fonts: {
         heading: 'Inter, Raleway',
         body: 'Inter, Raleway'
+    },
+
+    styles: {
+        global: {
+            body: {
+                fontSize: { base: "14px", sm:"15px", md: "16px", lg: "16px" }
+            }
+        }
     }
 });

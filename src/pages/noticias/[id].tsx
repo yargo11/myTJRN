@@ -22,27 +22,27 @@ export default function lerNoticia({ titulo, categoria, ultimaModificacao, corpo
         <>
             <PageTitle title={titulo} breadCrumbArray={breadcrumblist} showTitle={false}/>
             <ContainerBox>
-                <Text mt='2.625rem' mx='0.625rem' fontWeight='bold' fontSize='1.125rem' lineHeight='1.5rem'>{categoria}</Text>
-                <Text mt='1rem' fontWeight='bold' fontSize='3rem' lineHeight='3.5rem' color='tj_light_blue' maxW='67.25rem'>{titulo}</Text>
+                <Text mt='42px' mx='10px' fontWeight='bold' fontSize='112.5%' lineHeight='24px'>{categoria}</Text>
+                <Text mt='16px' fontWeight='bold' fontSize='300%' lineHeight='56px' color='tj_light_blue' maxW='1076px'>{titulo}</Text>
                 
-                <Flex mt='3.5rem' mb='0.75rem' fontSize='0.875rem' color='#888889' justifyContent='space-between'>
-                    <Text lineHeight='1.25rem'>{ultimaModificacao}</Text>
-                    <Flex lineHeight='1.059rem'>
-                        <Button fontSize='0.875rem' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Share.svg'/>}>
+                <Flex mt='56px' mb='12px' fontSize='87.5%' color='#888889' justifyContent='space-between'>
+                    <Text lineHeight='20px'>{ultimaModificacao}</Text>
+                    <Flex lineHeight='16.94px'>
+                        <Button fontSize='87.5%' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Share.svg'/>}>
                             Compartilhar
                         </Button>
-                        <GrayBorder orientation='vertical' mx='0.5rem'/>
-                        <Button fontSize='0.875rem' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Print.svg'/>}>
+                        <GrayBorder orientation='vertical' mx='8px'/>
+                        <Button fontSize='87.5%' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Print.svg'/>}>
                             Imprimir
                         </Button>
-                        <GrayBorder orientation='vertical' mx='0.5rem'/>
-                        <Button fontSize='0.875rem' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>}>
+                        <GrayBorder orientation='vertical' mx='8px'/>
+                        <Button fontSize='87.5%' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>}>
                             Ouvir
                         </Button>
                     </Flex>
                 </Flex>
                 <GrayBorder/>
-                <Box mt='3rem' mx='auto' mb='9.688rem' maxW='53.5rem'>
+                <Box mt='48px' mx='auto' mb='155px' maxW='856px'>
                     <div className={styles.Container}>
                         {parse(corpo)}
                     </div>
