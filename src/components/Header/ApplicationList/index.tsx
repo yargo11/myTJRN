@@ -5,7 +5,7 @@ export default function ApplicationList() {
         <Flex
             fontFamily='Inter'
             fontWeight='medium'
-            lineHeight='19.36px'
+            lineHeight='121%'
             marginTop='10px'
             mx='0'>
             <Link href='#'>Webmail</Link>

@@ -15,7 +15,7 @@ export default function SearchButton ({ name, actualFunction, ...others }: Searc
             mb='8px'
             fontWeight='normal'
             fontSize='87.5%'
-            lineHeight='16.94px'
+            lineHeight='121%'
             overflowWrap='break-word'
             whiteSpace='normal'
             borderRadius={actualFunction === name ? '6px 6px 0 0' : 'md'}

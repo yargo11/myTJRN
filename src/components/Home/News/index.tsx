@@ -21,10 +21,10 @@ export default function News () {
                 </Box>
 
                 <Wrap justify='end' mt='350px' wrap='wrap' spacing='32px'>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='19.36px' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Mulher</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
+                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Mulher</WrapItem>
                     <WrapItem>
                         <Button
                             as={Link}

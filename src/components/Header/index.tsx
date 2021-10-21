@@ -14,7 +14,7 @@ export default function Header() {
                 fontWeight='bold'
                 fontSize='250%'
                 color='tj_light_blue'
-                lineHeight='55px'
+                lineHeight='137.5%'
                 href='/'>TJRN.jus.br</Link>
             <ApplicationList />
         </ContainerBox>

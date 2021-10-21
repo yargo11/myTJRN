@@ -17,7 +17,7 @@ export default function Footer () {
                         fontWeight='bold'
                         fontSize='150%'
                         color='#59C4EA'
-                        lineHeight='29.05px'
+                        lineHeight='121%'
                         href='#'>TJRN.jus.br</Link>
                         <PolicyFuncionalityList />
                 </Box>
@@ -27,7 +27,7 @@ export default function Footer () {
                         fontWeight='normal'
                         fontSize='75%'
                         color='#F2F2F2'
-                        lineHeight='14.52px'>Siga-nos nas redes sociais</Text>
+                        lineHeight='121%'>Siga-nos nas redes sociais</Text>
                         <SocialMediaList />
                 </Box>
             </ContainerBox>

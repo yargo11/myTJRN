@@ -44,8 +44,8 @@ export default function Search () {
                         _active={{ filter: 'brightness(75%)' }}>Pesquisar</Button>
                 </Flex>
                 <Flex px='16px' py='16px' flexWrap='wrap' bgColor='white' borderRadius='0 0 6px 6px'>
-                    <Text lineHeight='17px' fontSize='75%'>Mais buscados:</Text>
-                    <UnorderedList display='flex' flexWrap='wrap' listStyleType='none' lineHeight='17px' fontSize='75%'>
+                    <Text lineHeight='141.66%' fontSize='75%'>Mais buscados:</Text>
+                    <UnorderedList display='flex' flexWrap='wrap' listStyleType='none' lineHeight='141.66%' fontSize='75%'>
                         <ListItem mx='4px'>Precatórios</ListItem>
                         <ListItem mx='4px'>Consulta Processual</ListItem>
                         <ListItem mx='4px'>Estágio</ListItem>

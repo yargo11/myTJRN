@@ -5,7 +5,7 @@ export default function PolicyFuncionalityList () {
         <Wrap
             color='#F2F2F2'
             fontWeight='normal'
-            lineHeight='19.36px'
+            lineHeight='121%'
             mt='16px'
             spacing='16px'>
             <WrapItem as={Link} href='#'>Termos de uso</WrapItem>

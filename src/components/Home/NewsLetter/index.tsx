@@ -14,13 +14,13 @@ export default function NewsLetter () {
                         fontWeight='bold'
                         fontSize='200%'
                         color='tj_light_gray'
-                        lineHeight='40px'
+                        lineHeight='125%'
                         href='#'>Assine para receber nossa newsletter</Text>
                     <Text
                         mt='12px'
                         fontWeight='normal'
                         color='tj_light_gray'
-                        lineHeight='22px'
+                        lineHeight='137.5%'
                         href='#'>Seus dados estão seguros conosco, leia nossa política de privacidade.</Text>
                 </Box>
                 <Wrap spacing='8px' >
