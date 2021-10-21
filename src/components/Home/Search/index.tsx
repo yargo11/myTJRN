@@ -18,7 +18,8 @@ export default function Search () {
         <Box
             w='full'
             py='81px'
-            background='linear-gradient(95.7deg, #20A0CE 8.83%, #B8D272 145.52%)' display='inline-block'>
+            background='linear-gradient(95.7deg, #20A0CE 8.83%, #B8D272 145.52%)'
+            display='inline-block'>
 
             <ContainerBox>
                 <Flex>

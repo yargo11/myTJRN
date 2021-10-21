@@ -1,6 +1,6 @@
-import { Divider, Flex, Link } from "@chakra-ui/react";
+import { Flex, Link } from "@chakra-ui/react";
 import ContainerBox from "../../components/ContainerBox";
-import GrayBorder from "../../components/GrayBorder";
+import GrayBorder from "../../components/Border/GrayBorder";
 import NewsList from "../../components/NewsList";
 import PageTitle from "../../components/PageTitle";
 

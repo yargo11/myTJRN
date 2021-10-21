@@ -1,4 +1,4 @@
-import { Divider, DividerProps } from "@chakra-ui/layout";
+import { Divider, DividerProps } from "@chakra-ui/react";
 
 export default function GrayBorder ({...attrs}:DividerProps) {
     return (

@@ -1,13 +1,13 @@
-import { Box, Button, Flex, Link, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Link, Spacer, Text } from "@chakra-ui/react";
 import ContainerBox from "../ContainerBox";
-import GrayBorder from "../GrayBorder";
+import GrayBorder from "../Border/GrayBorder";
 
 export default function AboutContent () {
     return (
         <>
             <GrayBorder/>
-            <ContainerBox as={Flex} py='16px' alignItems='center' justifyContent='space-between'>
-                <Flex alignItems='center' flexWrap='wrap'>
+            <ContainerBox as={Center} py='16px'>
+                <Center flexWrap='wrap'>
                     <Box>
                         <Text mr='23.5px' fontSize='87.5%' >Esse conteúdo foi útil para você?</Text>
                     </Box>
@@ -36,7 +36,8 @@ export default function AboutContent () {
                             _hover={{ filter: 'brightness(120%)' }}
                             _active={{ filter: 'brightness(75%)' }}>Não</Button>
                     </Box>
-                </Flex>
+                </Center>
+                <Spacer />
                 <Link fontSize='87.5%' fontWeight='125%' textDecor='underline' _hover={{textDecor:'underline'}}>Relatar problema com esta página</Link>
             </ContainerBox>
         </>

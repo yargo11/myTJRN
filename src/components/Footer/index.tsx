@@ -1,6 +1,6 @@
 import { Box, Flex, Link, Text } from '@chakra-ui/react';
 import ContainerBox from '../ContainerBox';
-import GradientBorder from '../GradientBorder';
+import GradientBorder from '../Border/GradientBorder';
 import PolicyFuncionalityList from './PolicyFuncionalityList';
 import SocialMediaList from './SocialMediaList';
 

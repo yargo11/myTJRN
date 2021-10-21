@@ -1,7 +1,7 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/breadcrumb";
 import { Box, Text } from "@chakra-ui/react";
 import ContainerBox from "../ContainerBox";
-import GradientBorder from "../GradientBorder";
+import GradientBorder from "../Border/GradientBorder";
 
 
 export interface BreadCrumbProps {

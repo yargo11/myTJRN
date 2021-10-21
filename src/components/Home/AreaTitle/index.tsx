@@ -1,4 +1,4 @@
-import { Box, Text, TextProps } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 
 interface areaTitleProps {
     title: string;

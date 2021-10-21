@@ -1,10 +1,11 @@
 import parse from 'html-react-parser';
 import PageTitle from '../../components/PageTitle';
-import { Box, Flex, Text, Image, Button, Divider } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { GetServerSideProps } from 'next';
 import ContainerBox from '../../components/ContainerBox';
-import GrayBorder from '../../components/GrayBorder';
+import GrayBorder from '../../components//Border/GrayBorder';
 import styles from './styles.module.scss';
+import ListenPrintSharePanel from '../../components/ListenPrintSharePanel';
 
 interface LerNoticiaProps {
     categoria: string;
@@ -14,6 +15,7 @@ interface LerNoticiaProps {
 }
 
 export default function lerNoticia({ titulo, categoria, ultimaModificacao, corpo }:LerNoticiaProps) {
+
     const breadcrumblist = [];
 
     breadcrumblist.push(breadcrumb);
@@ -25,21 +27,9 @@ export default function lerNoticia({ titulo, categoria, ultimaModificacao, corpo
                 <Text mt='42px' mx='10px' fontWeight='bold' fontSize='112.5%' lineHeight='24px'>{categoria}</Text>
                 <Text mt='16px' fontWeight='bold' fontSize='300%' lineHeight='56px' color='tj_light_blue' maxW='1076px'>{titulo}</Text>
                 
-                <Flex mt='56px' mb='12px' fontSize='87.5%' color='#888889' justifyContent='space-between'>
-                    <Text lineHeight='20px'>{ultimaModificacao}</Text>
-                    <Flex lineHeight='16.94px'>
-                        <Button fontSize='87.5%' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Share.svg'/>}>
-                            Compartilhar
-                        </Button>
-                        <GrayBorder orientation='vertical' mx='8px'/>
-                        <Button fontSize='87.5%' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Print.svg'/>}>
-                            Imprimir
-                        </Button>
-                        <GrayBorder orientation='vertical' mx='8px'/>
-                        <Button fontSize='87.5%' fontWeight='normal' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>}>
-                            Ouvir
-                        </Button>
-                    </Flex>
+                <Flex mt='56px' mb='12px' fontSize='87.5%' color='#888889' justifyContent='space-between' flexWrap='wrap'>
+                    <Text fontSize='87.5%' lineHeight='20px'>{ultimaModificacao}</Text>
+                    <ListenPrintSharePanel />
                 </Flex>
                 <GrayBorder/>
                 <Box mt='48px' mx='auto' mb='155px' maxW='856px'>
