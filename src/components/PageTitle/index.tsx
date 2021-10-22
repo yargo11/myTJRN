@@ -22,7 +22,7 @@ export default function PageTitle ({breadCrumbArray, description, showTitle, tit
             <GradientBorder />
             <Box bgColor='tj_dark_blue' color='tj_light_gray' py='16px'>
                 <ContainerBox>
-                    <Breadcrumb separator='>' fontWeight='normal' fontSize='87.5%' lineHeight='20px'>
+                    <Breadcrumb separator='>' fontWeight='normal' fontSize='87.5%' lineHeight='142.85%'>
                         <BreadcrumbItem>
                             <BreadcrumbLink href='/'>Início</BreadcrumbLink>
                         </BreadcrumbItem>
@@ -35,8 +35,8 @@ export default function PageTitle ({breadCrumbArray, description, showTitle, tit
                             <BreadcrumbLink isCurrentPage>{title}</BreadcrumbLink>
                         </BreadcrumbItem>
                     </Breadcrumb>
-                    {showTitle === true ? <Text fontWeight='bold' fontSize='225%' lineHeight='46px' mt='32px' mb='16px'>{title}</Text> : <></>}
-                    {description ? <Text maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='25px' mb='32px'>{description}</Text>:<></> }
+                    {showTitle === true ? <Text fontWeight='bold' fontSize='225%' lineHeight='12.77%' mt='32px' mb='16px'>{title}</Text> : <></>}
+                    {description ? <Text maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='138.88%' mb='32px'>{description}</Text>:<></> }
                 </ContainerBox>
             </Box>
         </>

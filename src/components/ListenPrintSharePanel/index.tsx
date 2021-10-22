@@ -3,7 +3,11 @@ import { useState } from "react";
 import GrayBorder from "../Border/GrayBorder";
 import ShareModal from "./ShareModal/index.";
 
-export default function ListenPrintSharePanel () {
+interface ListenPrintSharePanelProps {
+    listOfContentToRead: Array<string>;
+}
+
+export default function ListenPrintSharePanel ({ listOfContentToRead } :ListenPrintSharePanelProps) {
     const [shareModalOpenState, setShareModalOpenState] = useState(false);
 
     function handleOpenShareModal () {
@@ -13,18 +17,25 @@ export default function ListenPrintSharePanel () {
     function handleCloseShareModal () {
         setShareModalOpenState(false);
     }
+
+    function handleListenFunction () {
+        listOfContentToRead.map(contentToRead => {
+            speechSynthesis.speak(new SpeechSynthesisUtterance(contentToRead))
+        });
+    }
+
     return (
         <>
-            <Flex>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='16.94px' variant='link' rightIcon={<Image src='/icons/Share.svg'/>} onClick={handleOpenShareModal}>
+            <Flex className='no-print'>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg'/>} onClick={handleOpenShareModal}>
                     Compartilhar
                 </Button>
                 <GrayBorder orientation='vertical' mx='8px'/>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='16.94px' variant='link' rightIcon={<Image src='/icons/Print.svg'/>}>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Print.svg'/>} onClick={() => {window.print();}}>
                     Imprimir
                 </Button>
                 <GrayBorder orientation='vertical' mx='8px'/>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='16.94px' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>}>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>} onClick={handleListenFunction}>
                     Ouvir
                 </Button>
             </Flex>

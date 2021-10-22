@@ -6,6 +6,7 @@ import ContainerBox from '../../components/ContainerBox';
 import GrayBorder from '../../components//Border/GrayBorder';
 import styles from './styles.module.scss';
 import ListenPrintSharePanel from '../../components/ListenPrintSharePanel';
+import { useEffect } from 'react';
 
 interface LerNoticiaProps {
     categoria: string;
@@ -20,16 +21,21 @@ export default function lerNoticia({ titulo, categoria, ultimaModificacao, corpo
 
     breadcrumblist.push(breadcrumb);
 
+    /*
+    useEffect(() => {
+        speechSynthesis.speak(new SpeechSynthesisUtterance(corpo))
+    },[])
+    */
     return (
         <>
             <PageTitle title={titulo} breadCrumbArray={breadcrumblist} showTitle={false}/>
             <ContainerBox>
-                <Text mt='42px' mx='10px' fontWeight='bold' fontSize='112.5%' lineHeight='24px'>{categoria}</Text>
-                <Text mt='16px' fontWeight='bold' fontSize='300%' lineHeight='56px' color='tj_light_blue' maxW='1076px'>{titulo}</Text>
+                <Text mt='42px' mx='10px' fontWeight='bold' fontSize='112.5%' lineHeight='133.33%'>{categoria}</Text>
+                <Text mt='16px' fontWeight='bold' fontSize='300%' lineHeight='116.66%' color='tj_light_blue' maxW='1076px'>{titulo}</Text>
                 
                 <Flex mt='56px' mb='12px' fontSize='87.5%' color='#888889' justifyContent='space-between' flexWrap='wrap'>
-                    <Text fontSize='87.5%' lineHeight='20px'>{ultimaModificacao}</Text>
-                    <ListenPrintSharePanel />
+                    <Text fontSize='87.5%' lineHeight='142.85%'>{ultimaModificacao}</Text>
+                    <ListenPrintSharePanel listOfContentToRead={[corpo]}/>
                 </Flex>
                 <GrayBorder/>
                 <Box mt='48px' mx='auto' mb='155px' maxW='856px'>

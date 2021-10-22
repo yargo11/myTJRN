@@ -34,7 +34,13 @@ export const theme = extendTheme({
     styles: {
         global: {
             body: {
-                fontSize: { base: "12px", sm:"14px", md: "16px", lg: "16px" }
+                fontSize: { base: "12px", sm:"14px", md: "16px", lg: "16px" },
+                'color-adjust':'exact'
+            },
+            '.no-print': {
+                '@media print': {
+                    'display': 'none !important'
+                }
             }
         }
     }

@@ -6,7 +6,7 @@ import SocialMediaList from './SocialMediaList';
 
 export default function Footer () {
     return (
-        <Box w='full' h='227px' bgColor='tj_dark_blue'>
+        <Box w='full' h='227px' bgColor='tj_dark_blue' className='no-print'>
             <ContainerBox as={Flex}
                 h='full'
                 justifyContent='space-between'

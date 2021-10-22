@@ -3,6 +3,7 @@ import NewsLetter from "../components/Home/NewsLetter"
 import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
 export default function Home() {
+
   return (
     <>
       <Search />

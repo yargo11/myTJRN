@@ -36,7 +36,7 @@ export default function Search () {
                         w='167px'
                         ml='16px'
                         fontWeight='medium'
-                        lineHeight='19.36px'
+                        lineHeight='121%'
                         color='white'
                         bgColor='tj_dark_blue'
                         transition='filter 0.2s'

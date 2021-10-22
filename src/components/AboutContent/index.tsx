@@ -4,7 +4,7 @@ import GrayBorder from "../Border/GrayBorder";
 
 export default function AboutContent () {
     return (
-        <>
+        <Box className='no-print'>
             <GrayBorder/>
             <ContainerBox as={Center} py='16px'>
                 <Center flexWrap='wrap'>
@@ -18,7 +18,7 @@ export default function AboutContent () {
                             mr='15px'
                             fontSize='12px'
                             fontWeight='medium'
-                            lineHeight='18px'
+                            lineHeight='150%'
                             color='white'
                             bgColor='tj_dark_blue'
                             transition='filter 0.2s'
@@ -29,7 +29,7 @@ export default function AboutContent () {
                             h='26px'
                             fontSize='12px'
                             fontWeight='medium'
-                            lineHeight='18px'
+                            lineHeight='150%'
                             color='white'
                             bgColor='tj_dark_blue'
                             transition='filter 0.2s'
@@ -40,6 +40,7 @@ export default function AboutContent () {
                 <Spacer />
                 <Link fontSize='87.5%' fontWeight='125%' textDecor='underline' _hover={{textDecor:'underline'}}>Relatar problema com esta página</Link>
             </ContainerBox>
-        </>
+        </Box>
     );
 }
+

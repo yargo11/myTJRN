@@ -1,7 +1,9 @@
-import { Button, Link, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, SimpleGrid, Spacer, Text } from "@chakra-ui/react";
-import { useRouter } from "next/router";
+import { Button, Input, InputGroup, InputRightElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 
-import { GrFacebook } from 'react-icons/gr'
+import { RiFacebookBoxFill, RiTwitterFill, RiWhatsappFill } from 'react-icons/ri'
+import ShareGrid from "./ShareGrid";
+import ShareButton from "./ShareGrid/ShareButton";
 
 interface ShareModalProps {
     isShareModalOpen: boolean;
@@ -10,9 +12,11 @@ interface ShareModalProps {
 
 export default function ShareModal ({ isShareModalOpen, handleCloseShareModal }: ShareModalProps) {
 
-    const router = useRouter();
-    const { asPath } = router; //asPath,route, try with one of them, if the actual does not work
+    const [windowUrl, setWindowUrl] = useState('');
 
+    useEffect(() => {
+        setWindowUrl(window.location.href);
+    },[])
 
     return (
         <Modal isOpen={isShareModalOpen} onClose={handleCloseShareModal}>
@@ -21,27 +25,33 @@ export default function ShareModal ({ isShareModalOpen, handleCloseShareModal }:
                 <ModalHeader>Compartilhar essa página</ModalHeader>
                 <ModalCloseButton />
                 <ModalBody>
-                <Text>Redes sociais</Text>
-                <SimpleGrid columns={2}>
-                    <Link href={`https://www.facebook.com/sharer/sharer.php?u=${process.env.PROJECT_URL}${asPath}`} target="_blank" display='flex' alignItems='center' maxW='110px'>
-                        <GrFacebook color='#3a559f' size={32}/>
-                        <Spacer />
-                        <Text>Facebook</Text>
-                    </Link>
-                    <Link href={`https://www.facebook.com/sharer/sharer.php?u=${process.env.PROJECT_URL}${asPath}`} target="_blank" display='flex' alignItems='center' maxW='110px'>
-                        <GrFacebook color='#3a559f' size={32}/>
-                        <Spacer />
-                        <Text>Facebook</Text>
-                    </Link>
-                </SimpleGrid>
+                    <ShareGrid title='Redes sociais' columns={2}>
+                        <ShareButton
+                            applicationShareLinkCode={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(windowUrl)}`}
+                            icon={<RiFacebookBoxFill color='#3a559f' size={35}/>}
+                            label='Facebook'/>
+                        <ShareButton
+                            applicationShareLinkCode={`https://twitter.com/intent/tweet?url=${encodeURIComponent(windowUrl)}`}
+                            icon={<RiTwitterFill color='#2aa9e0' size={35}/>}
+                            label='Twitter'/>
+                    </ShareGrid>
+                    <ShareGrid title='Mensagens' columns={2}>
+                        <ShareButton
+                            applicationShareLinkCode={`https://api.whatsapp.com/send?text=${encodeURIComponent(windowUrl)}`}
+                            icon={<RiWhatsappFill color='#2fb943' size={35}/>}
+                            label='WhatsApp'/>
+                    </ShareGrid>
+                    <ShareGrid title='Copiar link' columns={1}>
+                    <InputGroup size="md">
+                        <Input value={windowUrl}/>
+                        <InputRightElement width="80px">
+                            <Button h="1.75rem" size="sm" onClick={() => {navigator.clipboard.writeText(windowUrl)}}>
+                                Copiar
+                            </Button>
+                        </InputRightElement>
+                        </InputGroup>
+                    </ShareGrid>
                 </ModalBody>
-
-                <ModalFooter>
-                    <Button colorScheme="blue" mr={3}>
-                        Close
-                    </Button>
-                    <Button variant="ghost">Secondary Action</Button>
-                </ModalFooter>
             </ModalContent>
         </Modal>
     );

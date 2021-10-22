@@ -32,7 +32,7 @@ export default function NewsLetter () {
                             w='120px'
                             h='45px'
                             fontWeight='medium'
-                            lineHeight='22px'
+                            lineHeight='137.5%'
                             bgColor='tj_dark_blue'
                             color='white'
                             transition='filter 0.2s'

@@ -35,3 +35,18 @@ Produção: gray-dolson (200.23.118.50)
 * node_modules/ (contém as bibliotecas do projeto. Essa pasta só será atualizada quando houver alteração nas dependências do projeto)
 * package.json (informa as bibliotecas e da versão atual do projeto. Esse arquivo deverá ser atualizado junto com a pasta node modules)
 * public/ (contém arquivos públicos. Imagens, PDF's, etc. Deverá ser atualizado quando houver algum novo arquivo a ser disponibilizado)
+
+## Compartilhamento de links (função share link)
+
+# Whatsapp
+    https://api.whatsapp.com/send?text=texto link
+
+## Acessibilidade
+    https://developer.mozilla.org/en-US/docs/Web/API/SpeechSynthesis
+    Exemplo:
+
+        useEffect(() => {
+            speechSynthesis.speak(new SpeechSynthesisUtterance(corpo))
+        },[])
+
+        Na página de notícias
