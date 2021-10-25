@@ -26,15 +26,15 @@ export default function ListenPrintSharePanel ({ listOfContentToRead } :ListenPr
 
     return (
         <>
-            <Flex className='no-print'>
+            <Flex className='no-print' alignItems='center'>
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg'/>} onClick={handleOpenShareModal}>
                     Compartilhar
                 </Button>
-                <GrayBorder orientation='vertical' mx='8px'/>
+                <GrayBorder orientation='vertical' mx='8px' h='50%'/>
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Print.svg'/>} onClick={() => {window.print();}}>
                     Imprimir
                 </Button>
-                <GrayBorder orientation='vertical' mx='8px'/>
+                <GrayBorder orientation='vertical' mx='8px' h='50%'/>
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>} onClick={handleListenFunction}>
                     Ouvir
                 </Button>

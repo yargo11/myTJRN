@@ -35,7 +35,7 @@ export default function PageTitle ({breadCrumbArray, description, showTitle, tit
                             <BreadcrumbLink isCurrentPage>{title}</BreadcrumbLink>
                         </BreadcrumbItem>
                     </Breadcrumb>
-                    {showTitle === true ? <Text fontWeight='bold' fontSize='225%' lineHeight='12.77%' mt='32px' mb='16px'>{title}</Text> : <></>}
+                    {showTitle === true ? <Text fontWeight='bold' fontSize='225%' lineHeight='127.77%' mt='32px' mb='16px'>{title}</Text> : <></>}
                     {description ? <Text maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='138.88%' mb='32px'>{description}</Text>:<></> }
                 </ContainerBox>
             </Box>

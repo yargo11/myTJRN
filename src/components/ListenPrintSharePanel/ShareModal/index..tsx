@@ -1,4 +1,4 @@
-import { Button, Input, InputGroup, InputRightElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay } from "@chakra-ui/react";
+import { Button, Input, InputGroup, InputRightElement, Modal, ModalBody, ModalCloseButton, ModalContent, ModalHeader, ModalOverlay, Icon } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 
 import { RiFacebookBoxFill, RiTwitterFill, RiWhatsappFill } from 'react-icons/ri'
@@ -28,17 +28,17 @@ export default function ShareModal ({ isShareModalOpen, handleCloseShareModal }:
                     <ShareGrid title='Redes sociais' columns={2}>
                         <ShareButton
                             applicationShareLinkCode={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(windowUrl)}`}
-                            icon={<RiFacebookBoxFill color='#3a559f' size={35}/>}
+                            icon={<Icon as={RiFacebookBoxFill} color='#3a559f' h={35} w={35}/>}
                             label='Facebook'/>
                         <ShareButton
                             applicationShareLinkCode={`https://twitter.com/intent/tweet?url=${encodeURIComponent(windowUrl)}`}
-                            icon={<RiTwitterFill color='#2aa9e0' size={35}/>}
+                            icon={<Icon as={RiTwitterFill} color='#2aa9e0' h={35} w={35}/>}
                             label='Twitter'/>
                     </ShareGrid>
                     <ShareGrid title='Mensagens' columns={2}>
                         <ShareButton
                             applicationShareLinkCode={`https://api.whatsapp.com/send?text=${encodeURIComponent(windowUrl)}`}
-                            icon={<RiWhatsappFill color='#2fb943' size={35}/>}
+                            icon={<Icon as={RiWhatsappFill} color='#2fb943' h={35} w={35}/>}
                             label='WhatsApp'/>
                     </ShareGrid>
                     <ShareGrid title='Copiar link' columns={1}>

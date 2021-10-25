@@ -37,7 +37,7 @@ export default function ServiceAndInformation () {
                 </Select>
             </Flex>
 
-            <CardList mt='40px'>
+            <CardList mt='40px' columns={[1,2,3,4]}>
                 {TopicList ? TopicList.map(topic =>
                     <ServiceAndInformationCard key={topic.link} label={topic.label} description={topic.description} link={topic.link}/>
                 ) : <></>}

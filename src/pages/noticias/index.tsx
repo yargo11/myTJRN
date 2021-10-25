@@ -30,7 +30,7 @@ export default function noticias () {
             </ContainerBox>
             <GrayBorder/>
             <ContainerBox mt='56px' mb='150px'>
-                <NewsList newsList={list}/>
+                <NewsList categoryFilterLabel='Decisões Judiciais' categoryFilterDescription='Elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet.' newsList={list}/>
             </ContainerBox>
         </>
     );
