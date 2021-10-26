@@ -4,6 +4,7 @@ interface areaTitleProps {
     title: string;
 }
 
+
 export default function AreaTitle ({ title }:areaTitleProps) {
     return (
         <Flex alignItems='center' h='128px'>

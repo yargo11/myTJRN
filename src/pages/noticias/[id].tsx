@@ -49,7 +49,7 @@ export default function lerNoticia({ titulo, categoria, ultimaModificacao, corpo
 }
 
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async () => {
     //const { id } = context.query;
     //const noticia = await (await apinoticia.get('elemento/' + id)).data;
     return {
