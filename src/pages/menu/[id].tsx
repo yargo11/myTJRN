@@ -111,13 +111,48 @@ export const getServerSideProps: GetServerSideProps = async () => {
                 tipo: 'applicationCards',
                 listadeconteudo: [{
                     sigla: 'PJE',
-                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
                     titulo: 'Processo Judicial eletrônico',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
                     link: '#'
                 }, {
                     sigla: 'PROJUD',
-                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
                     titulo: 'Processos dos Juizados Especiais',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'SEEU',
+                    titulo: 'Sistema Eletrônico de Execução Unificado',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'SIGAJUS',
+                    titulo: 'Sistema Integrado de Gestão Administrativa da Justiça',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'SAJ',
+                    titulo: 'Sistema de Automação da Justiça',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'SERASAJUD',
+                    titulo: 'Tramitação de Ofícios entre Tribunais e Serasa Experian',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'INFOJUD',
+                    titulo: 'Sistema de Informações ao Judiciário',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'RENAJUD',
+                    titulo: 'Restrições Judiciais Sobre Veículos Automotores',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
+                    link: '#'
+                }, {
+                    sigla: 'CEP',
+                    titulo: 'Controle Estatístico de Prisões',
+                    descricao: 'Proposição da prática de atos jurídicos e acompanhamento do trâmite processual de forma padronizada',
                     link: '#'
                 }]
             }]
