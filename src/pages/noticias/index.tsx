@@ -1,21 +1,28 @@
-import { Flex, Link } from "@chakra-ui/react";
-import ContainerBox from "../../components/ContainerBox";
-import GrayBorder from "../../components/Border/GrayBorder";
-import NewsList from "../../components/NewsList";
-import PageTitle from "../../components/PageTitle";
+import { Flex, Link } from '@chakra-ui/react';
+import ContainerBox from '../../components/ContainerBox';
+import GrayBorder from '../../components/Border/GrayBorder';
+import NewsList from '../../components/NewsList';
+import PageTitle from '../../components/PageTitle';
+import { useState } from 'react';
+import Pagination from '../../components/Pagination';
+
+interface News {
+    id: number,
+    date: string,
+    title: string,
+    link: string
+}
 
 export default function noticias () {
 
-    const list = [];
+    const [list, setList] = useState<News[]>([item0, item1, item2, item3, item4, item5, item6, item7]);
+    const [currentPage,  setCurrentPage] = useState(0);
 
-    list.push(item0);
-    list.push(item1);
-    list.push(item2);
-    list.push(item3);
-    list.push(item4);
-    list.push(item5);
-    list.push(item6);
-    list.push(item7);
+
+    function doSomething(value:number) {
+        setCurrentPage(value);
+        console.log(value);
+    }
 
     return (
         <>
@@ -31,6 +38,7 @@ export default function noticias () {
             <GrayBorder/>
             <ContainerBox mt='56px' mb='150px'>
                 <NewsList categoryFilterLabel='Decisões Judiciais' categoryFilterDescription='Elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet.' newsList={list}/>
+                <Pagination currentPage={currentPage} numberOfPages={99} marginRange={2} skipGap={5} paginationRange={5} onClickFunction={doSomething} />
             </ContainerBox>
         </>
     );
