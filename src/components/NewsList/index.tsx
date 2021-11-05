@@ -1,5 +1,5 @@
-import NewsCard, { NewsCardProps } from "./NewsCard";
-import CardList from "../CardList";
+import NewsCard, { NewsCardProps } from './NewsCard';
+import CardList from '../CardList';
 
 interface NewsListProps {
     categoryFilterLabel?: string;

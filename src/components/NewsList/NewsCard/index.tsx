@@ -1,4 +1,4 @@
-import { Image, Text, Link } from "@chakra-ui/react";
+import { Image, Text, Link } from '@chakra-ui/react';
 
 export interface NewsCardProps {
     imgPath?: string;
