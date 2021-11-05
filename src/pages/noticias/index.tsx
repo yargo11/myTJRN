@@ -37,8 +37,11 @@ export default function noticias () {
             </ContainerBox>
             <GrayBorder/>
             <ContainerBox mt='56px' mb='150px'>
-                <NewsList categoryFilterLabel='Decisões Judiciais' categoryFilterDescription='Elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet.' newsList={list}/>
-                <Pagination currentPage={currentPage} numberOfPages={99} marginRange={2} skipGap={5} paginationRange={5} onClickFunction={doSomething} />
+                <NewsList
+                    categoryFilterLabel='Decisões Judiciais'
+                    categoryFilterDescription='Elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet.'
+                    newsList={list}/>
+                <Pagination currentPage={currentPage} numberOfPages={10} marginRange={3} skipGap={5} paginationRange={5} breakLabel='...' nextLabel='Próxima Página' previousLabel='Página Anterior' onClickFunction={doSomething} />
             </ContainerBox>
         </>
     );
