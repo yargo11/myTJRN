@@ -29,7 +29,7 @@ export default function ApplicationCard ({ description, label, link, sigla, inde
                 <Spacer minH='8px'/>
                 <Text fontWeight='normal' lineHeight='137,5%'>{description}</Text>
             </Flex>
-                    <Image src='/icons/GoTo.svg' alignSelf='start' mt='28px' mr='22px'/>
+            <Image src='/icons/GoTo.svg' alignSelf='start' mt='28px' mr='22px'/>
         </Flex>
     );
 }

@@ -35,11 +35,11 @@ export const theme = extendTheme({
         global: {
             body: {
                 fontSize: { base: "12px", sm:"14px", md: "16px", lg: "16px" },
-                'color-adjust':'exact'
+                colorAdjust:'exact'
             },
             '.no-print': {
                 '@media print': {
-                    'display': 'none !important'
+                    display: 'none !important'
                 }
             }
         }
