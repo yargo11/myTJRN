@@ -1,4 +1,4 @@
-import { useMediaQuery } from '@chakra-ui/react'
+import { Center } from '@chakra-ui/react'
 import MidDevicesPagination from './MidDevicesPagination.tsx';
 import SmallDevicesPagination from './SmallDevicesPagination.tsx';
 
@@ -15,10 +15,8 @@ export interface PaginationProps {
 }
 
 export default function Pagination ({ currentPage, numberOfPages, paginationRange, marginRange, skipGap, breakLabel, nextLabel, previousLabel, onClickFunction }:PaginationProps) {
-    const [isLargerThan700] = useMediaQuery("(min-width: 700px)");
     return (
-        <>
-            {isLargerThan700 ?
+        <Center w='full'>
             <MidDevicesPagination
                 currentPage={currentPage}
                 numberOfPages={numberOfPages}
@@ -29,11 +27,11 @@ export default function Pagination ({ currentPage, numberOfPages, paginationRang
                 nextLabel={nextLabel}
                 previousLabel={previousLabel}
                 onClickFunction={onClickFunction} />
-            : <SmallDevicesPagination
+            <SmallDevicesPagination
                 currentPage={currentPage}
                 numberOfPages={numberOfPages}
                 paginationRange={paginationRange}
-                onClickFunction={onClickFunction} />}
-        </>
+                onClickFunction={onClickFunction} />
+        </Center>
     );
 }

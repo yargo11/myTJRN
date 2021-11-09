@@ -1,12 +1,13 @@
 import { Link, Flex } from "@chakra-ui/react";
 import ContainerBox from "../ContainerBox";
-import ApplicationList from "./ApplicationList";
+import RightMenuDesktop from "./RightMenuDesktop";
+import RightMenuMobile from "./RightMenuMobile";
 
 //Precisa melhorar responsividade
 export default function Header() {
     return (
         <ContainerBox as={Flex}
-            h='179px'
+            minH={{base: '56px', sm: '97px', md: '138px', lg: '179px'}}
             justifyContent='space-between'
             alignItems='center' flexWrap='wrap'>
             <Link
@@ -16,7 +17,8 @@ export default function Header() {
                 color='tj_light_blue'
                 lineHeight='137.5%'
                 href='/'>TJRN.jus.br</Link>
-            <ApplicationList />
+            <RightMenuDesktop />
+            <RightMenuMobile />
         </ContainerBox>
     );
 }

@@ -21,8 +21,9 @@ export default function noticias () {
 
     function doSomething(value:number) {
         setCurrentPage(value);
-        console.log(value);
     }
+
+    
 
     return (
         <>

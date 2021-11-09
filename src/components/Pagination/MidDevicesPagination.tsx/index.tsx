@@ -30,10 +30,12 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
 
     const fullDisplay = useBreakpointValue({ base: 'none', lg: 'inline-flex' })
 
+    const display = useBreakpointValue({ base: 'none', md: 'flex' })
+
     return (
         <>
             { numberOfPages > currentPage ? 
-                <Center w='full'>
+                <Center w='full' display={display}>
                     <PaginationButton
                         display={fullDisplay}
                         isDisabled={currentPage === 0}

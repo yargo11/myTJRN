@@ -1,11 +1,12 @@
-import { Center } from '@chakra-ui/react'
+import { Center, useBreakpointValue } from '@chakra-ui/react'
 import { PaginationProps } from '..';
 import PaginationButtonArray from '../PaginationButtonArray';
 
 
 export default function SmallDevicesPagination ({ currentPage, numberOfPages, paginationRange, onClickFunction }:Pick<PaginationProps, 'currentPage' | 'numberOfPages' | 'paginationRange' | 'onClickFunction'>) {
 
-    const range = paginationRange;
+    const display = useBreakpointValue({ base: 'flex', md: 'none' })
+
     let firstButtonValue = 1;
 
     if (currentPage >= paginationRange - 1) {
@@ -19,7 +20,7 @@ export default function SmallDevicesPagination ({ currentPage, numberOfPages, pa
     return (
         <>
             { numberOfPages > currentPage ? 
-                <Center w='full'>
+                <Center w='full' display={display}>
                     { numberOfPages > paginationRange ?
                         <PaginationButtonArray numbers={Array.from({length: paginationRange}, (_,k:number) => k + firstButtonValue)} currentPage={currentPage} onClickFunction={onClickFunction} />
                     :<PaginationButtonArray numbers={Array.from({length: numberOfPages}, (_,k:number) => k + 1)} currentPage={currentPage} onClickFunction={onClickFunction} />}

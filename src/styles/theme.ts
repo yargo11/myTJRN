@@ -34,7 +34,7 @@ export const theme = extendTheme({
     styles: {
         global: {
             body: {
-                fontSize: { base: "12px", sm:"14px", md: "16px", lg: "16px" },
+                fontSize: { base: "16px", sm:"14px", md: "16px", lg: "16px" },
                 colorAdjust:'exact'
             },
             '.no-print': {
