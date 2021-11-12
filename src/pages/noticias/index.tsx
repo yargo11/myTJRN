@@ -13,7 +13,7 @@ interface News {
     link: string
 }
 
-export default function noticias () {
+export default function Noticias () {
 
     const [list, setList] = useState<News[]>([item0, item1, item2, item3, item4, item5, item6, item7]);
     const [currentPage,  setCurrentPage] = useState(0);

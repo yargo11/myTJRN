@@ -15,7 +15,7 @@ interface LerNoticiaProps {
     corpo: string;
 }
 
-export default function lerNoticia({ titulo, categoria, ultimaModificacao, corpo }:LerNoticiaProps) {
+export default function Noticia({ titulo, categoria, ultimaModificacao, corpo }:LerNoticiaProps) {
 
     const breadcrumblist = [];
 

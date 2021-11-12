@@ -13,7 +13,7 @@ interface MenuProps {
     listaDeConteudo: Array<AreaType>;
 }
 
-export default function menu ({ listaDeConteudo, descricao, titulo }:MenuProps) {
+export default function Menu ({ listaDeConteudo, descricao, titulo }:MenuProps) {
 
     return (
         <>
