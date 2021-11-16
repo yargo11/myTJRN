@@ -2,7 +2,8 @@ import { GetServerSideProps } from 'next';
 import ContainerBox from '../components/ContainerBox';
 import AreaTitle from '../components/Content/AreaTitle';
 import parse from 'html-react-parser';
-import PageContent from '../components/Content/PageContent';
+import PageTitle from '../components/PageTitle';
+import PageContentList from '../components/Content/PageContentList';
 
 interface PageProps {
     title: string,
@@ -10,6 +11,8 @@ interface PageProps {
     content: string
 }
 export default function Page({title, subtitle, content}:PageProps) {
+
+  const breadcrumblist = [breadcrumb1, breadcrumb2];
 
   const contentheader2 = content.matchAll(new RegExp('<h2>([a-z]|[A-Z]|[0-9]|\x20|[\xC0-\xFF]|\-)+</h2>', 'g'));
 
@@ -25,11 +28,14 @@ export default function Page({title, subtitle, content}:PageProps) {
   }
 
   return (
-    <ContainerBox>
-      <AreaTitle title={title} subtitle={subtitle}/>
-      <PageContent headers={pageTitles}/>
-      {parse(content)}
-    </ContainerBox>
+    <>
+      <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
+      <ContainerBox>
+        <AreaTitle title={title} subtitle={subtitle}/>
+        <PageContentList headers={pageTitles}/>
+        {parse(content)}
+      </ContainerBox>
+    </>
   );
 }
 
@@ -64,3 +70,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     }
   }
 }
+
+
+const breadcrumb1 = {label: 'Infância, Juventude e Família', link: '/menu/2'}
+const breadcrumb2 = {label: 'Adoção', link: '/menu/10'}

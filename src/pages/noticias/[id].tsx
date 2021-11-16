@@ -17,9 +17,7 @@ interface LerNoticiaProps {
 
 export default function Noticia({ titulo, categoria, ultimaModificacao, corpo }:LerNoticiaProps) {
 
-    const breadcrumblist = [];
-
-    breadcrumblist.push(breadcrumb);
+    const breadcrumblist = [breadcrumb];
 
     /*
     useEffect(() => {
@@ -79,6 +77,4 @@ export const getServerSideProps: GetServerSideProps = async () => {
     }
 }
 
-
 const breadcrumb = {label: 'Notícias', link: '/noticias'}
-
