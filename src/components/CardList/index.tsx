@@ -14,12 +14,12 @@ interface CardListProps extends SimpleGridProps {
 export default function CardList ({children, categoryFilterLabel, categoryFilterDescription, ...attrs}: CardListProps) {
     return (
         <>
-            <Grid templateColumns="repeat(2, 1fr)" gap='24px' justifyContent='center' {...attrs} sx={{'@media not print': {display: 'none'}}}>
+            <SimpleGrid w='full' justifyContent='center' columns={2} spacing='24px' sx={{'@media not print': {display: 'none'}}}>
                 {categoryFilterLabel?
                     <FilterItem categoryFilterLabel={categoryFilterLabel} categoryFilterDescription={categoryFilterDescription} colSpan={1} />
                 : <></>}
                 { children }
-            </Grid>
+            </SimpleGrid>
             <SimpleGrid w='full' justifyContent='center' spacing='24px' {...attrs} sx={{'@media print': {display: 'none'}}}>
                 {categoryFilterLabel?
                     <FilterItem categoryFilterLabel={categoryFilterLabel} categoryFilterDescription={categoryFilterDescription} colSpan={{base: 1, sm: 2}} />
