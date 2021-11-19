@@ -20,7 +20,7 @@ export default function News () {
                     <NewsList newsList={list}/>
                 </Box>
 
-                <Wrap justify='end' mt='350px' wrap='wrap' spacing='32px' maxW='95%'>
+                <Wrap justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
                     <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
                     <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
                     <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
