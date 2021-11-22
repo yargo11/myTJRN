@@ -11,7 +11,6 @@ export default function Footer () {
                 h='full'
                 justifyContent='space-between'
                 alignItems='center' flexWrap='wrap'>
-
                 <Box>
                     <Link
                         fontWeight='bold'
@@ -19,17 +18,16 @@ export default function Footer () {
                         color='#59C4EA'
                         lineHeight='121%'
                         href='#'>TJRN.jus.br</Link>
-                        <PolicyFuncionalityList />
                 </Box>
-
-                <Box>
+                <Flex alignItems='end' flexDir='column'>
                     <Text
                         fontWeight='normal'
                         fontSize='75%'
                         color='#F2F2F2'
                         lineHeight='121%'>Siga-nos nas redes sociais</Text>
                         <SocialMediaList />
-                </Box>
+                        <PolicyFuncionalityList />
+                </Flex>
             </ContainerBox>
             <GradientBorder />
         </Box>

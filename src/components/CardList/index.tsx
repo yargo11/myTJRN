@@ -1,5 +1,4 @@
-import { Grid, GridItem, Link, SimpleGrid, SimpleGridProps, Spacer, Text, Icon } from '@chakra-ui/react';
-import { FaBell } from 'react-icons/fa'
+import { SimpleGrid, SimpleGridProps } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 import FilterItem from './FilterItem';
 
