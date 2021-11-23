@@ -1,7 +1,7 @@
 import { Flex, Button, Image } from "@chakra-ui/react";
 import { useState } from "react";
 import GrayBorder from "../Border/GrayBorder";
-import ShareModal from "./ShareModal/index.";
+import ShareModal from "./ShareModal";
 
 interface ListenPrintSharePanelProps {
     listOfContentToRead: Array<string>;

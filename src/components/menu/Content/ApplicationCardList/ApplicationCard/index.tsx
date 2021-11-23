@@ -10,12 +10,13 @@ interface LinkCardProps {
 }
 
 export default function ApplicationCard ({ description, label, link, sigla, index }:LinkCardProps) {
-    const screenWidth = useBreakpointValue({ base: 'none', sm: 'flex' })
+    const screenMediumWidth = useBreakpointValue({ base: 'none', sm: 'flex' })
+    const screenSmallWidth = useBreakpointValue({ base: 'flex', sm: 'none' })
 
     return (
         <Flex as={Link} href={link} w='full' border='1px' borderColor='#D8DBDF' borderRadius='md'>
             <Center
-                display={screenWidth}
+                display={screenMediumWidth}
                 minW='196px'
                 bg={Math.floor((index/2) + 0.5) % 2 == 0 ? '#00384D' : '#14697F'}
                 fontWeight='semibold'
@@ -24,12 +25,25 @@ export default function ApplicationCard ({ description, label, link, sigla, inde
                 color='white'>
                 {sigla}
             </Center>
-            <Flex flexDir='column' pt='24px' pb='19px' pl='24px'>
+            <Flex flexDir='column' pb='19px'>
+                <Center
+                    display={screenSmallWidth}
+                    w='full'
+                    h='100px'
+                    bg={Math.floor((index/2) + 0.5) % 2 == 0 ? '#00384D' : '#14697F'}
+                    fontWeight='semibold'
+                    fontSize='187.5%'
+                    lineHeight='110%'
+                    color='white'>
+                    {sigla}
+                </Center>
+                <Flex justifyContent='space-between' alignItems='center' pt='24px' px='24px'>
                     <Text fontSize='112.5%' fontWeight='bold' lineHeight='138.88%' color='tj_dark_blue'>{label}</Text>
+                    <Image src='/icons/GoTo.svg'/>
+                </Flex>
                 <Spacer minH='8px'/>
-                <Text fontWeight='normal' lineHeight='137,5%'>{description}</Text>
+                <Text ml='24px' fontWeight='normal' lineHeight='137,5%'>{description}</Text>
             </Flex>
-            <Image src='/icons/GoTo.svg' alignSelf='start' mt='28px' mr='22px'/>
         </Flex>
     );
 }

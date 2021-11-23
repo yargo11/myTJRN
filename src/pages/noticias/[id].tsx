@@ -6,7 +6,6 @@ import ContainerBox from '../../components/ContainerBox';
 import GrayBorder from '../../components//Border/GrayBorder';
 import styles from './styles.module.scss';
 import ListenPrintSharePanel from '../../components/ListenPrintSharePanel';
-import { useEffect } from 'react';
 
 interface LerNoticiaProps {
     categoria: string;
@@ -45,7 +44,6 @@ export default function Noticia({ titulo, categoria, ultimaModificacao, corpo }:
         </>
     )
 }
-
 
 export const getServerSideProps: GetServerSideProps = async () => {
     //const { id } = context.query;

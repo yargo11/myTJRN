@@ -1,11 +1,17 @@
-import { Center, Text } from '@chakra-ui/react';
+import { Flex, Text } from '@chakra-ui/react';
 
-export default function Calendar () {
+export interface CalendarProps {
+    weekday: string,
+    monthday: number,
+    month: string
+}
+
+export default function Calendar ({ weekday, monthday, month }: CalendarProps) {
     return (
-        <Center minW='110px' h='140px' pt='10px' flexDir='column' backgroundImage='/image/CalendarBackground.png'>
-            <Text fontWeight='semibold' lineHeight='137.5%' color='white'>Ter</Text>
-            <Text fontWeight='extrabold' fontSize='400%' lineHeight='116.67%'>20</Text>
-            <Text fontWeight='medium' fontSize='112.5%' lineHeight='138.89%'>OUT</Text>
-        </Center>
+        <Flex minW='110px' h='140px' pt='13px' alignItems='center' flexDir='column' backgroundImage='/image/CalendarBackground.png'>
+            <Text fontWeight='semibold' fontSize='16px' lineHeight='22px' color='white'>{weekday}</Text>
+            <Text fontWeight='extrabold' fontSize='48px' lineHeight='56px' mt='10px'>{monthday}</Text>
+            <Text fontWeight='medium' fontSize='18px' lineHeight='25px' mt='5px'>{month}</Text>
+        </Flex>
     );
 }

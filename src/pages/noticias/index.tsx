@@ -18,12 +18,9 @@ export default function Noticias () {
     const [list, setList] = useState<News[]>([item0, item1, item2, item3, item4, item5, item6, item7]);
     const [currentPage,  setCurrentPage] = useState(0);
 
-
     function doSomething(value:number) {
         setCurrentPage(value);
     }
-
-    
 
     return (
         <>
@@ -42,7 +39,16 @@ export default function Noticias () {
                     categoryFilterLabel='Decisões Judiciais'
                     categoryFilterDescription='Elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet.'
                     newsList={list}/>
-                <Pagination currentPage={currentPage} numberOfPages={20} marginRange={3} skipGap={5} paginationRange={5} breakLabel='...' nextLabel='Próxima Página' previousLabel='Página Anterior' onClickFunction={doSomething} />
+                <Pagination
+                    currentPage={currentPage}
+                    numberOfPages={20}
+                    marginRange={3}
+                    skipGap={5}
+                    paginationRange={5}
+                    breakLabel='...'
+                    nextLabel='Próxima Página'
+                    previousLabel='Página Anterior'
+                    onClickFunction={doSomething}/>
             </ContainerBox>
         </>
     );

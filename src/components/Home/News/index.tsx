@@ -2,22 +2,20 @@ import { Box, Button, Link, Wrap, WrapItem } from "@chakra-ui/react";
 import ContainerBox from "../../ContainerBox";
 import AreaTitle from "../AreaTitle";
 import NewsList from "../../NewsList";
+import { NewsCardProps } from "../../NewsList/NewsCard";
 
-export default function News () {
+interface NewsProps {
+    newsList: Array<NewsCardProps>;
+}
 
-    const list = [];
-
-    list.push(item0);
-    list.push(item1);
-    list.push(item2);
-    list.push(item3);
+export default function News ({ newsList }: NewsProps) {
 
     return (
         <Box w='full' py='63px' bgColor='tj_light_gray'>
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
                 <Box w='full' mt='40px'>
-                    <NewsList newsList={list}/>
+                    <NewsList newsList={newsList}/>
                 </Box>
 
                 <Wrap justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
@@ -44,9 +42,3 @@ export default function News () {
         </Box>
     );
 }
-
-
-const item0 = {id:0, date:'2019-12-28', title:'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '#'}
-const item1 = {id:1, date:'2020-01-20', title:'Comarca de Touros seleciona estagiário de pós-graduação em Direito', link: '#'}
-const item2 = {id:2, date:'2020-01-17', title:'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '#'}
-const item3 = {id:3, date:'2019-12-16', title:'Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN', link: '#'}

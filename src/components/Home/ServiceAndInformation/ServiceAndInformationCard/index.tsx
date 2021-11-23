@@ -1,6 +1,6 @@
 import { Box, Flex, Image, Text, Link } from '@chakra-ui/react';
 
-interface TopicBoxInterface {
+export interface TopicBoxInterface {
     label: string;
     description: string;
     link: string;

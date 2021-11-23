@@ -1,15 +1,20 @@
 import { Box, Flex, Spacer } from '@chakra-ui/react';
-import Calendar from "../../Calendar";
+import Calendar, { CalendarProps } from "../../Calendar";
 import AreaTitle from "../AreaTitle";
-import EventList from './EventList';
+import EventList, { Event } from './EventList';
 
-export default function Agenda () {
-    const eventList = [item0, item1, item2];
+interface AgendaProps {
+    calendar: CalendarProps,
+    eventList: Array<Event>
+}
+
+export default function Agenda ({calendar, eventList}:AgendaProps) {
+    
     return (
         <Box>
             <AreaTitle title='Calendário' subtitle='Veja a agenda do Poder Judiciário' />
             <Flex mt='32px'>
-                <Calendar />
+                <Calendar weekday={calendar.weekday} monthday={calendar.monthday} month={calendar.month}/>
                 <Spacer maxW='24px' minW='24px'/>
                 <EventList eventList={eventList}/>
             </Flex>
@@ -18,6 +23,3 @@ export default function Agenda () {
 }
 
 
-const item0 = {label: 'Sessão da Terceira Câmara Cível', type: 'Ordinária', link:'#'}
-const item1 = {label: 'Sessão da Primeira Câmara Cível', type: 'Ordinária', link:'#'}
-const item2 = {label: 'Sessão da Câmara Criminal', type: 'Ordinária', link:'#'}

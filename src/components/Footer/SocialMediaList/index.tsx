@@ -2,7 +2,7 @@ import { HStack, Link, Image } from '@chakra-ui/react';
 
 export default function SocialMediaList () {
     return (
-        <HStack spacing='8px' mt='8px'>
+        <HStack spacing='8px' mt='8px' mb='35px'>
             <Link href='#'><Image src='/icons/FacebookLogo.svg'/></Link>
             <Link href='#'><Image src='/icons/InstagramLogo.svg'/></Link>
             <Link href='#'><Image src='/icons/TwitterLogo.svg'/></Link>
