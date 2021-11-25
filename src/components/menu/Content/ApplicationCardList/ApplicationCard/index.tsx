@@ -18,7 +18,7 @@ export default function ApplicationCard ({ description, label, link, sigla, inde
             <Center
                 display={screenMediumWidth}
                 minW='196px'
-                bg={Math.floor((index/2) + 0.5) % 2 == 0 ? '#00384D' : '#14697F'}
+                bg={Math.floor((index/2) + 0.5) % 2 == 0 ? 'tj_dark_blue' : 'tj_light_blue'}
                 fontWeight='semibold'
                 fontSize='187.5%'
                 lineHeight='110%'
@@ -30,7 +30,7 @@ export default function ApplicationCard ({ description, label, link, sigla, inde
                     display={screenSmallWidth}
                     w='full'
                     h='100px'
-                    bg={Math.floor((index/2) + 0.5) % 2 == 0 ? '#00384D' : '#14697F'}
+                    bg={Math.floor((index/2) + 0.5) % 2 == 0 ? 'tj_dark_blue' : 'tj_light_blue'}
                     fontWeight='semibold'
                     fontSize='187.5%'
                     lineHeight='110%'

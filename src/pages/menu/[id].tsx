@@ -3,8 +3,8 @@ import { GetServerSideProps } from "next";
 import GrayBorder from "../../components/Border/GrayBorder";
 import ContainerBox from "../../components/ContainerBox";
 import ListenPrintSharePanel from "../../components/ListenPrintSharePanel";
-import AreaTitle from "../../components/menu/AreaTitle";
-import Content, { AreaType } from "../../components/menu/Content";
+import AreaTitle from "../../components/Menu/AreaTitle";
+import Content, { AreaType } from "../../components/Menu/Content";
 import PageTitle from "../../components/PageTitle";
 
 interface MenuProps {
@@ -21,7 +21,7 @@ export default function Menu ({ listaDeConteudo, descricao, titulo }:MenuProps) 
                 title={titulo}
                 showTitle={true}
                 description={descricao}/>
-            <ContainerBox as={Flex} h='53px' justifyContent='end'>
+            <ContainerBox as={Flex} py='18px' justifyContent='end'>
                 <ListenPrintSharePanel listOfContentToRead={[]}/>
             </ContainerBox>
             <GrayBorder/>

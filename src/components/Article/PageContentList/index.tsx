@@ -9,7 +9,7 @@ export interface PageContentProps {
 export default function PageContentList ({ headers }:PageContentProps) {
     return (
         <>
-            {headers? <Flex flexDir='column' bgColor='#FAFBFC' borderRadius='6px' p='24px'>
+            {headers? <Flex flexDir='column' bgColor='#FAFBFC' borderRadius='6px' p='24px' mb='32px'>
                 <GridDisplay headers={headers} />
                 <AccordionDisplay headers={headers} />
             </Flex> : <></>}

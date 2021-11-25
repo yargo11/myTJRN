@@ -4,6 +4,7 @@ export const theme = extendTheme({
     colors: {
         tj_dark_blue: '#00384D',
         tj_light_blue: '#14697F',
+        tj_navy_blue: '#336699',
         tj_light_gray: '#FAFBFC'
     },
     components:{
@@ -34,7 +35,7 @@ export const theme = extendTheme({
     styles: {
         global: {
             body: {
-                fontSize: { base: "16px", sm:"12px", md: "14px", lg: "16px" },
+                fontSize: { base: "10px", sm:"12px", md: "14px", lg: "16px" },
                 colorAdjust:'exact'
             },
             '.no-print': {

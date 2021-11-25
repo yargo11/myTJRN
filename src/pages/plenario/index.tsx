@@ -1,6 +1,9 @@
+import { Flex } from "@chakra-ui/react";
+import GrayBorder from "../../components/Border/GrayBorder";
 import CardList from "../../components/CardList";
 import ContainerBox from "../../components/ContainerBox";
 import ImageCard from "../../components/ImageCard";
+import ListenPrintSharePanel from "../../components/ListenPrintSharePanel";
 import PageTitle from "../../components/PageTitle";
 
 export default function Plenario () {
@@ -11,11 +14,15 @@ export default function Plenario () {
                 title='Membros do Plenário'
                 description='Informações sobre o que é o poder judiciário, sua história, como se estrutura e seu funionamento etc etc etc etc etc etc etcetcetcetcetcetcetcetcetc etc'
                 showTitle={true}/>
-            <ContainerBox>
+            <ContainerBox as={Flex} py='18px' justifyContent='end'>
+                <ListenPrintSharePanel listOfContentToRead={[]} />
+            </ContainerBox>
+            <GrayBorder />
+            <ContainerBox mt='80px' mb='100px'>
                 <CardList columns={[1,1,2]}>
                 {desList ? desList.map(des =>
-                        <ImageCard key={des.link} description={des.description} image={des.image} label={des.label} link={des.link}/>
-                    ) : <></>} 
+                    <ImageCard key={des.link} description={des.description} image={des.image} label={des.label} link={des.link}/>
+                ) : <></>} 
                 </CardList>
             </ContainerBox>
         </>

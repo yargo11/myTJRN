@@ -12,7 +12,7 @@ export default function GridDisplay ({ headers }:PageContentProps) {
                 {headers.map((header, index) => 
                     <Link key={index} href={`#${index}`} display='inline-block'>
                         <Image src='/icons/ArrowDown.svg' display='inline' mr='7px'/>
-                        <Text display='inline' lineHeight='150%' textDecor='underline' color='#336699'>{header}</Text>
+                        <Text display='inline' lineHeight='150%' textDecor='underline' color='tj_navy_blue'>{header}</Text>
                     </Link>
                 )}
             </CardList>

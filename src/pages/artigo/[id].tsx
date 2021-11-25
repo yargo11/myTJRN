@@ -4,6 +4,8 @@ import PageTitle from '../../components/PageTitle';
 import PageContentList from '../../components/Article/PageContentList';
 import AreaTitle from '../../components/Home/AreaTitle';
 import ContainerBox from '../../components/ContainerBox';
+import { Box, Flex, Spacer } from '@chakra-ui/react';
+import LeftMenu from '../../components/Article/LeftMenu';
 
 interface PageProps {
     title: string,
@@ -11,6 +13,8 @@ interface PageProps {
     content: string
 }
 export default function Page({title, subtitle, content}:PageProps) {
+  
+  const linkList=[link0,link1,link2]
 
   const breadcrumblist = [breadcrumb1, breadcrumb2];
 
@@ -22,18 +26,26 @@ export default function Page({title, subtitle, content}:PageProps) {
 
   while (content.search('<h2>') != -1) {
     content = content.replace('<h2>', () => {
-      headerIndex++;
-      return `<h2 id="${headerIndex}">`
+        headerIndex++;
+        return `<h2 id="${headerIndex}">`
     })
   }
 
   return (
     <>
       <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
-      <ContainerBox>
-        <AreaTitle title={title} subtitle={subtitle}/>
-        <PageContentList headers={pageTitles}/>
-        {parse(content)}
+      <ContainerBox mt='56px'>
+        <Flex>
+          <Box w='306px'>
+            <LeftMenu rootLabel='Adoção' rootLink='#' linkList={linkList}/>
+          </Box>
+          <Spacer w='134px'/>
+          <Box maxW='746px'>
+            <AreaTitle title={title} subtitle={subtitle}/>
+            <PageContentList headers={pageTitles}/>
+            {parse(content)}
+          </Box>
+        </Flex>
       </ContainerBox>
     </>
   );
@@ -72,3 +84,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
 const breadcrumb1 = {label: 'Infância, Juventude e Família', link: '/menu/2'}
 const breadcrumb2 = {label: 'Adoção', link: '/menu/10'}
+
+const link0={label: 'Como adotar', link: '/artigo/1'}
+const link1={label: 'Apadrinhamento', link: '/artigo/2'}
+const link2={label: 'Dar filho para adoção', link: '/artigo/3'}
