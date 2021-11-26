@@ -25,7 +25,7 @@ export default function Menu ({ listaDeConteudo, descricao, titulo }:MenuProps) 
                 <ListenPrintSharePanel listOfContentToRead={[]}/>
             </ContainerBox>
             <GrayBorder/>
-            <ContainerBox>
+            <ContainerBox mb='130px'>
                 {listaDeConteudo?
                     listaDeConteudo.map(content =>
                     <>

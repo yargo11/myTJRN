@@ -5,7 +5,8 @@ import PageContentList from '../../components/Article/PageContentList';
 import AreaTitle from '../../components/Home/AreaTitle';
 import ContainerBox from '../../components/ContainerBox';
 import { Box, Flex, Spacer } from '@chakra-ui/react';
-import LeftMenu from '../../components/Article/LeftMenu';
+import AsideMenuMidDevices from '../../components/Article/AsideMenu/AsideMenuMidDevices';
+
 
 interface PageProps {
     title: string,
@@ -34,18 +35,16 @@ export default function Page({title, subtitle, content}:PageProps) {
   return (
     <>
       <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
-      <ContainerBox mt='56px'>
-        <Flex>
-          <Box w='306px'>
-            <LeftMenu rootLabel='Adoção' rootLink='#' linkList={linkList}/>
-          </Box>
-          <Spacer w='134px'/>
-          <Box maxW='746px'>
-            <AreaTitle title={title} subtitle={subtitle}/>
-            <PageContentList headers={pageTitles}/>
-            {parse(content)}
-          </Box>
-        </Flex>
+      <ContainerBox as={Flex} mt='56px'>
+        <Box w='306px'>
+          <AsideMenuMidDevices rootLabel='Adoção' rootLink='#' linkList={linkList}/>
+        </Box>
+        <Spacer />
+        <Box maxW='746px'>
+          <AreaTitle title={title} subtitle={subtitle}/>
+          <PageContentList headers={pageTitles}/>
+          {parse(content)}
+        </Box>
       </ContainerBox>
     </>
   );

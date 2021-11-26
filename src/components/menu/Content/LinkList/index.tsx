@@ -1,5 +1,5 @@
 import { Link } from "@chakra-ui/react"
-import { ContentType } from ".."
+import { ContentType } from "..";
 
 interface LinkListProps {
     listadeconteudo: Array<ContentType>;
