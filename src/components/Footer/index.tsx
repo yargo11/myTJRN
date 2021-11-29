@@ -28,7 +28,9 @@ export default function Footer () {
                     </CardList>
                 </ContainerBox>
             </Box>
-            <GradientBorder />
+            <Box w='full' className='no-print'>
+                <GradientBorder />
+            </Box>
         </>
     );
 }

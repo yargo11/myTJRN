@@ -4,8 +4,8 @@ import PageTitle from '../../components/PageTitle';
 import PageContentList from '../../components/Article/PageContentList';
 import AreaTitle from '../../components/Home/AreaTitle';
 import ContainerBox from '../../components/ContainerBox';
-import { Box, Flex, Spacer } from '@chakra-ui/react';
-import AsideMenuMidDevices from '../../components/Article/AsideMenu/AsideMenuMidDevices';
+import { Box, Flex, Spacer, useBreakpointValue } from '@chakra-ui/react';
+import AsideMenu from '../../components/Article/AsideMenu';
 
 
 interface PageProps {
@@ -14,6 +14,7 @@ interface PageProps {
     content: string
 }
 export default function Page({title, subtitle, content}:PageProps) {
+  const display = useBreakpointValue({ base: Box, sm: Flex })
   
   const linkList=[link0,link1,link2]
 
@@ -35,9 +36,9 @@ export default function Page({title, subtitle, content}:PageProps) {
   return (
     <>
       <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
-      <ContainerBox as={Flex} mt='56px'>
+      <ContainerBox as={display} mt='56px' sx={{'@media print': {display: 'block'}}}>
         <Box w='306px'>
-          <AsideMenuMidDevices rootLabel='Adoção' rootLink='#' linkList={linkList}/>
+          <AsideMenu rootLabel='Adoção' rootLink='#' linkList={linkList} />
         </Box>
         <Spacer />
         <Box maxW='746px'>

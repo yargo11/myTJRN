@@ -1,15 +1,11 @@
-import { Box, Link, Image } from "@chakra-ui/react";
-import AsideMenuMidDevicesItem, { AsideMenuMidDevicesItemProps } from "./AsideMenuMidDevicesItem";
-
-interface LeftMenuProps {
-    rootLink: string,
-    rootLabel: string,
-    linkList: Array<AsideMenuMidDevicesItemProps>
-}
+import { Box, Link, Image, useBreakpointValue } from "@chakra-ui/react";
+import { LeftMenuProps } from "..";
+import AsideMenuMidDevicesItem from "./AsideMenuMidDevicesItem";
 
 export default function AsideMenuMidDevices ({ rootLabel, rootLink, linkList }:LeftMenuProps) {
+    const display = useBreakpointValue({ base: 'none', sm: 'block' })
     return (
-        <Box>
+        <Box display={display} className='no-print'>
             <Box w='full' h='3px' bgColor='#00384D'></Box>
             <Link
                 href={rootLink}

@@ -1,5 +1,4 @@
-import { Flex, Image, Link, Divider, Text } from '@chakra-ui/react';
-import { useBreakpointValue } from '@chakra-ui/react';
+import { Flex, Image, Link, Divider, Text, useBreakpointValue } from '@chakra-ui/react';
 
 interface LinkCardProps {
     link: string;

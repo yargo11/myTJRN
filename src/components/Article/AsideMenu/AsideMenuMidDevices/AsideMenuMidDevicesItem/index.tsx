@@ -1,10 +1,6 @@
 import { Link } from "@chakra-ui/react";
 import {useRouter} from 'next/router';
-
-export interface AsideMenuMidDevicesItemProps {
-    label: string,
-    link: string
-}
+import { AsideMenuMidDevicesItemProps } from "../..";
 
 export default function AsideMenuMidDevicesItem ({ label, link }: AsideMenuMidDevicesItemProps) {
     const router = useRouter();
