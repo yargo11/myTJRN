@@ -1,6 +1,5 @@
-import { Flex, Button, Image } from "@chakra-ui/react";
+import { Flex, Button, Image, Divider } from "@chakra-ui/react";
 import { useState } from "react";
-import GrayBorder from "../Border/GrayBorder";
 import ShareModal from "./ShareModal";
 
 interface ListenPrintSharePanelProps {
@@ -30,16 +29,16 @@ export default function ListenPrintSharePanel ({ listOfContentToRead } :ListenPr
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg'/>} onClick={handleOpenShareModal}>
                     Compartilhar
                 </Button>
-                <GrayBorder orientation='vertical' mx='8px' h='50%'/>
+                <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%'/>
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Print.svg'/>} onClick={() => {window.print();}}>
                     Imprimir
                 </Button>
-                <GrayBorder orientation='vertical' mx='8px' h='50%'/>
+                <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%'/>
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>} onClick={handleListenFunction}>
                     Ouvir
                 </Button>
             </Flex>
-        <ShareModal isShareModalOpen={shareModalOpenState} handleCloseShareModal={handleCloseShareModal}/>
+            <ShareModal isShareModalOpen={shareModalOpenState} handleCloseShareModal={handleCloseShareModal}/>
         </>
     );
 }

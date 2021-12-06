@@ -1,12 +1,12 @@
 import { Box, Link, Image, useBreakpointValue } from "@chakra-ui/react";
 import { LeftMenuProps } from "..";
-import AsideMenuMidDevicesItem from "./AsideMenuMidDevicesItem";
+import Item from "./Item";
 
-export default function AsideMenuMidDevices ({ rootLabel, rootLink, linkList }:LeftMenuProps) {
+export default function MidDevices ({ rootLabel, rootLink, linkList }:LeftMenuProps) {
     const display = useBreakpointValue({ base: 'none', sm: 'block' })
     return (
         <Box display={display} className='no-print'>
-            <Box w='full' h='3px' bgColor='#00384D'></Box>
+            <Box w='full' h='3px' bgColor='tj_dark_blue'></Box>
             <Link
                 href={rootLink}
                 display='flex'
@@ -23,10 +23,10 @@ export default function AsideMenuMidDevices ({ rootLabel, rootLink, linkList }:L
                     mr='8.5px'/>
                 {rootLabel}
             </Link>
-            <Box w='full' h='1px' bgColor='#00384D'></Box>
-            {linkList? linkList.map(link => <AsideMenuMidDevicesItem key={link.link} label={link.label} link={link.link}/>)
+            <Box w='full' h='1px' bgColor='tj_dark_blue'></Box>
+            {linkList? linkList.map(link => <Item key={link.link} label={link.label} link={link.link}/>)
             : <></>}
-            <Box w='full' h='1px' bgColor='#00384D' mt='16px' mb='12px'></Box>
+            <Box w='full' h='1px' bgColor='tj_dark_blue' mt='16px' mb='12px'></Box>
         </Box>
     );
 }

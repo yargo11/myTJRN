@@ -1,7 +1,7 @@
 import { Flex, Box, Spacer, Text, useBreakpointValue } from "@chakra-ui/react";
+import Profile from "../../components/Aside/Profile";
 import ContainerBox from "../../components/ContainerBox";
 import PageTitle from "../../components/PageTitle";
-import AsideMenu from "../../components/Profile/AsideMenu";
 
 export default function Perfil () {
     const profile = {
@@ -37,12 +37,12 @@ export default function Perfil () {
         <>
             <PageTitle title='Desembargador Vivaldo Pinheiro' breadCrumbArray={[]} showTitle={false}/>
             <Box w='full' h='299px' bgColor='rgba(0, 56, 77, 0.1)'></Box>
-            <ContainerBox as={imageWidth}>
-                <Box w='306px' mt='-251px'>
-                    <AsideMenu image={profile.image} email={profile.email} telefone={profile.telefone} />
+            <ContainerBox as={imageWidth} mb='100px'>
+                <Box maxW='306px' mt='-251px'>
+                    <Profile image={profile.image} email={profile.email} telefone={profile.telefone} />
                 </Box>
                 <Spacer maxW='130px'/>
-                <Box maxW='747px' mt={topMarginText} mb='100px'>
+                <Box maxW='747px' mt={topMarginText}>
                     <Text fontWeight='bold' fontSize='200%' lineHeight='140.625%'>{profile.title}</Text>
                     <Text fontWeight='bold' fontSize='350%' lineHeight='80.36%' color='tj_dark_blue' mt='16px'>{profile.name}</Text>
                     <Text fontWeight='semibold' fontSize='200%' lineHeight='118.75%' mt='96px'>Biografia</Text>

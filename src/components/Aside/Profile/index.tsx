@@ -1,13 +1,13 @@
 import { Box, Image, Text } from "@chakra-ui/react";
 import ListenPrintSharePanel from "../../ListenPrintSharePanel";
 
-interface AsideMenuImage {
+interface ProfileProps {
     image: string,
     email: string,
     telefone: string
 }
 
-export default function AsideMenu ({ image, email, telefone }:AsideMenuImage) {
+export default function Profile ({ image, email, telefone }:ProfileProps) {
     return (
         <>
             <Image src={image}/>
@@ -18,7 +18,7 @@ export default function AsideMenu ({ image, email, telefone }:AsideMenuImage) {
                 <Text fontWeight='bold' mt='16px'>Telefone</Text>
                 <Text fontWeight='normal'>{telefone}</Text>
             </Box>
-            <Box w='full' h='1px' bgColor='#00384D' mt='40px' mb='12px'></Box>
+            <Box w='full' h='1px' bgColor='tj_dark_blue' mt='40px' mb='12px'></Box>
             <ListenPrintSharePanel listOfContentToRead={[]} />
         </>
     );

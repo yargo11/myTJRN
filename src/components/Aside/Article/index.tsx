@@ -1,7 +1,7 @@
 import ListenPrintSharePanel from "../../ListenPrintSharePanel";
-import AsideMenuMidDevices from "./AsideMenuMidDevices";
+import MidDevices from "./MidDevices";
 
-export interface LeftMenuProps {
+export interface ArticleProps {
     rootLink: string,
     rootLabel: string,
     linkList: Array<AsideMenuMidDevicesItemProps>
@@ -11,10 +11,10 @@ export interface AsideMenuMidDevicesItemProps {
     label: string,
     link: string
 }
-export default function AsideMenu ({ rootLink, rootLabel, linkList }:LeftMenuProps) {
+export default function Article ({ rootLink, rootLabel, linkList }: ArticleProps) {
     return (
         <>
-            <AsideMenuMidDevices rootLink={rootLink} rootLabel={rootLabel} linkList={linkList} />
+            <MidDevices rootLink={rootLink} rootLabel={rootLabel} linkList={linkList} />
             <ListenPrintSharePanel listOfContentToRead={[]} />
         </>
     );

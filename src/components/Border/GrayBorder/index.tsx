@@ -1,7 +1,7 @@
-import { Divider, DividerProps } from "@chakra-ui/react";
+import { Box, DividerProps } from "@chakra-ui/react";
 
 export default function GrayBorder ({...attrs}:DividerProps) {
     return (
-        <Divider border='1px solid #D8DBDF' {...attrs}/>
+        <Box w='full' border='1px solid #D8DBDF' {...attrs}/>
     );
 }

@@ -2,7 +2,7 @@ import { Link } from "@chakra-ui/react";
 import {useRouter} from 'next/router';
 import { AsideMenuMidDevicesItemProps } from "../..";
 
-export default function AsideMenuMidDevicesItem ({ label, link }: AsideMenuMidDevicesItemProps) {
+export default function Item ({ label, link }: AsideMenuMidDevicesItemProps) {
     const router = useRouter();
     const { asPath } = router; //asPath,route, try with one of them, if the actual does not work
 
