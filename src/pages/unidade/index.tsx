@@ -15,6 +15,7 @@ export default function Unidade () {
                         aditionalInfo: `É a secretaria a quem compete planejar, dirigir e coordenar atividades administrativas em 
                         consonância com diretrizes da Presidência do Tribunal.`,
                         image: '/image/Forum.png',
+                        endereco: 'R. Dr. Lauro Pinto, 315 - Lagoa Nova, Natal - RN, 59064-972',
                         ultimaPublicacao: '2021-12-03T14:38:51-0300',
                         lista: [
                             {
