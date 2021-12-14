@@ -16,7 +16,7 @@ export default function Unidade () {
                         consonância com diretrizes da Presidência do Tribunal.`,
                         image: '/image/Forum.png',
                         endereco: 'R. Dr. Lauro Pinto, 315 - Lagoa Nova, Natal - RN, 59064-972',
-                        ultimaPublicacao: '2021-12-03T14:38:51-0300',
+                        ultimaAtualizacao: '2021-12-03T14:38:51-0300',
                         lista: [
                             {
                                 label: 'Horário de funcionamento',
@@ -56,7 +56,7 @@ export default function Unidade () {
             </Flex>
             <ContainerBox as={imageWidth} my='64px'>
                 <Box maxW='416px'>
-                    <Unit image={unit.image} lastUpdate={unit.ultimaPublicacao}/>
+                    <Unit image={unit.image} lastUpdate={unit.ultimaAtualizacao}/>
                 </Box>
                 <Spacer maxW='130px'/>
                 <Box maxW='747px'>

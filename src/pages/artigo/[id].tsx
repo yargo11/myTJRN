@@ -12,8 +12,9 @@ interface PageProps {
     title: string,
     subtitle: string,
     content: string
+    lastUpdate: string
 }
-export default function Page({title, subtitle, content}:PageProps) {
+export default function Page({title, subtitle, content, lastUpdate}:PageProps) {
   const display = useBreakpointValue({ base: Box, sm: Flex })
   
   const linkList=[link0,link1,link2]
@@ -38,7 +39,7 @@ export default function Page({title, subtitle, content}:PageProps) {
       <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
       <ContainerBox as={display} mt='56px' sx={{'@media print': {display: 'block'}}}>
         <Box maxW='306px'>
-          <Article rootLabel='Adoção' rootLink='#' linkList={linkList} />
+          <Article rootLabel='Adoção' rootLink='#' linkList={linkList} lastUpdate={lastUpdate}/>
         </Box>
         <Spacer />
         <Box maxW='746px'>
@@ -58,6 +59,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     props: {
       title: 'Como adotar',
       subtitle: 'Na adoção uma criança ou adolescente é acolhido por uma família, passando a ser filho ou filha na sua integralidade.',
+      lastUpdate: '2021-12-03T14:38:51-0300',
       content: `<h2>Visão geral</h2>
                 <p>A adoção começa no desejo de formar uma família, de acolher e ser acolhido(a). 
                 Os trâmites legais são fundamentais para a segurança de crianças, adolescentes e futuros pais e mães, mas o preparo emocional e a rede de apoio também são fundamentais! 

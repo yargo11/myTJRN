@@ -11,14 +11,14 @@ interface NewsProps {
 export default function News ({ newsList }: NewsProps) {
 
     return (
-        <Box w='full' py='63px' bgColor='tj_light_gray'>
+        <Box w='full' py='63px' bgColor='#F7FCEC'>
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
                 <Box w='full' mt='40px'>
                     <NewsList newsList={newsList}/>
                 </Box>
 
-                <Wrap justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
+                <Wrap minW='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
                     <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
                     <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
                     <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>

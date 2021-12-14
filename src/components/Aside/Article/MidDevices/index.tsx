@@ -1,8 +1,8 @@
 import { Box, Link, Image, useBreakpointValue } from "@chakra-ui/react";
-import { LeftMenuProps } from "..";
+import { ArticleProps } from "..";
 import Item from "./Item";
 
-export default function MidDevices ({ rootLabel, rootLink, linkList }:LeftMenuProps) {
+export default function MidDevices ({ rootLabel, rootLink, linkList }:ArticleProps) {
     const display = useBreakpointValue({ base: 'none', sm: 'block' })
     return (
         <Box display={display} className='no-print'>
