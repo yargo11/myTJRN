@@ -1,8 +1,9 @@
-import { SimpleGrid } from "@chakra-ui/react"
+import { Box, SimpleGrid } from "@chakra-ui/react"
 import ContainerBox from "../components/ContainerBox"
 import Agenda from "../components/Home/Agenda"
 import News from "../components/Home/News"
 import NewsLetter from "../components/Home/NewsLetter"
+import PJRN from "../components/Home/PJRN"
 import Productivity from "../components/Home/Productivity"
 import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
@@ -16,12 +17,15 @@ export default function Home() {
       <Search />
       <ServiceAndInformation serviceList={serviceList}/>
       <News newsList={newsList}/>
-      <ContainerBox pt='80px' pb='112px'>
-        <SimpleGrid columns={[1, 1, 2]} justifyContent='center' spacing='134px' >
-          <Productivity/>
-          <Agenda calendar={calendar} eventList={eventList}/>
-        </SimpleGrid>
-      </ContainerBox>
+      <PJRN />
+      <Box w='full' bgColor='#fff'>
+        <ContainerBox pt='80px' pb='112px'>
+          <SimpleGrid columns={[1, 1, 2]} justifyContent='center' spacing='134px' >
+            <Productivity/>
+            <Agenda calendar={calendar} eventList={eventList}/>
+          </SimpleGrid>
+        </ContainerBox>
+      </Box>
       <NewsLetter />
     </>
   )

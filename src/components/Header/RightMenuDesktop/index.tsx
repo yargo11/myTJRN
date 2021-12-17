@@ -10,7 +10,6 @@ export default function RightMenuDesktop() {
             fontFamily='Inter'
             fontWeight='medium'
             lineHeight='121%'
-            marginTop='10px'
             mx='0'
             className='no-print'>
             <Link href='#'>Webmail</Link>

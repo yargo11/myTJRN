@@ -9,8 +9,8 @@ export default function SearchButton ({ name, actualFunction, ...others }: Searc
     return (
         <Button
             bgColor='white'
-            h='57px'
-            p='16px'
+            px='16px'
+            py='24px'
             mr='8px'
             mb='8px'
             fontWeight='normal'

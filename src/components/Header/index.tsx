@@ -7,7 +7,7 @@ import RightMenuMobile from "./RightMenuMobile";
 export default function Header() {
     return (
         <ContainerBox as={Flex}
-            py='32px'
+            py='25px'
             justifyContent='space-between'
             alignItems='center' flexWrap='wrap'>
             <Link
