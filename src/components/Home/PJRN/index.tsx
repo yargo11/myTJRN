@@ -1,42 +1,32 @@
-import { Box, Center, Image, Spacer, Text, Flex } from "@chakra-ui/react";
+import { Box, GridItem, Image, Text } from "@chakra-ui/react";
 import ContainerBox from "../../ContainerBox";
 import AreaTitle from "../AreaTitle";
 import PJRNCard from "./PJRNCard";
-import PJRNDivider from "./PJRNDivider";
+import CardList from '../../CardList';
 
 export default function PJRN() {
     const unidadesList = [unidades1, unidades2, unidades3, unidades4]
     return (
         <Box maxW='1876px'>
-            <Image src="/icons/TJRNShield.svg" zIndex='-1' position='absolute' right='5.5%' width="449" height="548"/>
+            <Image src="/icons/tjrn-escudo.png" zIndex='-1' position='absolute' right='5.5%'/>
             <ContainerBox py='64px' position='relative'>
                 <AreaTitle title="Funcionamento do PJRN" subtitle="Veja a organização do Poder Judiciário "/>
-                <Center
+                <CardList
                     border='1px'
                     borderColor='#D8DBDF'
                     borderRadius='16px'
                     mt='46px'
-                    px='24px'
                     pt='44px'
                     pb='28px'
-                    sx={{
-                        '@media (min-width: 500px)': {
-                            flexDir:'row'
-                        },
-                        '@media (max-width: 499px)': {
-                            flexDir:'column'
-                        }
-                    }}>
-                    <Text fontWeight='bold' fontSize='150%' lineHeight='168.75%' textDecor='underline'>Presidência e Vice-presidência</Text>
-                    <Spacer />
+                    columnGap='0px'
+                    columns={[1,4,4,5,6]}>
+                    <GridItem  colSpan={[1,4,4,1,2]}>
+                        <Text fontWeight='bold' fontSize='150%' lineHeight='168.75%' textDecor='underline' textAlign='center'>Presidência e Vice-presidência</Text>
+                    </GridItem>
                     {unidadesList? unidadesList.map(
-                        elemento =>
-                            <Flex key={elemento.label}>
-                                <PJRNDivider/>
-                                <PJRNCard quantity={elemento.quantity} label={elemento.label}/>
-                            </Flex>
+                        elemento => <PJRNCard key={elemento.label} quantity={elemento.quantity} label={elemento.label}/>
                     ) : <></>}
-                </Center>
+                </CardList>
             </ContainerBox>
         </Box>
     );
