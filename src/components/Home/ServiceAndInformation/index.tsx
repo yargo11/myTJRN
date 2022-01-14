@@ -14,7 +14,7 @@ export default function ServiceAndInformation ({ serviceList }:ServiceAndInforma
     return (
         <ContainerBox py='64px'>
             <Flex justifyContent='space-between' wrap='wrap'>
-                <AreaTitle title='Informações e serviços' subtitle='Encontre informações e serviços do Poder Judiciario'/>
+                <AreaTitle title='Informações e serviços' subtitle='Encontre informações e serviços do Poder Judiciário'/>
                 <Select mt='16px' placeholder="Seu perfil" borderColor='tj_dark_blue' icon={SelectIcon} iconSize='34' w='160px' _hover={{ borderColor: 'tj_dark_blue'}}>
                     <option value="option1">Option 1</option>
                     <option value="option2">Option 2</option>

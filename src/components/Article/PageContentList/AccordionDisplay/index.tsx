@@ -1,11 +1,10 @@
-import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Accordion, AccordionButton, AccordionIcon, AccordionItem, AccordionPanel, Box, Image, Link, Text } from '@chakra-ui/react';
 import { PageContentProps } from '..';
 import CardList from '../../../CardList';
 
 export default function AccordionDisplay ({ headers }:PageContentProps) {
-    const display = useBreakpointValue({ base: 'initial', sm: 'none' })
     return (
-        <Accordion display={display} allowToggle>
+        <Accordion display={{ base: 'initial', sm: 'none' }} allowToggle>
             <AccordionItem>
                 <h2>
                     <AccordionButton>

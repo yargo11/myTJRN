@@ -11,7 +11,7 @@ export default function Info() {
         <Box bgColor='rgba(212, 238, 248, 0.8)' pt='64px' pb='85px'>
             <ContainerBox>
                 <AreaTitle title='Precisa de outras informações?' subtitle='Entre em contato pelos nossos Canais de Atendimento'/>
-                <CardList columns={[1,2,4]} mt='69px'>
+                <CardList columns={[1,2,2,4]} mt='69px' spacingX='0px'>
                     {infoList.map( info => <InfoCard key={info.label} label={info.label} info={info.info}/>)}
                     <Flex flexDir='column' alignContent='start' justifyContent='center' textAlign='center' color='#131D57'>
                         <Link fontWeight='bold' fontSize='131.25%' lineHeight='133.33%' href='#' mb='21px'>Unidades Administrativas</Link>

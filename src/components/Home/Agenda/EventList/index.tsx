@@ -1,4 +1,5 @@
-import { Box, Divider, Link, Text } from '@chakra-ui/react';
+import { Box, SimpleGrid } from '@chakra-ui/react';
+import Item from './Item';
 
 interface EventListProps {
     eventList: Array<Event>
@@ -12,17 +13,11 @@ export interface Event {
 
 export default function EventList ({ eventList }:EventListProps) {
     return (
-        <Box w='full'>
+        <SimpleGrid columns={1} spacing='12px'>
             {eventList? eventList.map(event =>
-                <Box key={event.link}>
-                    <Link href={event.link} mb='8px'>
-                        <Text fontWeight='bold' fontSize='112.5%' lineHeight='138.89%' color='tj_dark_blue'>{event.label}</Text>
-                        <Text fontSize='87.5%' lineHeight='142.86%'>{event.type}</Text>
-                    </Link>
-                    <Divider mb='12px'/>
-                </Box>
+                <Item key={event.link} link={event.link} label={event.label} type={event.type}/>
             )
             : <></>}
-        </Box>
+        </SimpleGrid>
     );
 }

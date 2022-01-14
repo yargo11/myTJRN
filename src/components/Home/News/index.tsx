@@ -18,11 +18,47 @@ export default function News ({ newsList }: NewsProps) {
                     <NewsList newsList={newsList}/>
                 </Box>
 
-                <Wrap minW='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Decisões Judiciais</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Seleções</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Notas à Imprensa</WrapItem>
-                    <WrapItem as={Link} fontWeight='normal' lineHeight='121%' textDecor='underline' _hover={{textDecor:'underline'}} alignSelf='center'>Mulher</WrapItem>
+                <Wrap w='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
+                    <WrapItem
+                        as={Link}
+                        fontWeight='normal'
+                        lineHeight='121%'
+                        textDecor='underline'
+                        _hover={{textDecor:'underline'}}
+                        alignSelf='center'
+                        href='#'>
+                            Decisões Judiciais
+                    </WrapItem>
+                    <WrapItem
+                        as={Link}
+                        fontWeight='normal'
+                        lineHeight='121%'
+                        textDecor='underline'
+                        _hover={{textDecor:'underline'}}
+                        alignSelf='center'
+                        href='#'>
+                            Seleções
+                    </WrapItem>
+                    <WrapItem
+                        as={Link}
+                        fontWeight='normal'
+                        lineHeight='121%'
+                        textDecor='underline'
+                        _hover={{textDecor:'underline'}}
+                        alignSelf='center'
+                        href='#'>
+                            Notas à Imprensa
+                    </WrapItem>
+                    <WrapItem
+                        as={Link}
+                        fontWeight='normal'
+                        lineHeight='121%'
+                        textDecor='underline'
+                        _hover={{textDecor:'underline'}} 
+                        alignSelf='center'
+                        href='#'>
+                            Mulher
+                    </WrapItem>
                     <WrapItem>
                         <Button
                             as={Link}

@@ -1,10 +1,7 @@
-import { Button, Menu, MenuButton, MenuItem, MenuList, useBreakpointValue } from '@chakra-ui/react';
+import { Button, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
 import { ChevronDownIcon } from '@chakra-ui/icons'
 
 export default function RightMenuMobile() {
-
-    const display = useBreakpointValue({ base: 'flex', sm: 'none' })
-
     return (
         <Menu>
             <MenuButton
@@ -16,7 +13,7 @@ export default function RightMenuMobile() {
                 w='102px'
                 backgroundColor='rgba(216, 216, 216, 0.05)'
                 borderRadius='none'
-                display={display}
+                display={{base: 'flex', sm: 'none'}}
                 leftIcon={<ChevronDownIcon />}>
                 Menu
             </MenuButton>

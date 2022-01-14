@@ -8,7 +8,6 @@ import Productivity from "../components/Home/Productivity"
 import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
 import Info from "../components/Home/Info"
-
 export default function Home() {
   const eventList = [event0, event1, event2];
   const newsList = [news0, news1, news2, news3];

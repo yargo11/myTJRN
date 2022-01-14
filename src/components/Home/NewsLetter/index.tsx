@@ -25,7 +25,7 @@ export default function NewsLetter () {
                 </Box>
                 <Wrap spacing='8px' >
                     <WrapItem>
-                        <Input w='full' maxW='388px' h='45px' display='flex' placeholder='Digite seu email' bgColor='white'/>
+                        <Input w='full' maxW='388px' h='45px' display='flex' placeholder='Digite seu email' bgColor='white' alt='Digite aqui o seu email para receber as newsletter do TJRN'/>
                     </WrapItem>
                     <WrapItem>
                         <Button

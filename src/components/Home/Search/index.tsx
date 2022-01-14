@@ -30,7 +30,7 @@ export default function Search () {
                 </Flex>
 
                 <Flex px='16px' pt='24px' bgColor='white' borderRadius='0 6px 0 0'>
-                    <Input placeholder="O que você está procurando hoje?" h='50px'/>
+                    <Input placeholder="O que você está procurando hoje?" h='50px' alt='Digite aqui o que você deseja buscar no portal do TJRN'/>
                     <Button
                         h='50px'
                         w='167px'
