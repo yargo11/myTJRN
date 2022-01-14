@@ -4,7 +4,7 @@ import Item from "./Item";
 
 export default function MidDevices ({ rootLabel, rootLink, linkList }:ArticleProps) {
     return (
-        <Box display={{ base: 'none', sm: 'block' }} className='no-print'>
+        <Box display={{ base: 'none', md: 'block' }} className='no-print'>
             <Box w='full' h='3px' bgColor='tj_dark_blue'></Box>
             <Link
                 href={rootLink}

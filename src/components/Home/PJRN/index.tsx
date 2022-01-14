@@ -8,7 +8,7 @@ export default function PJRN() {
     const unidadesList = [unidades1, unidades2, unidades3, unidades4]
     return (
         <Box maxW='1876px'>
-            <Box h='548px' w='449px' zIndex={-1} position='absolute' right='5.5%' tabIndex={-1} bgImage="url('/icons/tjrn-escudo.png')">
+            <Box h='645px' w='449px' zIndex={-1} position='absolute' right='5.5%' tabIndex={-1} bgImage="url('/image/tjrn-escudo.png')">
             </Box>
             <ContainerBox py='64px' position='relative'>
                 <AreaTitle title="Funcionamento do PJRN" subtitle="Veja a organização do Poder Judiciário "/>
