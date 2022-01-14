@@ -1,5 +1,4 @@
 import { Center, Flex, Image, Link, Spacer, Text } from '@chakra-ui/react';
-import { useBreakpointValue } from '@chakra-ui/react';
 
 interface LinkCardProps {
     index: number;
@@ -10,13 +9,10 @@ interface LinkCardProps {
 }
 
 export default function ApplicationCard ({ description, label, link, sigla, index }:LinkCardProps) {
-    const screenMediumWidth = useBreakpointValue({ base: 'none', sm: 'flex' })
-    const screenSmallWidth = useBreakpointValue({ base: 'flex', sm: 'none' })
-
     return (
         <Flex as={Link} href={link} w='full' border='1px' borderColor='#D8DBDF' borderRadius='md'>
             <Center
-                display={screenMediumWidth}
+                display={{ base: 'none', sm: 'flex' }}
                 minW='196px'
                 bg={Math.floor((index/2) + 0.5) % 2 == 0 ? 'tj_dark_blue' : 'tj_light_blue'}
                 fontWeight='semibold'
@@ -27,7 +23,7 @@ export default function ApplicationCard ({ description, label, link, sigla, inde
             </Center>
             <Flex flexDir='column' pb='19px'>
                 <Center
-                    display={screenSmallWidth}
+                    display={{ base: 'flex', sm: 'none' }}
                     w='full'
                     h='100px'
                     bg={Math.floor((index/2) + 0.5) % 2 == 0 ? 'tj_dark_blue' : 'tj_light_blue'}

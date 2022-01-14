@@ -12,7 +12,7 @@ export default function Footer () {
                 <ContainerBox>
                     <CardList columns={[1, 1, 2]}>
                     <Flex color='white' alignItems='center'>
-                        <Image src='/icons/TJRNLogo.svg'/>
+                        <Box h='73px' w='51px' bgImage="url('/icons/TJRNLogo.svg')"></Box>
                         <Box w='2px' minH='77px' mx='16px' bg='linear-gradient(90deg, #B8D272 0%, #20A0CE 100%)'></Box>
                         <Text mt='12px' fontSize='137.5%' lineHeight='121.04%' fontWeight='bold'>Poder Judiciário do <br/> Estado do Rio Grande do Norte</Text>
                     </Flex>

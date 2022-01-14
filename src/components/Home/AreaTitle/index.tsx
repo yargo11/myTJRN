@@ -1,4 +1,4 @@
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Heading } from "@chakra-ui/react";
 
 interface areaTitleProps {
     title: string;
@@ -7,9 +7,9 @@ interface areaTitleProps {
 
 export default function AreaTitle ({title, subtitle}:areaTitleProps) {
     return (
-        <Box mb='56px'>
-            <Text fontSize='225%' fontWeight='bold' color='tj_dark_blue' lineHeight='127.7%'>{title}</Text>
-            <Text fontSize='112.5%' color='#555555' lineHeight='138.8%'>{subtitle}</Text>
+        <Box>
+            <Heading as='h1' fontSize='225%' fontWeight='bold' color='tj_dark_blue' lineHeight='127.7%'>{title}</Heading>
+            <Heading as='h2' fontSize='112.5%' color='#555555' lineHeight='138.8%' mt='7px'>{subtitle}</Heading>
         </Box>
     );
 }

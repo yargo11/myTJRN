@@ -11,7 +11,7 @@ export const theme = extendTheme({
         Link:{
             baseStyle:{
                 _focus: {
-                    boxShadow: '0'
+                    boxShadow: '0 0 0 4px #FFC000'
                 },
                 _hover: {
                     textDecoration: "none",
@@ -22,8 +22,18 @@ export const theme = extendTheme({
         Button: {
             baseStyle: {
                 _focus: {
-                    boxShadow: '0'
+                    boxShadow: '0 0 0 4px #FFC000',
                 }
+            }
+        },
+        Input: {
+            defaultProps:{
+                focusBorderColor:'#FFC000',
+            }
+        },
+        Select: {
+            defaultProps:{
+                focusBorderColor:'#FFC000',
             }
         }
     },

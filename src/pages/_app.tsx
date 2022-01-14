@@ -4,7 +4,7 @@ import Header from '../components/Header';
 import { theme } from '../styles/theme';
 import {useRouter} from 'next/router';
 import AboutContent from '../components/AboutContent';
-
+import Head from 'next/head'
 
 function MyApp({ Component, pageProps }) {
 
@@ -12,12 +12,19 @@ function MyApp({ Component, pageProps }) {
   const { pathname } = router; //asPath,route, try with one of them, if the actual does not work
 
   return (
-    <ChakraProvider theme={theme}>
-      <Header />
-      <Component {...pageProps} />
-      {pathname === '/' ? <></> : <AboutContent />}
-      <Footer />
-    </ChakraProvider>
+    <>
+      <Head>
+        <title>Portal TJRN</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+        <meta name="description" content="Portal TJRN"/>
+      </Head>
+      <ChakraProvider theme={theme}>
+        <Header />
+        <Component {...pageProps} />
+        {pathname === '/' ? <></> : <AboutContent />}
+        <Footer />
+      </ChakraProvider>
+    </>
   )
 }
 

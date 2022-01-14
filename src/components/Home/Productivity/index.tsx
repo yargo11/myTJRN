@@ -6,13 +6,13 @@ export default function Productivity () {
         <Box>
             <AreaTitle title='Produtividade' subtitle='Veja informações de produção do Poder Judiciário'/>
             <Divider mb='16px' mt='34px'/>
-            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue'>Produtividade semanal do Poder Judiciário</Link>
+            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue' href='#'>Produtividade semanal do Poder Judiciário</Link>
             <Divider my='16px'/>
-            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue'>Estatísticas</Link>
+            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue' href='#'>Estatísticas</Link>
             <Divider my='16px'/>
-            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue'>Centro de Inteligência</Link>
+            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue' href='#'>Centro de Inteligência</Link>
             <Divider my='16px'/>
-            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue'>Carta de serviços ao cidadão</Link>
+            <Link fontSize='131.25%' fontWeight='bold' lineHeight='119.05%' color='tj_dark_blue' href='#'>Carta de serviços ao cidadão</Link>
             <Divider my='16px'/>
         </Box>
     );

@@ -4,6 +4,8 @@
 
 [Documentação do pm2](https://pm2.keymetrics.io/docs/usage/process-management/)
 
+[Documentação de acessibilidade](https://docs.google.com/document/d/10xaNhYiToJ1Wb5bPsqyGyV4QcGrtdI7iSa2OLK1xCBI/edit?usp=sharing)
+
 # Requisitos
 * node 14
 * yarn

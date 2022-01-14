@@ -32,7 +32,6 @@ export default function Perfil () {
 
 
     const imageWidth = useBreakpointValue({ base: Box, sm: Flex })
-    const topMarginText = useBreakpointValue({ base: '0px', sm: '-154px'  })
     return (
         <>
             <PageTitle title='Desembargador Vivaldo Pinheiro' breadCrumbArray={[]} showTitle={false}/>
@@ -42,7 +41,7 @@ export default function Perfil () {
                     <Profile image={profile.image} email={profile.email} telefone={profile.telefone} />
                 </Box>
                 <Spacer maxW='130px'/>
-                <Box maxW='747px' mt={topMarginText}>
+                <Box maxW='747px' mt={{ base: '0px', sm: '-154px'  }}>
                     <Text fontWeight='bold' fontSize='200%' lineHeight='140.625%'>{profile.title}</Text>
                     <Text fontWeight='bold' fontSize='350%' lineHeight='80.36%' color='tj_dark_blue' mt='16px'>{profile.name}</Text>
                     <Text fontWeight='semibold' fontSize='200%' lineHeight='118.75%' mt='96px'>Biografia</Text>

@@ -1,4 +1,4 @@
-import { Center, Spacer, useBreakpointValue } from '@chakra-ui/react'
+import { Center, Spacer } from '@chakra-ui/react'
 import { PaginationProps } from '..';
 import PaginationButton from "../PaginationButton";
 import PaginationButtonArray from '../PaginationButtonArray';
@@ -28,16 +28,12 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
         Array.from({length: paginationRange}, (_,k:number) => k + endingRange + 1)
         : Array.from({length: paginationFinalMargin}, (_,k:number) => k + numberOfPages - paginationFinalMargin + 1);
 
-    const fullDisplay = useBreakpointValue({ base: 'none', lg: 'inline-flex' })
-
-    const display = useBreakpointValue({ base: 'none', md: 'flex' })
-
     return (
         <>
             { numberOfPages > currentPage ? 
-                <Center w='full' display={display}>
+                <Center w='full' display={{ base: 'none', md: 'flex' }}>
                     <PaginationButton
-                        display={fullDisplay}
+                        display={{ base: 'none', lg: 'inline-flex' }}
                         isDisabled={currentPage === 0}
                         active={false}
                         key={previousLabel}
@@ -77,7 +73,7 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
                     : <PaginationButtonArray numbers={Array.from({length: numberOfPages}, (_,k:number) => k + 1)} currentPage={currentPage} onClickFunction={onClickFunction} />}
 
                     <PaginationButton
-                        display={fullDisplay}
+                        display={{ base: 'none', lg: 'inline-flex' }}
                         isDisabled={currentPage === numberOfPages - 1}
                         active={false}
                         key={nextLabel}

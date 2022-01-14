@@ -1,11 +1,10 @@
-import { Box, Divider, Image, Link, Text, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Divider, Image, Link, Text } from '@chakra-ui/react';
 import { PageContentProps } from '..';
 import CardList from '../../../CardList';
 
 export default function GridDisplay ({ headers }:PageContentProps) {
-    const display = useBreakpointValue({ base: 'none', sm: 'initial' })
     return (
-        <Box display={display}>
+        <Box display={{ base: 'none', sm: 'initial' }}>
             <Text lineHeight='121%'>Nesta Página</Text>
             <Divider my='16px'/>
             <CardList columns={2} >

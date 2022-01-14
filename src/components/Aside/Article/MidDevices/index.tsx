@@ -1,11 +1,10 @@
-import { Box, Link, Image, useBreakpointValue } from "@chakra-ui/react";
+import { Box, Link, Image } from "@chakra-ui/react";
 import { ArticleProps } from "..";
 import Item from "./Item";
 
 export default function MidDevices ({ rootLabel, rootLink, linkList }:ArticleProps) {
-    const display = useBreakpointValue({ base: 'none', sm: 'block' })
     return (
-        <Box display={display} className='no-print'>
+        <Box display={{ base: 'none', sm: 'block' }} className='no-print'>
             <Box w='full' h='3px' bgColor='tj_dark_blue'></Box>
             <Link
                 href={rootLink}
