@@ -38,7 +38,7 @@ export default function AboutContent () {
                     </Box>
                 </Center>
                 <Spacer />
-                <Link fontSize='87.5%' fontWeight='125%' textDecor='underline' _hover={{textDecor:'underline'}}>Relatar problema com esta página</Link>
+                <Link href='#' fontSize='87.5%' fontWeight='125%' textDecor='underline' _hover={{textDecor:'underline'}}>Relatar problema com esta página</Link>
             </ContainerBox>
         </Box>
     );

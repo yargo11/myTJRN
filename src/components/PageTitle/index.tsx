@@ -16,7 +16,7 @@ interface PageTitleProps {
     description?: string;
 }
 
-export default function PageTitle ({breadCrumbArray, description, showTitle, title}:PageTitleProps) {
+export default function PageTitle({ breadCrumbArray, description, showTitle, title }: PageTitleProps) {
     return (
         <>
             <GradientBorder />
@@ -26,17 +26,17 @@ export default function PageTitle ({breadCrumbArray, description, showTitle, tit
                         <BreadcrumbItem>
                             <BreadcrumbLink href='/'>Início</BreadcrumbLink>
                         </BreadcrumbItem>
-                        {breadCrumbArray? breadCrumbArray.map(breadcrumb =>
-                        <BreadcrumbItem key={breadcrumb.label}>
-                            <BreadcrumbLink href={breadcrumb.link}>{breadcrumb.label}</BreadcrumbLink>
-                        </BreadcrumbItem>) : 
-                        <></>}
-                        <BreadcrumbItem>
-                            <BreadcrumbLink isCurrentPage>{title}</BreadcrumbLink>
+                        {breadCrumbArray ? breadCrumbArray.map(breadcrumb =>
+                            <BreadcrumbItem key={breadcrumb.label}>
+                                <BreadcrumbLink href={breadcrumb.link}>{breadcrumb.label}</BreadcrumbLink>
+                            </BreadcrumbItem>) :
+                            <></>}
+                        <BreadcrumbItem isCurrentPage>
+                            <BreadcrumbLink>{title}</BreadcrumbLink>
                         </BreadcrumbItem>
                     </Breadcrumb>
                     {showTitle === true ? <Text fontWeight='bold' fontSize='225%' lineHeight='127.77%' mt='32px' mb='16px'>{title}</Text> : <></>}
-                    {description ? <Text maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='138.88%' mb='32px'>{description}</Text>:<></> }
+                    {description ? <Text maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='138.88%' mb='32px'>{description}</Text> : <></>}
                 </ContainerBox>
             </Box>
         </>

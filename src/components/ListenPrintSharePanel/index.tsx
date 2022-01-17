@@ -6,18 +6,18 @@ interface ListenPrintSharePanelProps {
     listOfContentToRead: Array<string>;
 }
 
-export default function ListenPrintSharePanel ({ listOfContentToRead } :ListenPrintSharePanelProps) {
+export default function ListenPrintSharePanel({ listOfContentToRead }: ListenPrintSharePanelProps) {
     const [shareModalOpenState, setShareModalOpenState] = useState(false);
 
-    function handleOpenShareModal () {
+    function handleOpenShareModal() {
         setShareModalOpenState(true);
     }
 
-    function handleCloseShareModal () {
+    function handleCloseShareModal() {
         setShareModalOpenState(false);
     }
 
-    function handleListenFunction () {
+    function handleListenFunction() {
         listOfContentToRead.map(contentToRead => {
             speechSynthesis.speak(new SpeechSynthesisUtterance(contentToRead))
         });
@@ -26,19 +26,19 @@ export default function ListenPrintSharePanel ({ listOfContentToRead } :ListenPr
     return (
         <>
             <Flex className='no-print' alignItems='center'>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg'/>} onClick={handleOpenShareModal}>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg' w='1rem' h='1rem'/>} onClick={handleOpenShareModal}>
                     Compartilhar
                 </Button>
-                <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%'/>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Print.svg'/>} onClick={() => {window.print();}}>
+                <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%' />
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Print.svg' w='1rem' h='1rem'/>} onClick={() => { window.print(); }}>
                     Imprimir
                 </Button>
-                <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%'/>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Listen.svg'/>} onClick={handleListenFunction}>
+                <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%' />
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Listen.svg' w='1rem' h='1rem'/>} onClick={handleListenFunction}>
                     Ouvir
                 </Button>
             </Flex>
-            <ShareModal isShareModalOpen={shareModalOpenState} handleCloseShareModal={handleCloseShareModal}/>
+            <ShareModal isShareModalOpen={shareModalOpenState} handleCloseShareModal={handleCloseShareModal} />
         </>
     );
 }
