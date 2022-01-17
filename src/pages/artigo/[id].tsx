@@ -4,7 +4,7 @@ import PageTitle from '../../components/PageTitle';
 import PageContentList from '../../components/Article/PageContentList';
 import AreaTitle from '../../components/Home/AreaTitle';
 import ContainerBox from '../../components/ContainerBox';
-import { Box, Flex, Spacer, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, GridItem, SimpleGrid, Spacer, useBreakpointValue } from '@chakra-ui/react';
 import Article from '../../components/Aside/Article';
 
 
@@ -15,8 +15,6 @@ interface PageProps {
     lastUpdate: string
 }
 export default function Page({title, subtitle, content, lastUpdate}:PageProps) {
-  const display = useBreakpointValue({ base: Box, sm: Flex })
-  
   const linkList=[link0,link1,link2]
 
   const breadcrumblist = [breadcrumb1, breadcrumb2];
@@ -37,16 +35,17 @@ export default function Page({title, subtitle, content, lastUpdate}:PageProps) {
   return (
     <>
       <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
-      <ContainerBox as={display} mt='56px' sx={{'@media print': {display: 'block'}}}>
-        <Box maxW='306px'>
-          <Article rootLabel='Adoção' rootLink='#' linkList={linkList} lastUpdate={lastUpdate}/>
-        </Box>
-        <Spacer />
-        <Box maxW='746px'>
-          <AreaTitle title={title} subtitle={subtitle}/>
-          <PageContentList headers={pageTitles}/>
-          {parse(content)}
-        </Box>
+      <ContainerBox mt='56px' sx={{'@media print': {display: 'block'}}}>
+        <SimpleGrid columns={{base: 2, md: 3}} spacingX='30px'>
+          <GridItem colSpan={{base: 2, md: 1}}>
+            <Article rootLabel='Adoção' rootLink='#' linkList={linkList} lastUpdate={lastUpdate}/>
+          </GridItem>
+          <GridItem colSpan={2}>
+            <AreaTitle title={title} subtitle={subtitle}/>
+            <PageContentList headers={pageTitles}/>
+            {parse(content)}
+          </GridItem>
+        </SimpleGrid>
       </ContainerBox>
     </>
   );

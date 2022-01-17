@@ -1,4 +1,4 @@
-import { Flex, Box, Spacer, Text, useBreakpointValue } from "@chakra-ui/react";
+import { Flex, Box, Spacer, Text, useBreakpointValue, SimpleGrid, GridItem } from "@chakra-ui/react";
 import Profile from "../../components/Aside/Profile";
 import ContainerBox from "../../components/ContainerBox";
 import PageTitle from "../../components/PageTitle";
@@ -35,20 +35,21 @@ export default function Perfil () {
     return (
         <>
             <PageTitle title='Desembargador Vivaldo Pinheiro' breadCrumbArray={[]} showTitle={false}/>
-            <Box w='full' h='299px' bgColor='rgba(0, 56, 77, 0.1)'></Box>
+            <Box w='full' h='299px' bgColor='rgba(0, 56, 77, 0.1)' zIndex={-1} position='absolute' tabIndex={-1}></Box>
             <ContainerBox as={imageWidth} mb='100px'>
-                <Box maxW='306px' mt='-251px'>
-                    <Profile image={profile.image} email={profile.email} telefone={profile.telefone} />
-                </Box>
-                <Spacer maxW='130px'/>
-                <Box maxW='747px' mt={{ base: '0px', sm: '-154px'  }}>
+            <SimpleGrid columns={{base: 2, md: 3}} spacingX='30px'>
+                <GridItem colSpan={{base: 2, md: 1}} pt='48px'>
+                    <Profile image={profile.image} email={profile.email} telefone={profile.telefone}/>
+                </GridItem>
+                <GridItem colSpan={2} py={{base: '30px', md:'145px'}}>
                     <Text fontWeight='bold' fontSize='200%' lineHeight='140.625%'>{profile.title}</Text>
                     <Text fontWeight='bold' fontSize='350%' lineHeight='80.36%' color='tj_dark_blue' mt='16px'>{profile.name}</Text>
                     <Text fontWeight='semibold' fontSize='200%' lineHeight='118.75%' mt='96px'>Biografia</Text>
                     <Text fontWeight='normal' fontSize='112.5%' lineHeight='177.78%' letterSpacing='-0.26px' mt='35.36px'>{profile.biography}</Text>
                     <Text fontWeight='semibold' fontSize='200%' lineHeight='118.75%' mt='57.37px'>{profile.title}</Text>
                     <Text fontWeight='normal' fontSize='112.5%' lineHeight='177.78%' letterSpacing='-0.26px' mt='35.36px'>{profile.titleDescription}</Text>
-                </Box>
+                    </GridItem>
+                </SimpleGrid>
             </ContainerBox>
         </>
     );
