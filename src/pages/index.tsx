@@ -22,7 +22,7 @@ export default function Home() {
       <Info />
       <Box w='full' bgColor='#fff'>
         <ContainerBox pt='80px' pb='112px'>
-          <SimpleGrid columns={[1, 1, 2]} justifyContent='center' spacing='134px' >
+          <SimpleGrid columns={[1, 1, 2]} justifyContent='center' spacingX='134px' spacingY='50px'>
             <Productivity/>
             <Agenda calendar={calendar} eventList={eventList}/>
           </SimpleGrid>
