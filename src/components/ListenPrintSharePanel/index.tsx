@@ -25,7 +25,7 @@ export default function ListenPrintSharePanel({ listOfContentToRead }: ListenPri
 
     return (
         <>
-            <Flex className='no-print' alignItems='center'>
+            <Flex className='no-print' alignItems='center' fontWeight='bold'>
                 <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg' w='1rem' h='1rem'/>} onClick={handleOpenShareModal}>
                     Compartilhar
                 </Button>
