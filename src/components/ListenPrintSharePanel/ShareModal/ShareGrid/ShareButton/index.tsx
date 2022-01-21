@@ -9,6 +9,7 @@ interface ShareButtonProps {
 export default function ShareButton ({applicationShareLinkCode, icon, label}: ShareButtonProps) {
     return (
         <Link
+            aria-label={`Compartilhar no ${label}`}
             href={applicationShareLinkCode}
             target="_blank"
             display='flex'

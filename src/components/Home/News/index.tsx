@@ -6,9 +6,15 @@ import { NewsCardProps } from "../../NewsList/NewsCard";
 
 interface NewsProps {
     newsList: Array<NewsCardProps>;
+    categoryList: Array<CategoryProps>
 }
 
-export default function News ({ newsList }: NewsProps) {
+export interface CategoryProps {
+    id: number,
+    nome: string
+}
+
+export default function News ({ newsList, categoryList }: NewsProps) {
 
     return (
         <Box w='full' py='63px' bgColor='#F7FCEC'>
@@ -19,46 +25,20 @@ export default function News ({ newsList }: NewsProps) {
                 </Box>
 
                 <Wrap w='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
-                    <WrapItem
-                        as={Link}
-                        fontWeight='normal'
-                        lineHeight='121%'
-                        textDecor='underline'
-                        _hover={{textDecor:'underline'}}
-                        alignSelf='center'
-                        href='#'>
-                            Decisões Judiciais
-                    </WrapItem>
-                    <WrapItem
-                        as={Link}
-                        fontWeight='normal'
-                        lineHeight='121%'
-                        textDecor='underline'
-                        _hover={{textDecor:'underline'}}
-                        alignSelf='center'
-                        href='#'>
-                            Seleções
-                    </WrapItem>
-                    <WrapItem
-                        as={Link}
-                        fontWeight='normal'
-                        lineHeight='121%'
-                        textDecor='underline'
-                        _hover={{textDecor:'underline'}}
-                        alignSelf='center'
-                        href='#'>
-                            Notas à Imprensa
-                    </WrapItem>
-                    <WrapItem
-                        as={Link}
-                        fontWeight='normal'
-                        lineHeight='121%'
-                        textDecor='underline'
-                        _hover={{textDecor:'underline'}} 
-                        alignSelf='center'
-                        href='#'>
-                            Mulher
-                    </WrapItem>
+                    {categoryList? categoryList.map(
+                        category =>
+                            <WrapItem
+                                as={Link}
+                                key={category.id}
+                                fontWeight='normal'
+                                lineHeight='121%'
+                                textDecor='underline'
+                                _hover={{textDecor:'underline'}}
+                                alignSelf='center'
+                                href='#'>
+                                    {category.nome}
+                            </WrapItem>
+                    ) : <></>}
                     <WrapItem>
                         <Button
                             as={Link}

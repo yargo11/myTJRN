@@ -1,6 +1,6 @@
 import { Center } from '@chakra-ui/react'
-import MidDevicesPagination from './MidDevicesPagination.tsx';
-import SmallDevicesPagination from './SmallDevicesPagination.tsx';
+import MidDevicesPagination from './MidDevicesPagination';
+import SmallDevicesPagination from './SmallDevicesPagination';
 
 export interface PaginationProps {
     currentPage: number;

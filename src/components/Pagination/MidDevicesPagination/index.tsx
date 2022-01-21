@@ -39,20 +39,16 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
                         key={previousLabel}
                         label={previousLabel}
                         onClickFunction={() => onClickFunction(currentPage - 1)}/>
-                    
                     <Spacer maxW='4px'/>
                     
                     {numberOfPages > paginationRange ?
                         <>
                             <PaginationButtonArray numbers={initialRangeButtons} currentPage={currentPage} onClickFunction={onClickFunction} />
                             {currentPage >= paginationRange - 1?
-                                <>
-                                    <PaginationButton
-                                        active={false}
-                                        key={skipGap.toString + ' anteriores'}
-                                        label={breakLabel} onClickFunction={() => onClickFunction(minGap)}/>
-                                    <Spacer maxW='4px'/>
-                                </>
+                                <PaginationButton
+                                    active={false}
+                                    key={skipGap.toString + ' anteriores'}
+                                    label={breakLabel} onClickFunction={() => onClickFunction(minGap)}/>
                             :<></>}
 
                             {currentPage >= paginationRange - 1 && currentPage <= endingRange ?
@@ -60,18 +56,16 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
                             :<></>}
 
                             {currentPage <= endingRange || currentPage < paginationRange - 1 ?
-                                <>
-                                    <PaginationButton
-                                        active={false}
-                                        key={skipGap.toString + ' próximas'}
-                                        label={breakLabel} onClickFunction={() => onClickFunction(maxGap)}/>
-                                    <Spacer maxW='4px'/>
-                                </>
+                                <PaginationButton
+                                    active={false}
+                                    key={skipGap.toString + ' próximas'}
+                                    label={breakLabel} onClickFunction={() => onClickFunction(maxGap)}/>
                             :<></>}
                             <PaginationButtonArray numbers={finalRangeButtons} currentPage={currentPage} onClickFunction={onClickFunction} />
                         </>
                     : <PaginationButtonArray numbers={Array.from({length: numberOfPages}, (_,k:number) => k + 1)} currentPage={currentPage} onClickFunction={onClickFunction} />}
 
+                    <Spacer maxW='4px'/>
                     <PaginationButton
                         display={{ base: 'none', lg: 'inline-flex' }}
                         isDisabled={currentPage === numberOfPages - 1}

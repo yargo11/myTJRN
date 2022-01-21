@@ -1,20 +1,25 @@
 import { Image, Text, Link } from '@chakra-ui/react';
 
 export interface NewsCardProps {
-    imgPath?: string;
-    date: string;
-    title: string;
-    link: string;
+    id: number,
+    titulo: string,
+    tituloUrl: string
+    urlImg?: string,
+    dataPublicacao: string
 }
 
-export default function NewsCard ({imgPath, date, title, link}:NewsCardProps) {
+export default function NewsCard ({urlImg, dataPublicacao, titulo, tituloUrl}:NewsCardProps) {
     return (
-        <Link href={link} w='full' mb='14px'>
-            <Image w='306px' h='204px' borderRadius='8px' src={imgPath ?? '/image/NewsTmpImage.png'} alt={"notícia "}/>
+        <Link href={`/noticias/${tituloUrl}`} w='full' mb='14px'>
+            <Image w='306px' h='204px' borderRadius='8px' src={urlImg?? '/image/NewsTmpImage.png'} alt={"notícia "}/>
             <Text mt='16px' mb='8px' fontSize='75%' fontWeight='medium' lineHeight='141.66%' color='#888889'>
-                {date.substring(8) + '/' + date.substring(5,7) + '/' + date.substring(0,4)}
+                {new Date(dataPublicacao).toLocaleDateString('pt-BR', {
+                day: '2-digit',
+                month: 'long',
+                year: 'numeric'
+            })}
             </Text>
-            <Text fontSize='112.5%' fontWeight='medium' lineHeight='138.88%' color='tj_light_blue'>{title}</Text>
+            <Text fontSize='112.5%' fontWeight='medium' lineHeight='138.88%' color='tj_light_blue'>{titulo}</Text>
         </Link>
     );
 }

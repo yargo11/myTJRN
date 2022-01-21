@@ -1,23 +1,30 @@
 import { Box, SimpleGrid } from "@chakra-ui/react"
 import ContainerBox from "../components/ContainerBox"
 import Agenda from "../components/Home/Agenda"
-import News from "../components/Home/News"
+import News, { CategoryProps } from "../components/Home/News"
 import NewsLetter from "../components/Home/NewsLetter"
 import PJRN from "../components/Home/PJRN"
 import Productivity from "../components/Home/Productivity"
 import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
 import Info from "../components/Home/Info"
-export default function Home() {
+import { GetServerSideProps } from 'next';
+import { NewsCardProps } from "../components/NewsList/NewsCard"
+
+interface HomePropsInterface {
+  newsList: Array<NewsCardProps>
+  categoryList: Array<CategoryProps>
+}
+
+export default function Home({ newsList, categoryList }: HomePropsInterface) {
   const eventList = [event0, event1, event2];
-  const newsList = [news0, news1, news2, news3];
   const serviceList = [service0, service1, service2, service3, service4, service5, service6, service7, service8, service9, service10, service11, service12, service13, service14, service15];
   const calendar = { weekday:'TER', monthday:19, month:'OUT'};
   return (
     <>
       <Search />
       <ServiceAndInformation serviceList={serviceList}/>
-      <News newsList={newsList}/>
+      <News newsList={newsList} categoryList={categoryList}/>
       <PJRN />
       <Info />
       <Box w='full' bgColor='#fff'>
@@ -33,14 +40,24 @@ export default function Home() {
   )
 }
 
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  let newsApiResult = await ((await fetch(`${process.env.BACKEND_URL}noticias/home?noticia-size=4&assuntos-size=4`, {
+    method: 'GET'
+  })).json())
+
+  
+  return {
+    props: {
+      newsList: newsApiResult.noticias,
+      categoryList: newsApiResult.assuntos
+    },
+  }
+}
+
 const event0 = {label: 'Sessão da Terceira Câmara Cível', type: 'Ordinária', link:'#'}
 const event1 = {label: 'Sessão da Primeira Câmara Cível', type: 'Ordinária', link:'#'}
 const event2 = {label: 'Sessão da Câmara Criminal', type: 'Ordinária', link:'#'}
-
-const news0 = {id:0, date:'2019-12-28', title:'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '#'}
-const news1 = {id:1, date:'2020-01-20', title:'Comarca de Touros seleciona estagiário de pós-graduação em Direito', link: '#'}
-const news2 = {id:2, date:'2020-01-17', title:'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '#'}
-const news3 = {id:3, date:'2019-12-16', title:'Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN', link: '#'}
 
 const service0 = {id:0, label: 'Consultas na justiça', description: 'Conheça seus direitos, processos legais, tribunais e mais', link: '#'}
 const service1 = {id:1, label: 'Produtos do Tribunal', description: 'Acórdãos, Decisões, Pareceres, Relatórios, Sentenças e mais', link: '#'}
