@@ -1,11 +1,17 @@
 import { NextApiRequest, NextApiResponse } from "next"
 
 export default async (request: NextApiRequest, response: NextApiResponse) => {
-    let body = JSON.parse(request.body)
-    
+    let body = await JSON.parse(request.body)
+
     let newsApiResult = await ((await fetch(`${process.env.BACKEND_URL}noticias?page=${body.page}&size=${body.pageSize}`, {
         method: 'GET'
-    })).json())
+      })).json()).catch(
+      error => {
+        console.log(error)
+        newsApiResult = {noticias: [], assuntos: []}
+      }
+    )
+
     if (newsApiResult.content.length) {
         return response.status(200).setHeader('Content-Type', 'application/json').send(newsApiResult.content);
     } else {

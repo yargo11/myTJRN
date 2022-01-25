@@ -1,7 +1,7 @@
 import { Box, SimpleGrid } from "@chakra-ui/react"
 import ContainerBox from "../components/ContainerBox"
 import Agenda from "../components/Home/Agenda"
-import News, { CategoryProps } from "../components/Home/News"
+import News, { CategoryProps, NewsProps } from "../components/Home/News"
 import NewsLetter from "../components/Home/NewsLetter"
 import PJRN from "../components/Home/PJRN"
 import Productivity from "../components/Home/Productivity"
@@ -9,14 +9,12 @@ import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
 import Info from "../components/Home/Info"
 import { GetServerSideProps } from 'next';
-import { NewsCardProps } from "../components/NewsList/NewsCard"
 
 interface HomePropsInterface {
-  newsList: Array<NewsCardProps>
-  categoryList: Array<CategoryProps>
+  news: NewsProps
 }
 
-export default function Home({ newsList, categoryList }: HomePropsInterface) {
+export default function Home({ news }: HomePropsInterface) {
   const eventList = [event0, event1, event2];
   const serviceList = [service0, service1, service2, service3, service4, service5, service6, service7, service8, service9, service10, service11, service12, service13, service14, service15];
   const calendar = { weekday:'TER', monthday:19, month:'OUT'};
@@ -24,7 +22,7 @@ export default function Home({ newsList, categoryList }: HomePropsInterface) {
     <>
       <Search />
       <ServiceAndInformation serviceList={serviceList}/>
-      <News newsList={newsList} categoryList={categoryList}/>
+      <News noticias={news.noticias} assuntos={news.assuntos}/>
       <PJRN />
       <Info />
       <Box w='full' bgColor='#fff'>
@@ -45,12 +43,37 @@ export const getServerSideProps: GetServerSideProps = async () => {
   let newsApiResult = await ((await fetch(`${process.env.BACKEND_URL}noticias/home?noticia-size=4&assuntos-size=4`, {
     method: 'GET'
   })).json())
-
+  /*
+  let newsApiResult;
   
+  await fetch(`${process.env.BACKEND_URL}noticias/home?noticia-size=4&assuntos-size=4`, {
+    method: 'GET'
+  }).then(
+    response => {
+      newsApiResult = response.json().then(
+        result => {
+          console.log(result);
+          newsApiResult = result;
+        }
+      ).catch(
+        error => {
+          console.log(error);
+          newsApiResult = {noticias: [], assuntos: []};
+        }
+      )
+    }
+  ).catch(
+    error => {
+      console.log(error);
+      newsApiResult = {noticias: [], assuntos: []};
+    }
+  )
+
+  console.log(newsApiResult);
+*/
   return {
     props: {
-      newsList: newsApiResult.noticias,
-      categoryList: newsApiResult.assuntos
+      news: newsApiResult
     },
   }
 }

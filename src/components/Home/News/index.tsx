@@ -4,9 +4,9 @@ import AreaTitle from "../AreaTitle";
 import NewsList from "../../NewsList";
 import { NewsCardProps } from "../../NewsList/NewsCard";
 
-interface NewsProps {
-    newsList: Array<NewsCardProps>;
-    categoryList: Array<CategoryProps>
+export interface NewsProps {
+    noticias?: Array<NewsCardProps>;
+    assuntos: Array<CategoryProps>
 }
 
 export interface CategoryProps {
@@ -14,18 +14,17 @@ export interface CategoryProps {
     nome: string
 }
 
-export default function News ({ newsList, categoryList }: NewsProps) {
-
+export default function News ({ noticias, assuntos }: NewsProps) {
     return (
         <Box w='full' py='63px' bgColor='#F7FCEC'>
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
                 <Box w='full' mt='40px'>
-                    <NewsList newsList={newsList}/>
+                    {noticias? <NewsList newsList={noticias}/>:<></>}
                 </Box>
 
                 <Wrap w='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
-                    {categoryList? categoryList.map(
+                    {assuntos? assuntos.map(
                         category =>
                             <WrapItem
                                 as={Link}
