@@ -9,6 +9,7 @@ import Search from "../components/Home/Search"
 import ServiceAndInformation from "../components/Home/ServiceAndInformation"
 import Info from "../components/Home/Info"
 import { GetServerSideProps } from 'next';
+import { TIMEOUT } from "dns"
 
 interface HomePropsInterface {
   news: NewsProps
@@ -40,37 +41,29 @@ export default function Home({ news }: HomePropsInterface) {
 
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  let newsApiResult = await ((await fetch(`${process.env.BACKEND_URL}noticias/home?noticia-size=4&assuntos-size=4`, {
-    method: 'GET'
-  })).json())
-  /*
-  let newsApiResult;
-  
-  await fetch(`${process.env.BACKEND_URL}noticias/home?noticia-size=4&assuntos-size=4`, {
+
+  let newsApiResult = await fetch(`${process.env.BACKEND_URL}noticias/home?noticia-size=4&assuntos-size=4`, {
     method: 'GET'
   }).then(
     response => {
-      newsApiResult = response.json().then(
+      return response.json().then(
         result => {
-          console.log(result);
-          newsApiResult = result;
+          return result;
         }
       ).catch(
         error => {
           console.log(error);
-          newsApiResult = {noticias: [], assuntos: []};
+          return {noticias: [], assuntos: []};
         }
       )
     }
   ).catch(
     error => {
       console.log(error);
-      newsApiResult = {noticias: [], assuntos: []};
+      return {noticias: [], assuntos: []};
     }
   )
 
-  console.log(newsApiResult);
-*/
   return {
     props: {
       news: newsApiResult

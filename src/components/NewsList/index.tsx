@@ -9,16 +9,23 @@ export interface NewsListProps {
 
 export default function NewsList ({ categoryFilterLabel, categoryFilterDescription, newsList }:NewsListProps) {
     return (
-        <CardList categoryFilterLabel={categoryFilterLabel} categoryFilterDescription={categoryFilterDescription} columns={[1,2,3,4]}>
-            {newsList ? newsList.map(news =>
-                <NewsCard
-                    key={news.id}
-                    id={news.id}
-                    dataPublicacao={news.dataPublicacao}
-                    titulo={news.titulo}
-                    tituloUrl={news.tituloUrl}
-                    urlImg={news.urlImg}/>
-            ) : <></>}
-        </CardList>
+        <>
+            {newsList ?
+                <CardList
+                    categoryFilterLabel={categoryFilterLabel}
+                    categoryFilterDescription={categoryFilterDescription}
+                    columns={[1,2,3,4]}>
+                    {newsList.map(news =>
+                        <NewsCard
+                            key={news.id}
+                            id={news.id}
+                            dataPublicacao={news.dataPublicacao}
+                            titulo={news.titulo}
+                            tituloUrl={news.tituloUrl}
+                            urlImg={news.urlImg}/>
+                    )}
+                </CardList>
+            : <></>}
+        </>
     );
 }

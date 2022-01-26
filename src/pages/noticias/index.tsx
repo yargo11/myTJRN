@@ -59,9 +59,27 @@ export default function Noticias ({newsList, totalPages}:NoticiaProps) {
 }
 
 export const getServerSideProps: GetServerSideProps = async () => {
-    let newsApiResult = await ((await fetch(`${process.env.BACKEND_URL}noticias?page=0&size=${pageSize}`, {
-      method: 'GET'
-    })).json())
+    let newsApiResult = await fetch(`${process.env.BACKEND_URL}noticias?page=0&size=${pageSize}`, {
+        method: 'GET'
+    }).then(
+        response => {
+            return response.json().then(
+                result => {
+                    return result;
+                }
+            ).catch(
+                error => {
+                    console.log(error);
+                    return {content: [], totalPages: 0};
+                }
+            )
+        }
+    ).catch(
+        error => {
+            console.log(error);
+            return {content: [], totalPages: 0};
+        }
+    )
   
     return {
       props: {

@@ -20,7 +20,7 @@ export default function News ({ noticias, assuntos }: NewsProps) {
             <ContainerBox>
                 <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
                 <Box w='full' mt='40px'>
-                    {noticias? <NewsList newsList={noticias}/>:<></>}
+                    <NewsList newsList={noticias}/>
                 </Box>
 
                 <Wrap w='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>

@@ -46,18 +46,38 @@ export default function Noticia({ titulo, categoria, ultimaModificacao, corpo }:
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const { id } = context.query;
-    let newsApiResult = await ((await fetch(`${process.env.BACKEND_URL}noticias/${id}`, {
+    let newsApiResult = await fetch(`${process.env.BACKEND_URL}noticias/${id}`, {
         method: 'GET'
-      })).json())
+    }).then(
+        response => {
+            return response.json().then(
+                result => {
+                    return result;
+                }
+            ).catch(
+                error => {
+                    console.log(error);
+                    return {titulo: '', assunto: '', dataAtualizacao: null, dataPublicacao: null, corpo: '<h1>Notícia não encontrada</h1>'};
+                }
+            )
+        }
+    ).catch(
+        error => {
+            console.log(error);
+            return {titulo: '', assunto: '', dataAtualizacao: null, dataPublicacao: null, corpo: '<h1>Notícia não encontrada</h1>'};
+        }
+    )
+
     return {
         props: {
             titulo: newsApiResult.titulo,
             categoria: newsApiResult.assunto,
-            ultimaModificacao: new Date(newsApiResult.dataAtualizacao).toLocaleDateString('pt-BR', {
-                day: '2-digit',
-                month: 'long',
-                year: 'numeric'
-            }),
+            ultimaModificacao: new Date(newsApiResult.dataAtualizacao ? newsApiResult.dataAtualizacao : newsApiResult.dataPublicacao)
+                .toLocaleDateString('pt-BR', {
+                    day: '2-digit',
+                    month: 'long',
+                    year: 'numeric'
+                }),
             corpo: newsApiResult.corpo
         },
     }
