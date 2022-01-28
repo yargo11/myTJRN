@@ -1,4 +1,4 @@
-import { Spacer } from '@chakra-ui/react';
+import { Center, Spacer } from '@chakra-ui/react';
 import PaginationButton from "../PaginationButton";
 
 interface PaginationButtonArrayProps {
@@ -11,14 +11,13 @@ export default function PaginationButtonArray ({ numbers, currentPage, onClickFu
     return (
         <>
         {numbers.map(buttonValue =>
-            <>
+            <Center key={buttonValue}>
                 <PaginationButton
                     active={currentPage + 1 === buttonValue}
-                    key={buttonValue}
                     label={buttonValue.toString()}
                     onClickFunction={() => onClickFunction(buttonValue - 1)}/>
                     <Spacer maxW='4px'/>
-            </>)}
+            </Center>)}
         </>
     );
 }

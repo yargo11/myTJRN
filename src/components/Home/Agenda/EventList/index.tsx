@@ -13,7 +13,7 @@ export interface Event {
 
 export default function EventList ({ eventList }:EventListProps) {
     return (
-        <SimpleGrid columns={1} spacing='12px'>
+        <SimpleGrid columns={1} spacing='12px' w='full'>
             {eventList? eventList.map(event =>
                 <Item key={event.link} link={event.link} label={event.label} type={event.type}/>
             )

@@ -11,7 +11,6 @@ export default function PaginationButton ({ label, active, onClickFunction, isDi
     return (
         <Button
             disabled={isDisabled}
-            
             variant='outline'
             color={active? 'white' : 'tj_dark_blue'}
             bgColor={active? 'tj_dark_blue' : 'white'}

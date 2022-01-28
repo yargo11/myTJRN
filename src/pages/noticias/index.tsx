@@ -5,21 +5,27 @@ import NewsList from '../../components/NewsList';
 import PageTitle from '../../components/PageTitle';
 import { useState } from 'react';
 import Pagination from '../../components/Pagination';
+import { GetServerSideProps } from 'next';
+import { NewsCardProps } from '../../components/NewsList/NewsCard';
 
-interface News {
-    id: number,
-    date: string,
-    title: string,
-    link: string
+const pageSize = 10;
+
+interface NoticiaProps {
+    newsList: Array<NewsCardProps>,
+    totalPages: number
 }
 
-export default function Noticias () {
-
-    const [list, setList] = useState<News[]>([item0, item1, item2, item3, item4, item5, item6, item7]);
+export default function Noticias ({newsList, totalPages}:NoticiaProps) {
     const [currentPage,  setCurrentPage] = useState(0);
+    const [list, setList] = useState(newsList);
 
-    function doSomething(value:number) {
+    async function changePage(value:number) {
         setCurrentPage(value);
+
+        setList(await ((await fetch(`/api/NewsPagination/`, {
+            method: 'POST',
+            body: JSON.stringify({page: value, pageSize: pageSize})
+        })).json()))
     }
 
     return (
@@ -36,29 +42,49 @@ export default function Noticias () {
             <GrayBorder/>
             <ContainerBox mt='56px' mb='150px'>
                 <NewsList
-                    categoryFilterLabel='Decisões Judiciais'
-                    categoryFilterDescription='Elementum pulvinar leo tincidunt molestie at ultrices morbi ornare. Nulla diam diam ut dignissim. Justo, velit nunc nunc consectetur nunc nec dui. Purus quam at amet.'
                     newsList={list}/>
                 <Pagination
                     currentPage={currentPage}
-                    numberOfPages={20}
+                    numberOfPages={totalPages}
                     marginRange={3}
                     skipGap={5}
                     paginationRange={5}
                     breakLabel='...'
                     nextLabel='Próxima Página'
                     previousLabel='Página Anterior'
-                    onClickFunction={doSomething}/>
+                    onClickFunction={changePage}/>
             </ContainerBox>
         </>
     );
 }
 
-const item0 = {id:0, date:'2019-12-28', title:'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '/noticias/1'}
-const item1 = {id:1, date:'2020-01-20', title:'Comarca de Touros seleciona estagiário de pós-graduação em Direito', link: '/noticias/1'}
-const item2 = {id:2, date:'2020-01-17', title:'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '/noticias/1'}
-const item3 = {id:3, date:'2019-12-16', title:'Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN', link: '/noticias/1'}
-const item4 = {id:4, date:'2019-12-28', title:'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '/noticias/1'}
-const item5 = {id:5, date:'2020-01-20', title:'Comarca de Touros seleciona estagiário de pós-graduação em Direito', link: '/noticias/1'}
-const item6 = {id:6, date:'2020-01-17', title:'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '/noticias/1'}
-const item7 = {id:7, date:'2019-12-16', title:'Mérito Legislativo: Des. Vivaldo Pinheiro é homenageado pela ALRN', link: '/noticias/1'}
+export const getServerSideProps: GetServerSideProps = async () => {
+    let newsApiResult = await fetch(`${process.env.BACKEND_URL}noticias?page=0&size=${pageSize}`, {
+        method: 'GET'
+    }).then(
+        response => {
+            return response.json().then(
+                result => {
+                    return result;
+                }
+            ).catch(
+                error => {
+                    console.log(error);
+                    return {content: [], totalPages: 0};
+                }
+            )
+        }
+    ).catch(
+        error => {
+            console.log(error);
+            return {content: [], totalPages: 0};
+        }
+    )
+  
+    return {
+      props: {
+        newsList: newsApiResult.content,
+        totalPages: newsApiResult.totalPages
+      },
+    }
+  }

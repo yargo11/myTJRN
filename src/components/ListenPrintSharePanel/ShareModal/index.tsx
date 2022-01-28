@@ -45,7 +45,7 @@ export default function ShareModal ({ isShareModalOpen, handleCloseShareModal }:
                     <InputGroup size="md">
                         <Input value={windowUrl}/>
                         <InputRightElement width="80px">
-                            <Button h="1.75rem" size="sm" onClick={() => {navigator.clipboard.writeText(windowUrl)}}>
+                            <Button h="1.75rem" size="sm" onClick={() => {navigator.clipboard.writeText(windowUrl)}} aria-label={'Copiar Link da página'}>
                                 Copiar
                             </Button>
                         </InputRightElement>

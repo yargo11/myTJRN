@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/breadcrumb";
-import { Box, Text } from "@chakra-ui/react";
+import { Box, Heading, Text } from "@chakra-ui/react";
 import ContainerBox from "../ContainerBox";
 import GradientBorder from "../Border/GradientBorder";
 
@@ -35,8 +35,8 @@ export default function PageTitle({ breadCrumbArray, description, showTitle, tit
                             <BreadcrumbLink>{title}</BreadcrumbLink>
                         </BreadcrumbItem>
                     </Breadcrumb>
-                    {showTitle === true ? <Text fontWeight='bold' fontSize='225%' lineHeight='127.77%' mt='32px' mb='16px'>{title}</Text> : <></>}
-                    {description ? <Text maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='138.88%' mb='32px'>{description}</Text> : <></>}
+                    {showTitle === true ? <Heading as='h1' fontWeight='bold' fontSize='225%' lineHeight='127.77%' mt='32px' mb='16px'>{title}</Heading> : <></>}
+                    {description ? <Heading as='h2' maxW='856px' fontWeight='normal' fontSize='112.5%' lineHeight='138.88%' mb='32px'>{description}</Heading> : <></>}
                 </ContainerBox>
             </Box>
         </>

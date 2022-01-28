@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Flex, Heading } from "@chakra-ui/react";
 
 interface areaTitleProps {
     title: string;
@@ -8,7 +8,7 @@ interface areaTitleProps {
 export default function AreaTitle ({ title }:areaTitleProps) {
     return (
         <Flex alignItems='center' h='128px'>
-            <Text fontSize='200%' fontWeight='semibold' color='tj_dark_blue' lineHeight='125%'>{title}</Text>
+            <Heading as='h3' fontSize='200%' fontWeight='semibold' color='tj_dark_blue' lineHeight='125%'>{title}</Heading>
         </Flex>
     );
 }
