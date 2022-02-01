@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
-import PageTitle from '../../../../components/PageTitle';
-import PageContentList from '../../../../components/Article/PageContentList';
-import AreaTitle from '../../../../components/Home/AreaTitle';
-import ContainerBox from '../../../../components/ContainerBox';
-import Article from '../../../../components/Aside/Article';
+import PageTitle from '../../../components/PageTitle';
+import PageContentList from '../../../components/Article/PageContentList';
+import AreaTitle from '../../../components/Home/AreaTitle';
+import ContainerBox from '../../../components/ContainerBox';
+import Article from '../../../components/Aside/Article';
 import {
     GridItem, SimpleGrid, Spacer, useBreakpointValue, Text,
 } from '@chakra-ui/react';

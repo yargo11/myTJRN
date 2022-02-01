@@ -1,11 +1,11 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
-import PageTitle from '../../../../components/PageTitle';
-import PageContentList from '../../../../components/Article/PageContentList';
-import AreaTitle from '../../../../components/Home/AreaTitle';
-import ContainerBox from '../../../../components/ContainerBox';
-import Article from '../../../../components/Aside/Article';
+import PageTitle from '../../../components/PageTitle';
+import PageContentList from '../../../components/Article/PageContentList';
+import AreaTitle from '../../../components/Home/AreaTitle';
+import ContainerBox from '../../../components/ContainerBox';
+import Article from '../../../components/Aside/Article';
 import {
     Box, Flex, GridItem, SimpleGrid, Spacer, useBreakpointValue, Text,
     Accordion,
@@ -14,16 +14,17 @@ import {
     AccordionPanel,
     AccordionIcon,
 } from '@chakra-ui/react';
-import FilePdf from '../../../../components/FilePdf';
+import FilePdf from '../../../components/FilePdf';
 
 import {
     manuaisAdovgado,
     manuaisServidor,
-    manuaisDesembargador,
+    manuaisMagistrado,
     manuaisDefensorias,
-    manuaisRedacaoJudiciaria,
+    manuaisDelegacias,
     manuaisMinisterioPublico,
     manuaisOficiaisDeJustica,
+    manuaisOutrosManuais,
     manuaisPraticasJuridicas,
     manuaisProcuradorias
 } from './manuais'
@@ -34,7 +35,7 @@ interface PageProps {
     content: string
     lastUpdate: string
 }
-export default function SegundoGrau({ title, subtitle, content, lastUpdate }: PageProps) {
+export default function PrimeiroGrau({ title, subtitle, content, lastUpdate }: PageProps) {
 
     const router = useRouter()
     const { id } = router.query
@@ -97,18 +98,18 @@ export default function SegundoGrau({ title, subtitle, content, lastUpdate }: Pa
                                 <AccordionButton>
                                     <Box flex='1' textAlign='left'>
                                         <Text fontSize='1.25rem' fontWeight='500'>
-                                            Desembargadores
+                                            Magistrado
                                         </Text>
                                     </Box>
                                     <AccordionIcon />
                                 </AccordionButton>
                                 <AccordionPanel pb={4}>
-                                    {manuaisDesembargador.map(desembargador =>
+                                    {manuaisMagistrado.map(madistrado =>
                                     (
                                         <FilePdf
-                                            key={desembargador.title}
-                                            title={desembargador.title}
-                                            anchor={desembargador.anchor}
+                                            key={madistrado.title}
+                                            title={madistrado.title}
+                                            anchor={madistrado.anchor}
                                         />
                                     )
                                     )
@@ -258,18 +259,41 @@ export default function SegundoGrau({ title, subtitle, content, lastUpdate }: Pa
                                 <AccordionButton>
                                     <Box flex='1' textAlign='left'>
                                         <Text fontSize='1.25rem' fontWeight='500'>
-                                            Redação Judiciária
+                                            Delegacias
                                         </Text>
                                     </Box>
                                     <AccordionIcon />
                                 </AccordionButton>
                                 <AccordionPanel pb={4}>
-                                    {manuaisRedacaoJudiciaria.map(redacao =>
+                                    {manuaisDelegacias.map(delegacais =>
                                     (
                                         <FilePdf
-                                            key={redacao.title}
-                                            title={redacao.title}
-                                            anchor={redacao.anchor}
+                                            key={delegacais.title}
+                                            title={delegacais.title}
+                                            anchor={delegacais.anchor}
+                                        />
+                                    )
+                                    )
+                                    }
+                                </AccordionPanel>
+                            </AccordionItem>
+
+                            <AccordionItem>
+                                <AccordionButton>
+                                    <Box flex='1' textAlign='left'>
+                                        <Text fontSize='1.25rem' fontWeight='500'>
+                                            Outros Manuais
+                                        </Text>
+                                    </Box>
+                                    <AccordionIcon />
+                                </AccordionButton>
+                                <AccordionPanel pb={4}>
+                                    {manuaisOutrosManuais.map(outros =>
+                                    (
+                                        <FilePdf
+                                            key={outros.title}
+                                            title={outros.title}
+                                            anchor={outros.anchor}
                                         />
                                     )
                                     )
@@ -277,6 +301,9 @@ export default function SegundoGrau({ title, subtitle, content, lastUpdate }: Pa
                                 </AccordionPanel>
                             </AccordionItem>
                         </Accordion>
+
+
+
                     </GridItem>
                 </SimpleGrid>
             </ContainerBox>

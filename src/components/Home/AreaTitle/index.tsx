@@ -1,3 +1,5 @@
+// AREA TITLE TEM O SUBTITLE COM FONTWEIGHT BOLD
+
 import { Box, Heading } from "@chakra-ui/react";
 
 interface areaTitleProps {

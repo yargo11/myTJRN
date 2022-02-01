@@ -48,7 +48,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
           </GridItem>
           <GridItem colSpan={2}>
             <AreaTitle title={pje[Number(id)].title} subtitle={pje[Number(id)].subtitle} />
-            {/* <PageContentList headers={pageTitles} /> */}
+            <PageContentList headers={pageTitles} />
             <Text>{parse(pje[Number(id)].content)}</Text>
           </GridItem>
         </SimpleGrid>
