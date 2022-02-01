@@ -21,9 +21,7 @@ export default function Plenario() {
             <ContainerBox mt='80px' mb='100px'>
                 <CardList columns={[1, 1, 2]}>
                     {desList ? desList.map(des =>
-                        <AspectRatio ratio={1}>
                             <ImageCard key={des.link} description={des.description} image={des.image} label={des.label} link={des.link} />
-                        </AspectRatio>
                     ) : <></>}
                 </CardList>
             </ContainerBox>

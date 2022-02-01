@@ -14,9 +14,9 @@ export default function ImageCard ({ description, label, link, image }:LinkCardP
         borderBottom='1px solid #D8DBDF'
         borderLeft='1px solid #D8DBDF'
         borderRight='2px solid #77CAED'>
-            <Image src={image} display={{ base: 'none', sm: 'flex' }}  w='196px' h='213px'/>
+            <Image src={image} display={{ base: 'none', sm: 'flex' }}  w='200px' h='auto' alt='#'/>
             <Flex w='full' flexDir='column' pb='19px'>
-                <Image src={image} display={{ base: 'flex', sm: 'none' }} w='196px' h='213px' alignSelf='center' mt='30px' alt='#'/>
+                <Image src={image} display={{ base: 'flex', sm: 'none' }} w='200px' h='auto' alignSelf='center' mt='30px' alt='#'/>
                 <Flex justifyContent='space-between' alignItems='center' pt='24px' px='24px'>
                     <Text fontSize='150%' fontWeight='bold' lineHeight='104.17%' color='#14697F'>{label}</Text>
                     <Image src='/icons/GoTo.svg' alt='RightIcon' w='1rem' h='1rem'/>
