@@ -9,6 +9,7 @@ import { Box, Flex, GridItem, SimpleGrid, Spacer, useBreakpointValue, Text, Avat
 import Article from '../../components/Aside/Article';
 import Coordenadoria from '../../components/Coordenadoria/IntroCoord';
 import MenuCoord from '../../components/Coordenadoria/MenuCoord';
+import Warnings from '../../components/Warnings';
 
 
 interface PageProps {
@@ -64,6 +65,9 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
             <AreaTitle2 title='Sobre a coordenadoria' subtitle={introInfo.about} />
             <AreaTitle2 title='Projetos' subtitle={introInfo.projects} />
             <AreaTitle2 title='Varas Especializadas' subtitle={introInfo.specialized_rods} />
+            <Warnings warnings={warnings} />
+
+
             {/* <AreaTitle title={pje[Number(id)].title} subtitle={pje[Number(id)].subtitle} /> */}
             {/* <PageContentList headers={pageTitles} /> */}
             {/* <Text>{parse(pje[Number(id)].content)}</Text> */}
@@ -104,6 +108,13 @@ const basicInfo = {
   email: 'secretariageral@jtnr.jus.br',
   telefone: '+55 84 3673-9216'
 }
+
+const warnings = [{
+  warning: 'O cadastro dos advogados no PJe deverá ser feito diretamente ao entrar no sistema, via certificado digital.',
+},
+{ warning: 'A habilitação do segundo advogado, de qualquer parte, tem que ser solicitada ao Juizado e/ou Vara em que o processo tramite.' },
+{ warning: 'Em conformidade com a Portaria n° 392/2014-TJ, informoamos que os processos que estão em fase de Cumprimento de Sentença devem ser cadastrados no PJe, utilizando a classe CUMPRIMENTO DE SENTENÇA.' }
+]
 
 const introInfo = {
   about: 'É a secretaria a quem compete planejar, dirigir e coordenar atividades administrativas em consonância com diretrizes da Presidência do Tribunal. Define e implementa sistemáticas e instrumentos de planejamento administrativo, de execução e de controle, além de zelar pelo cumprimento da legislação e das normas regulamentares.',
