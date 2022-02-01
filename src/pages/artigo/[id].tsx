@@ -1,10 +1,11 @@
 import { GetServerSideProps } from 'next';
 import parse from 'html-react-parser';
+import {convert} from 'html-to-text';
 import PageTitle from '../../components/PageTitle';
 import PageContentList from '../../components/Article/PageContentList';
 import AreaTitle from '../../components/Home/AreaTitle';
 import ContainerBox from '../../components/ContainerBox';
-import { Box, Flex, GridItem, SimpleGrid, Spacer, useBreakpointValue } from '@chakra-ui/react';
+import { GridItem, SimpleGrid } from '@chakra-ui/react';
 import Article from '../../components/Aside/Article';
 
 
@@ -38,7 +39,7 @@ export default function Page({title, subtitle, content, lastUpdate}:PageProps) {
       <ContainerBox mt='56px' sx={{'@media print': {display: 'block'}}}>
         <SimpleGrid columns={{base: 2, md: 3}} spacingX='30px'>
           <GridItem colSpan={{base: 2, md: 1}}>
-            <Article rootLabel='Adoção' rootLink='#' linkList={linkList} lastUpdate={lastUpdate}/>
+            <Article rootLabel='Adoção' rootLink='#' linkList={linkList} lastUpdate={lastUpdate} listOfContentToRead={['Título: ' + title, 'Subtítulo: ' + subtitle, 'Corpo:' + convert(content)]}/>
           </GridItem>
           <GridItem colSpan={2}>
             <AreaTitle title={title} subtitle={subtitle}/>

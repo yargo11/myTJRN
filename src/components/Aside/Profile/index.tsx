@@ -4,10 +4,11 @@ import ListenPrintSharePanel from "../../ListenPrintSharePanel";
 interface ProfileProps {
     image: string,
     email: string,
-    telefone: string
+    telefone: string,
+    listOfContentToRead: Array<string>
 }
 
-export default function Profile ({ image, email, telefone }:ProfileProps) {
+export default function Profile ({ image, email, telefone, listOfContentToRead }:ProfileProps) {
     return (
         <>
             <Image src={image}/>
@@ -19,7 +20,7 @@ export default function Profile ({ image, email, telefone }:ProfileProps) {
                 <Text fontWeight='normal'>{telefone}</Text>
             </Box>
             <Box w='full' h='1px' bgColor='tj_dark_blue' mt='40px' mb='12px'></Box>
-            <ListenPrintSharePanel listOfContentToRead={[]} />
+            <ListenPrintSharePanel listOfContentToRead={listOfContentToRead} />
         </>
     );
 }

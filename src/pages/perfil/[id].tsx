@@ -1,4 +1,4 @@
-import { Flex, Box, Spacer, Text, useBreakpointValue, SimpleGrid, GridItem } from "@chakra-ui/react";
+import { Flex, Box, Text, useBreakpointValue, SimpleGrid, GridItem } from "@chakra-ui/react";
 import Profile from "../../components/Aside/Profile";
 import ContainerBox from "../../components/ContainerBox";
 import PageTitle from "../../components/PageTitle";
@@ -39,7 +39,7 @@ export default function Perfil () {
             <ContainerBox as={imageWidth} mb='100px'>
             <SimpleGrid columns={{base: 2, md: 3}} spacingX='30px'>
                 <GridItem colSpan={{base: 2, md: 1}} pt='48px'>
-                    <Profile image={profile.image} email={profile.email} telefone={profile.telefone}/>
+                    <Profile image={profile.image} email={profile.email} telefone={profile.telefone} listOfContentToRead={['Nome: ' + profile.name, 'Biografia: ' + profile.biography, 'Título: ' + profile.title, profile.titleDescription, 'Email: ' + profile.email, 'Telefone: ' + profile.telefone]}/>
                 </GridItem>
                 <GridItem colSpan={2} py={{base: '30px', md:'145px'}}>
                     <Text fontWeight='bold' fontSize='200%' lineHeight='140.625%'>{profile.title}</Text>

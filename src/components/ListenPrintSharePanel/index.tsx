@@ -18,9 +18,13 @@ export default function ListenPrintSharePanel({ listOfContentToRead }: ListenPri
     }
 
     function handleListenFunction() {
-        listOfContentToRead.map(contentToRead => {
-            speechSynthesis.speak(new SpeechSynthesisUtterance(contentToRead))
-        });
+        if (!speechSynthesis.speaking) {
+            listOfContentToRead.map(contentToRead => {
+                speechSynthesis.speak(new SpeechSynthesisUtterance(contentToRead))
+            });
+        } else {
+            speechSynthesis.cancel();
+        }
     }
 
     return (

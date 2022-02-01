@@ -1,4 +1,4 @@
-import { Center, Flex, Box, Text, Link, useBreakpointValue, SimpleGrid, GridItem } from "@chakra-ui/react";
+import { Center, Flex, Text, Link, SimpleGrid, GridItem } from "@chakra-ui/react";
 import Unit from "../../components/Aside/Unit";
 import ContainerBox from "../../components/ContainerBox";
 import ListenPrintSharePanel from "../../components/ListenPrintSharePanel";
@@ -6,6 +6,7 @@ import PageTitle from "../../components/PageTitle";
 import TreeList from "../../components/TreeList";
 
 export default function Unidade() {
+    const list = [];
     const unit = {
         name: '1ª Vara da Comarca de Assu',
         about: `É a secretaria a quem compete planejar, dirigir e coordenar atividades administrativas 
@@ -42,13 +43,22 @@ export default function Unidade() {
             },
         ]
     }
+
+    unit.lista.map( elemento => {
+        list.push(elemento.label)
+        elemento.list.map(item => {
+            list.push(item.label ? item.label : '')
+            list.push(item.value ? item.value : '')
+        })
+    })
+
     return (
         <>
             <PageTitle title='1ª Vara da Comarca de Assu' breadCrumbArray={[]} showTitle={false} />
             <Flex bgColor='#FAFBFC'>
                 <ContainerBox as={Center} py='56px' flexWrap='wrap' alignContent='center' justifyContent='space-between'>
                     <Text fontWeight='extrabold' fontSize='250%' lineHeight='115%' color='tj_dark_blue'>{unit.name}</Text>
-                    <ListenPrintSharePanel listOfContentToRead={[]} />
+                    <ListenPrintSharePanel listOfContentToRead={['Unidade: ' + unit.name, 'Sobre:' + unit.about, 'Informações adicionais: ' + unit.aditionalInfo, 'Endereço:' + unit.endereco, ...list]} />
                 </ContainerBox>
             </Flex>
             <ContainerBox my='64px'>

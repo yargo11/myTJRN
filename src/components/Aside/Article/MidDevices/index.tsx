@@ -2,7 +2,7 @@ import { Box, Link, Image } from "@chakra-ui/react";
 import { ArticleProps } from "..";
 import Item from "./Item";
 
-export default function MidDevices({ rootLabel, rootLink, linkList }: ArticleProps) {
+export default function MidDevices({ rootLabel, rootLink, linkList }: Omit<ArticleProps, 'listOfContentToRead'>) {
     return (
         <Box display={{ base: 'none', md: 'block' }} className='no-print'>
             <Box w='full' h='3px' bgColor='tj_dark_blue'></Box>

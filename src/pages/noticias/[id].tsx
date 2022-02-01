@@ -1,4 +1,5 @@
 import parse from 'html-react-parser';
+import {convert} from 'html-to-text';
 import PageTitle from '../../components/PageTitle';
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { GetServerSideProps } from 'next';
@@ -17,11 +18,6 @@ interface LerNoticiaProps {
 export default function Noticia({ titulo, categoria, ultimaModificacao, corpo }:LerNoticiaProps) {
 
     const breadcrumblist = [{label: 'Notícias', link: '/noticias'}];
-    /*
-    useEffect(() => {
-        speechSynthesis.speak(new SpeechSynthesisUtterance(corpo))
-    },[])
-    */
     return (
         <>
             <PageTitle title={titulo} breadCrumbArray={breadcrumblist} showTitle={false}/>
@@ -31,7 +27,7 @@ export default function Noticia({ titulo, categoria, ultimaModificacao, corpo }:
                 
                 <Flex mt='56px' mb='12px' fontSize='87.5%' color='#888889' justifyContent='space-between' flexWrap='wrap'>
                     <Text fontSize='87.5%' lineHeight='142.85%'>{ultimaModificacao}</Text>
-                    <ListenPrintSharePanel listOfContentToRead={[corpo]}/>
+                    <ListenPrintSharePanel listOfContentToRead={['Título: ' + titulo, 'notícia: ' + convert(corpo)]}/>
                 </Flex>
                 <GrayBorder/>
                 <Box mt='48px' mx='auto' mb='155px' maxW='856px'>
