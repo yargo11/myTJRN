@@ -1,4 +1,4 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { Divider, Flex, Text } from "@chakra-ui/react";
 import ListenPrintSharePanel from "../../ListenPrintSharePanel";
 
 
@@ -20,6 +20,7 @@ export default function Coordenadoria({ coordenacao, contato, email, telefone }:
             <Text mb='1.5rem' fontSize='112.5%' color='#333333' fontWeight='400'>{email}</Text>
             <Text fontSize='112.5%' color='#000' fontWeight='700'>Telefone:</Text>
             <Text mb='3rem' fontSize='112.5%' color='#333333' fontWeight='400'>{telefone}</Text>
+            <Divider borderWidth='1px' borderColor='#00384D' mb='12px'/>
             <ListenPrintSharePanel listOfContentToRead={[]} />
         </Flex>
     )
