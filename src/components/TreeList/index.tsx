@@ -5,7 +5,7 @@ interface TreeListProps {
     elementList: Array<Tree>
 }
 
-interface Tree {
+export interface Tree {
     label: string,
     list: Array<ListItem>
 }

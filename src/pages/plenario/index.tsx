@@ -1,4 +1,5 @@
-import { AspectRatio, Flex } from "@chakra-ui/react";
+import { Flex } from "@chakra-ui/react";
+import { GetServerSideProps } from "next";
 import GrayBorder from "../../components/Border/GrayBorder";
 import CardList from "../../components/CardList";
 import ContainerBox from "../../components/ContainerBox";
@@ -6,8 +7,19 @@ import ImageCard from "../../components/ImageCard";
 import ListenPrintSharePanel from "../../components/ListenPrintSharePanel";
 import PageTitle from "../../components/PageTitle";
 
-export default function Plenario() {
-    const desList = [des0, des1, des2, des3, des4, des5, des6, des7, des8, des9, des10, des11, des12, des13, des14]
+interface PlenarioProps {
+    desembargadorList: Array<DesembargadorProps>
+}
+
+interface DesembargadorProps {
+    label: string,
+    description: string,
+    link: string,
+    image: string
+}
+
+export default function Plenario({desembargadorList}:PlenarioProps) {
+    
     return (
         <>
             <PageTitle
@@ -20,13 +32,25 @@ export default function Plenario() {
             <GrayBorder />
             <ContainerBox mt='80px' mb='100px'>
                 <CardList columns={[1, 1, 2]}>
-                    {desList ? desList.map(des =>
+                    {desembargadorList ? desembargadorList.map(des =>
                             <ImageCard key={des.link} description={des.description} image={des.image} label={des.label} link={des.link} />
                     ) : <></>}
                 </CardList>
             </ContainerBox>
         </>
     );
+}
+
+
+export const getServerSideProps: GetServerSideProps = async () => {
+    //const { id } = context.query;
+    //const noticia = await (await apinoticia.get('elemento/' + id)).data;
+    const desList = [des0, des1, des2, des3, des4, des5, des6, des7, des8, des9, des10, des11, des12, des13, des14]
+    return {
+        props: {
+            desList
+        }
+    }
 }
 
 const des0 = { label: 'Des. Vivaldo Pinheiro', description: 'Presidente', link: '#', image: '/image/Maria_Zeneide_Bezerra.png' }
