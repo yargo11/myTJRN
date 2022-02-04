@@ -32,7 +32,6 @@ export const manuaisAdovgado = [
         anchor: "/api/arquivo/AjuizamentodeAcaoCivelnoPJE.pdf"
     },
 ]
-
 export const manuaisServidor = [
     {
         title: "Configurar Visualizadores em Lote para Documentos Sigilosos",
@@ -203,7 +202,6 @@ export const manuaisServidor = [
         anchor: "/api/arquivo/AjuizamentodeAcaoCivelnoPJE.pdf"
     },
 ]
-
 export const manuaisMagistrado = [
     {
         title: "Como Filtrar Classe e Assuntos nas Etiquetas",
@@ -234,7 +232,6 @@ export const manuaisMagistrado = [
         anchor: "/api/arquivo/Minutareassinarato.pdf"
     },
 ]
-
 export const manuaisOficiaisDeJustica = [
     {
         title: "Novidades da versão 2.1 – Perfil Oficial de Justiça",
@@ -266,7 +263,6 @@ export const manuaisOficiaisDeJustica = [
         anchor: "/api/arquivo/Devolucaodemandado_OficialdeJustica.pdf"
     },
 ]
-
 export const manuaisMinisterioPublico = [
     {
         title: "Ajuizamento de Cartas Precatórias de Ordem Cível ou Arbitral, Requerimento de Apreensão de Veículos ou Reintegração de Posse por usuários de outros tribunais ou Juízo Deprecante",

@@ -2,12 +2,9 @@ import { Box, Button, Flex, HStack, Link, Icon, SimpleGrid, Spacer, Text } from 
 import { useState } from 'react'
 import { FiMenu } from 'react-icons/fi'
 
-export default function MenuCoord({linkList}) {
+export default function MenuCoord({ linkList, subMenu }) {
 
     const [showMenu, setShowMenu] = useState('none')
-
-    console.log('subMenu')
-    // console.log(subMenu)
 
     function handleMenuClick() {
         if (showMenu === 'none') {
@@ -16,6 +13,7 @@ export default function MenuCoord({linkList}) {
             setShowMenu('none')
         }
     }
+
     return (
         <Flex w='full' bg='#e1e7eb' direction='column'>
             <Flex w='100%' maxW='1296px' m='auto' h='87px' align='center'>
@@ -43,49 +41,11 @@ export default function MenuCoord({linkList}) {
             </Flex>
             <Flex py='32px' display={showMenu}>
                 <SimpleGrid minChildWidth='306px' spacing='24px' w='100%' maxW='1296px' m='auto'>
-                    {/* {subMenu.map(option => {
-                        <Flex key={option.label} as={Link} href={option.link} align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
+                    {subMenu.map(option =>
+                        <Flex key={option.link} as={Link} href={option.link} align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
                             <Text>{option.label}</Text>
                         </Flex>
-                    }
-                    )} */}
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-                    <Flex as={Link} href='#' align='center' pl='24px' color='#fff' textDecoration='underline' borderRadius='6px' bg='#00384D' height='97px'>
-                        <Text>Sobre o PJE</Text>
-                    </Flex>
-
+                    )}
                 </SimpleGrid>
             </Flex>
 

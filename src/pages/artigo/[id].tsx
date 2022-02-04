@@ -44,12 +44,12 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
       <ContainerBox mt='56px' sx={{ '@media print': { display: 'block' } }}>
         <SimpleGrid columns={{ base: 2, md: 3 }} spacingX='30px'>
           <GridItem colSpan={{ base: 2, md: 1 }}>
-            <Article rootLabel={breadcrumbpje1.label} rootLink='#' linkList={linkList} lastUpdate={pje[Number(id)].lastUpdate} />
+            <Article rootLabel={breadcrumbpje1.label} rootLink='#' linkList={linkList} lastUpdate={lastUpdate} />
           </GridItem>
           <GridItem colSpan={2}>
-            <AreaTitle title={pje[Number(id)].title} subtitle={pje[Number(id)].subtitle} />
+            <AreaTitle title={title} subtitle={subtitle} />
             <PageContentList headers={pageTitles} />
-            <Text>{parse(pje[Number(id)].content)}</Text>
+            <Text>{parse(content)}</Text>
           </GridItem>
         </SimpleGrid>
       </ContainerBox>

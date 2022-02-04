@@ -1,6 +1,6 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
-// import parse from 'html-react-parser';
+import parse from 'html-react-parser';
 import PageTitle from '../../../components/PageTitle';
 import PageContentList from '../../../components/Article/PageContentList';
 import AreaTitle2 from '../../../components/Home/AreaTitle2';
@@ -19,7 +19,7 @@ interface PageProps {
     lastUpdate: string
 }
 
-export default function Page({ title, subtitle, content, lastUpdate }: PageProps) {
+export default function Pje1Grau({ title, subtitle, content, lastUpdate }: PageProps) {
 
     const router = useRouter()
     const { id } = router.query
@@ -50,7 +50,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
                 showTitle={true}
                 breadCrumbArray={breadcrumblist}
             />
-            <MenuCoord linkList={linksInfo} />
+            <MenuCoord linkList={linksInfo} subMenu={subMenu} />
             <ContainerBox mt='56px' sx={{ '@media print': { display: 'block' } }}>
                 <SimpleGrid columns={{ base: 2, md: 3 }} spacingX='30px'>
                     <GridItem colSpan={{ base: 2, md: 1 }}>
@@ -59,18 +59,18 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
                             contato={basicInfo.contato}
                             email={basicInfo.email}
                             telefone={basicInfo.telefone}
+                            lastUpdate={lastUpdate}
                         />
                     </GridItem>
                     <GridItem colSpan={2}>
                         <AreaTitle2 title='PJe - Primeiro Grau' subtitle={introInfo.about} />
                         <PageContentList headers={pageTitles} />
-                        <AreaTitle2 title='Como acessar' subtitle={introInfo.projects} />
-                        <AreaTitle2 title='Fazer consulta pública' subtitle={introInfo.specialized_rods} />
-                        <Warnings warnings={warnings} />
-
+                        {/* <AreaTitle2 title={'Lorem Ipsum'} subtitle={introInfo.projects} /> */}
+                        {/* <AreaTitle2 title='Fazer consulta pública' subtitle={introInfo.specialized_rods} /> */}
+                        {/* <Warnings warnings={warnings} /> */}
 
                         {/* <AreaTitle title={pje[Number(id)].title} subtitle={pje[Number(id)].subtitle} /> */}
-                        {/* <Text>{parse(pje[Number(id)].content)}</Text> */}
+                        <Text>{parse(content)}</Text>
                     </GridItem>
                 </SimpleGrid>
             </ContainerBox>
@@ -86,7 +86,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
             title: 'Como adotar',
             subtitle: 'Na adoção uma criança ou adolescente é acolhido por uma família, passando a ser filho ou filha na sua integralidade.',
             lastUpdate: '2021-12-03T14:38:51-0300',
-            content: ``
+            content: `
+            <h2>Teste</h2>
+            <p>Lorem ipsum</p>
+            `
         }
     }
 }

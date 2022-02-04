@@ -25,7 +25,6 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
   const { id } = router.query
 
   const linkList = linksInfo
-  // const linkList = lista_de_links[Number(id)]
 
   const breadcrumblist = [breadcrumbpje1];
 
@@ -50,7 +49,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
         showTitle={true}
         breadCrumbArray={breadcrumblist}
       />
-      <MenuCoord linkList={linksInfo} />
+      <MenuCoord linkList={linksInfo} subMenu={subMenu} />
       <ContainerBox mt='56px' sx={{ '@media print': { display: 'block' } }}>
         <SimpleGrid columns={{ base: 2, md: 3 }} spacingX='30px'>
           <GridItem colSpan={{ base: 2, md: 1 }}>
@@ -59,6 +58,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
               contato={basicInfo.contato}
               email={basicInfo.email}
               telefone={basicInfo.telefone}
+              lastUpdate={lastUpdate}
             />
           </GridItem>
           <GridItem colSpan={2}>
@@ -69,7 +69,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
 
 
             {/* <AreaTitle title={pje[Number(id)].title} subtitle={pje[Number(id)].subtitle} /> */}
-            <PageContentList headers={pageTitles} />
+            {/* <PageContentList headers={pageTitles} /> */}
             {/* <Text>{parse(pje[Number(id)].content)}</Text> */}
           </GridItem>
         </SimpleGrid>
@@ -96,17 +96,17 @@ const breadcrumbpje1 = { label: 'PJE', link: '#' }
 
 const linksInfo = [
   { label: 'Início', link: '/pje/0' },
-  { label: 'PJe - Primeiro grau', link: '/pje/1' },
+  { label: 'PJe - Primeiro grau', link: '/pje/pje1grau' },
   { label: 'PJe - Segundo grau', link: '/pje/2' },
   { label: 'Documentos', link: '/pje/empresas' },
 ]
 
 const subMenu = [
-  {label:'Sobre o PJe', link: '/pje/0'},
-  {label:'Pje - Primeiro Grau', link: '/pje/0'},
-  {label:'Pje - Segundo Grau', link: '/pje/0'},
-  {label:'Documentos', link: '/pje/0'},
-  {label:'Municípios e Procuradorias', link: '/pje/0'},
+  { label: 'Sobre o PJe', link: '/pje/0' },
+  { label: 'Pje - Primeiro Grau', link: '/pje/0' },
+  { label: 'Pje - Segundo Grau', link: '/pje/0' },
+  { label: 'Documentos', link: '/pje/0' },
+  { label: 'Municípios e Procuradorias', link: '/pje/0' },
 ]
 
 const basicInfo = {
