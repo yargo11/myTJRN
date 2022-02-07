@@ -7,8 +7,8 @@ import { Box, Flex, GridItem, SimpleGrid, Text, Accordion, AccordionItem, Accord
 import MenuCoord from '../../../components/Coordenadoria/MenuCoord';
 import Coordenadoria from '../../../components/Coordenadoria/IntroCoord';
 
-import FilePdf from '../../../components/FilePdf';
 import { manuaisServidor, manuaisAdovgado, manuaisMagistrado, manuaisOficiaisDeJustica, manuaisMinisterioPublico, manuaisDefensorias, manuaisPraticasJuridicas, manuaisProcuradorias, manuaisDelegacias, manuaisOutrosManuais } from './manuais1';
+import AccordionVideoFile from '../../../components/AccordionVideoFile';
 
 
 interface PageProps {
@@ -59,32 +59,9 @@ export default function PjeManuais({ title, accordion, areaTitle, description, b
 
                     <GridItem colSpan={2}>
                         <AreaTitle title={areaTitle} subtitle='' />
-                        <Accordion allowToggle>
-                            {accordion.map(accordionElement =>
-                            (
-                                <AccordionItem>
-                                    <AccordionButton>
-                                        <Box flex='1' textAlign='left'>
-                                            <Text fontSize='1.25rem' fontWeight='500'>
-                                                {accordionElement.label}
-                                            </Text>
-                                        </Box>
-                                        <AccordionIcon />
-                                    </AccordionButton>
-                                    <AccordionPanel pb={4}>
-                                        {accordionElement.content.map(file =>
-                                            <FilePdf
-                                                key={file.title}
-                                                title={file.title}
-                                                anchor={file.anchor}
-                                            />
-                                        )}
-                                    </AccordionPanel>
-                                </AccordionItem>
-                            )
-                            )
-                            }
-                        </Accordion>
+                        <AccordionVideoFile
+                            allfilesandvideos={pjemanuais1}
+                        />
                     </GridItem>
                 </SimpleGrid>
             </ContainerBox>
@@ -106,17 +83,17 @@ export const getServerSideProps: GetServerSideProps = async () => {
             contato: 'Av. duqe de caxias, 151, 3 andar, ribeira, natal rn',
             email: 'secretariageral@jtnr.jus.br',
             telefone: '+55 84 3673-9216',
-            accordion: [
-                { label: 'Servidor', content: manuaisServidor },
-                { label: 'Advogados', content: manuaisAdovgado },
-                { label: 'Magistrados', content: manuaisMagistrado },
-                { label: 'Oficiais de Justiça', content: manuaisOficiaisDeJustica },
-                { label: 'Ministério Público', content: manuaisMinisterioPublico },
-                { label: 'Defensorias', content: manuaisDefensorias },
-                { label: 'Práticas Jurídicas', content: manuaisPraticasJuridicas },
-                { label: 'Procuradorias', content: manuaisProcuradorias },
-                { label: 'Delegacias', content: manuaisDelegacias },
-                { label: 'Outros Manuais', content: manuaisOutrosManuais },
+            fileandvideos: [
+                { category: 'Servidor', videofiles: manuaisServidor },
+                { category: 'Advogados', videofiles: manuaisAdovgado },
+                { category: 'Magistrados', videofiles: manuaisMagistrado },
+                { category: 'Oficiais de Justiça', videofiles: manuaisOficiaisDeJustica },
+                { category: 'Ministério Público', videofiles: manuaisMinisterioPublico },
+                { category: 'Defensorias', videofiles: manuaisDefensorias },
+                { category: 'Práticas Jurídicas', videofiles: manuaisPraticasJuridicas },
+                { category: 'Procuradorias', videofiles: manuaisProcuradorias },
+                { category: 'Delegacias', videofiles: manuaisDelegacias },
+                { category: 'Outros Manuais', videofiles: manuaisOutrosManuais },
             ]
         }
     }
@@ -159,3 +136,15 @@ const subMenu = [
     { label: 'Municípios e Procuradorias', link: '/pje/0' },
 ]
 
+const pjemanuais1 = [
+    { category: 'Servidor', videofiles: manuaisServidor },
+    { category: 'Advogados', videofiles: manuaisAdovgado },
+    { category: 'Magistrados', videofiles: manuaisMagistrado },
+    { category: 'Oficiais de Justiça', videofiles: manuaisOficiaisDeJustica },
+    { category: 'Ministério Público', videofiles: manuaisMinisterioPublico },
+    { category: 'Defensorias', videofiles: manuaisDefensorias },
+    { category: 'Práticas Jurídicas', videofiles: manuaisPraticasJuridicas },
+    { category: 'Procuradorias', videofiles: manuaisProcuradorias },
+    { category: 'Delegacias', videofiles: manuaisDelegacias },
+    { category: 'Outros Manuais', videofiles: manuaisOutrosManuais },
+]
