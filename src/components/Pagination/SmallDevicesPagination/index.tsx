@@ -1,4 +1,4 @@
-import { Center } from '@chakra-ui/react'
+import { Flex } from '@chakra-ui/react'
 import { PaginationProps } from '..';
 import PaginationButtonArray from '../PaginationButtonArray';
 
@@ -22,12 +22,12 @@ export default function SmallDevicesPagination ({ currentPage, numberOfPages, pa
     return (
         <>
             { numberOfPages > currentPage ? 
-                <Center w='full' display={{ base: 'flex', md: 'none' }}>
+                <Flex w='full' display={{ base: 'flex', md: 'none' }} justify='end'>
                     <PaginationButtonArray
                         numbers={arrayOfButtons}
                         currentPage={currentPage}
                         onClickFunction={onClickFunction} />
-                </Center>
+                </Flex>
             :<></>}
         </>
     );

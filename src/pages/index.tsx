@@ -1,36 +1,35 @@
 import { Box, SimpleGrid } from "@chakra-ui/react"
 import ContainerBox from "../components/ContainerBox"
-import Agenda from "../components/Home/Agenda"
+import Agenda, { AgendaProps } from "../components/Home/Agenda"
 import News, { NewsProps } from "../components/Home/News"
 import NewsLetter from "../components/Home/NewsLetter"
-import PJRN from "../components/Home/PJRN"
+import PJRN, { PJRNProps } from "../components/Home/PJRN"
 import Productivity from "../components/Home/Productivity"
 import Search from "../components/Home/Search"
-import ServiceAndInformation from "../components/Home/ServiceAndInformation"
+import ServiceAndInformation, { ServiceAndInformationProps } from "../components/Home/ServiceAndInformation"
 import Info from "../components/Home/Info"
 import { GetServerSideProps } from 'next';
 
 interface HomePropsInterface {
   news: NewsProps
+  agenda: AgendaProps,
+  serviceAndInformation: ServiceAndInformationProps,
+  pjrn: PJRNProps
 }
 
-export default function Home({ news }: HomePropsInterface) {
-  const eventList = [event0, event1, event2];
-  const serviceList = [service0, service1, service2, service3, service4, service5, service6, service7, service8, service9, service10, service11, service12, service13, service14, service15];
-  const calendar = { weekday:'TER', monthday:19, month:'OUT'};
-  const unidadesList = [unidades1, unidades2, unidades3, unidades4]
+export default function Home({ news, agenda, serviceAndInformation, pjrn }: HomePropsInterface) {
   return (
     <>
       <Search />
-      <ServiceAndInformation serviceList={serviceList}/>
+      <ServiceAndInformation serviceList={serviceAndInformation.serviceList}/>
       <News noticias={news.noticias} assuntos={news.assuntos}/>
-      <PJRN unidadeList={unidadesList}/>
+      <PJRN unidadeList={pjrn.unidadeList}/>
       <Info />
       <Box w='full' bgColor='#fff'>
         <ContainerBox pt='80px' pb='112px'>
           <SimpleGrid columns={[1, 1, 2]} justifyContent='center' spacingX='134px' spacingY='50px'>
             <Productivity/>
-            <Agenda calendar={calendar} eventList={eventList}/>
+            <Agenda calendar={agenda.calendar} eventList={agenda.eventList}/>
           </SimpleGrid>
         </ContainerBox>
       </Box>
@@ -66,7 +65,10 @@ export const getServerSideProps: GetServerSideProps = async () => {
 
   return {
     props: {
-      news: newsApiResult
+      news: newsApiResult,
+      agenda: {eventList: [event0, event1, event2], calendar: { weekday:'TER', monthday:19, month:'OUT'}},
+      serviceAndInformation: {serviceList: [service0, service1, service2, service3, service4, service5, service6, service7, service8, service9, service10, service11, service12, service13, service14, service15]},
+      pjrn: {unidadeList: [unidades1, unidades2, unidades3, unidades4]}
     },
   }
 }

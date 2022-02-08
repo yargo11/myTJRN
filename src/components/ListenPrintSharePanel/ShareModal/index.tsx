@@ -43,7 +43,7 @@ export default function ShareModal ({ isShareModalOpen, handleCloseShareModal }:
                     </ShareGrid>
                     <ShareGrid title='Copiar link' columns={1}>
                     <InputGroup size="md">
-                        <Input value={windowUrl}/>
+                        <Input value={windowUrl} readOnly/>
                         <InputRightElement width="80px">
                             <Button h="1.75rem" size="sm" onClick={() => {navigator.clipboard.writeText(windowUrl)}} aria-label={'Copiar Link da página'}>
                                 Copiar

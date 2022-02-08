@@ -1,4 +1,4 @@
-import { Flex, Button, Image, Divider } from "@chakra-ui/react";
+import { Flex, Button, Image, Divider, Spacer } from "@chakra-ui/react";
 import { useState } from "react";
 import ShareModal from "./ShareModal";
 
@@ -29,16 +29,16 @@ export default function ListenPrintSharePanel({ listOfContentToRead }: ListenPri
 
     return (
         <>
-            <Flex className='no-print' alignItems='center' fontWeight='bold'>
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Share.svg' w='1rem' h='1rem'/>} onClick={handleOpenShareModal}>
+            <Flex className='no-print' alignItems='start' fontWeight='bold' flexDir={{base: 'row', md: 'column', xl:'row'}}>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' mb='8px' rightIcon={<Image src='/icons/Share.svg' w='1rem' h='1rem'/>} onClick={handleOpenShareModal}>
                     Compartilhar
                 </Button>
                 <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%' />
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Print.svg' w='1rem' h='1rem'/>} onClick={() => { window.print(); }}>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' mb='8px' rightIcon={<Image src='/icons/Print.svg' w='1rem' h='1rem'/>} onClick={() => { window.print(); }}>
                     Imprimir
                 </Button>
                 <Divider orientation='vertical' border='1px solid #D8DBDF' mx='8px' h='50%' />
-                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' rightIcon={<Image src='/icons/Listen.svg' w='1rem' h='1rem'/>} onClick={handleListenFunction}>
+                <Button fontSize='87.5%' fontWeight='normal' lineHeight='121%' variant='link' mb='8px' rightIcon={<Image src='/icons/Listen.svg' w='1rem' h='1rem'/>} onClick={handleListenFunction}>
                     Ouvir
                 </Button>
             </Flex>

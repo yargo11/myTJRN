@@ -18,7 +18,7 @@ export default function ServiceAndInformationCard ({ description, label, link }:
             px='24px'
             border='1px'
             borderColor='#D8DBDF'
-            borderRadius='md'
+            borderRadius='2xl'
             className='card-print'>
             <Image src='icons/TopicBox.svg' w='53px' h='53px' ml='8.63px' display={{ base: 'none', sm: 'initial' }} alt=''/>
             <Flex justifyContent='space-between'>

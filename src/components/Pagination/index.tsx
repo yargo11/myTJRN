@@ -1,8 +1,8 @@
-import { Center } from '@chakra-ui/react'
+import { BoxProps, Center } from '@chakra-ui/react'
 import MidDevicesPagination from './MidDevicesPagination';
 import SmallDevicesPagination from './SmallDevicesPagination';
 
-export interface PaginationProps {
+export interface PaginationProps extends BoxProps {
     currentPage: number;
     numberOfPages: number;
     paginationRange: number;
@@ -14,9 +14,9 @@ export interface PaginationProps {
     onClickFunction: (selectedPage:number) => void;
 }
 
-export default function Pagination ({ currentPage, numberOfPages, paginationRange, marginRange, skipGap, breakLabel, nextLabel, previousLabel, onClickFunction }:PaginationProps) {
+export default function Pagination ({ currentPage, numberOfPages, paginationRange, marginRange, skipGap, breakLabel, nextLabel, previousLabel, onClickFunction, ...attrs }:PaginationProps) {
     return (
-        <Center w='full'>
+        <Center w='full' {...attrs}>
             <MidDevicesPagination
                 currentPage={currentPage}
                 numberOfPages={numberOfPages}

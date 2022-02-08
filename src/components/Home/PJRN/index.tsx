@@ -4,7 +4,7 @@ import AreaTitle from "../AreaTitle";
 import PJRNCard from "./PJRNCard";
 import CardList from '../../CardList';
 
-interface PJRNProps {
+export interface PJRNProps {
     unidadeList: Array<UnidadeProps>
 }
 

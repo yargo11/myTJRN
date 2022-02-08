@@ -3,7 +3,7 @@ import Calendar, { CalendarProps } from "../../Calendar";
 import AreaTitle from "../AreaTitle";
 import EventList, { Event } from './EventList';
 
-interface AgendaProps {
+export interface AgendaProps {
     calendar: CalendarProps,
     eventList: Array<Event>
 }
