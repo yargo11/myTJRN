@@ -1,4 +1,4 @@
-export const manuaisAdovgado = [
+export const manuaisAdvogado2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -19,7 +19,7 @@ export const manuaisAdovgado = [
         link: "/api/arquivo/SOLICITAR HABILITAÇÃO.pdf"
     },
 ]
-export const manuaisServidor = [
+export const manuaisServidor2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -49,7 +49,7 @@ export const manuaisServidor = [
         link: "/api/arquivo/REALIZAR JUNTADA DE DOCUMENTOS.pdf"
     },
 ]
-export const manuaisDesembargador = [
+export const manuaisDesembargador2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -73,7 +73,7 @@ export const manuaisDesembargador = [
         link: "/api/arquivo/Votação antecipada e assinar acórdão - Vogal.pdf"
     },
 ]
-export const manuaisOficiaisDeJustica = [
+export const manuaisOficiaisDeJustica2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -91,7 +91,7 @@ export const manuaisOficiaisDeJustica = [
         link: "/api/arquivo/Oficial_de_Justiça.pdf"
     },
 ]
-export const manuaisMinisterioPublico = [
+export const manuaisMinisterioPublico2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -112,7 +112,7 @@ export const manuaisMinisterioPublico = [
         link: "/api/arquivo/SOLICITAR HABILITAÇÃO.pdf"
     },
 ]
-export const manuaisDefensorias = [
+export const manuaisDefensorias2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -133,7 +133,7 @@ export const manuaisDefensorias = [
         link: "/api/arquivo/SOLICITAR HABILITAÇÃO.pdf"
     },
 ]
-export const manuaisPraticasJuridicas = [
+export const manuaisPraticasJuridicas2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -154,7 +154,7 @@ export const manuaisPraticasJuridicas = [
         link: "/api/arquivo/SOLICITAR HABILITAÇÃO.pdf"
     },
 ]
-export const manuaisProcuradorias = [
+export const manuaisProcuradorias2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"
@@ -172,7 +172,7 @@ export const manuaisProcuradorias = [
         link: "/api/arquivo/SOLICITAR HABILITAÇÃO.pdf"
     },
 ]
-export const manuaisRedacaoJudiciaria = [
+export const manuaisRedacaoJudiciaria2 = [
     {
         title: "ACESSO AO PJe",
         link: "/api/arquivo/ACESSO AO PJe.pdf"

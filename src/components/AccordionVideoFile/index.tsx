@@ -47,7 +47,7 @@ export default function AccordionVideoFile({ allfilesandvideos }: AllFilesAndVid
                                                 href={data.link}
                                                 fontSize='112.5%'
                                                 fontWeight='400'
-
+                                                target='_blank'
                                             >
                                                 {data.title}
                                             </Link>

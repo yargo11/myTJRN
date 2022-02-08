@@ -10,16 +10,24 @@ import Article from '../../components/Aside/Article';
 import Coordenadoria from '../../components/Coordenadoria/IntroCoord';
 import MenuCoord from '../../components/Coordenadoria/MenuCoord';
 import Warnings from '../../components/Warnings';
+import SiteNews from '../../components/SiteNews';
 
 
 interface PageProps {
   title: string,
   subtitle: string,
-  content: string
-  lastUpdate: string
+  content: string,
+  lastUpdate: string,
+  linkprops: Array<LinkProps>
 }
 
-export default function Page({ title, subtitle, content, lastUpdate }: PageProps) {
+interface LinkProps {
+  title: string;
+  link: string;
+  lastUpdate: string;
+}
+
+export default function Page({ title, subtitle, content, lastUpdate, linkprops }: PageProps) {
 
   const router = useRouter()
   const { id } = router.query
@@ -61,16 +69,16 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
               lastUpdate={lastUpdate}
             />
           </GridItem>
-          <GridItem colSpan={2}>
-            <AreaTitle2 title='Apresentação' subtitle={introInfo.about} />
-            {/* <AreaTitle2 title='Projetos' subtitle={introInfo.projects} />
-            <AreaTitle2 title='Varas Especializadas' subtitle={introInfo.specialized_rods} /> */}
+          <GridItem colSpan={2} maxW='746px'>
+            {/* <PageContentList headers={pageTitles} /> */}
+            <AreaTitle2 title='Apresentação' subtitle={''} />
+
+            <Text mb="40px">{parse(content)}</Text>
+
             <Warnings warnings={warnings} />
 
+            <SiteNews linkprops={linkprops} />
 
-            {/* <AreaTitle title={pje[Number(id)].title} subtitle={pje[Number(id)].subtitle} /> */}
-            {/* <PageContentList headers={pageTitles} /> */}
-            {/* <Text>{parse(pje[Number(id)].content)}</Text> */}
           </GridItem>
         </SimpleGrid>
       </ContainerBox>
@@ -86,7 +94,17 @@ export const getServerSideProps: GetServerSideProps = async () => {
       title: 'Como adotar',
       subtitle: 'Na adoção uma criança ou adolescente é acolhido por uma família, passando a ser filho ou filha na sua integralidade.',
       lastUpdate: '2021-12-03T14:38:51-0300',
-      content: ``
+      content: `
+      <p>O PJe tem como premissa básica ofertar um sistema de informação "capaz de permitir a prática de atos processuais pelos magistrados, servidores e demais participantes da relação processual diretamente no sistema, assim como o acompanhamento desse processo judicial, independentemente de o processo tramitar na Justiça Federal, na Justiça dos Estados, na Justiça Militar dos Estados e na Justiça do Trabalho".</p>
+      <p>Entretanto, a adoção do PJe vai mais longe e se apresenta como uma ferramenta robusta, fundamentada em requisitos de segurança e interoperabilidade, que proporcionará aos tribunais grande racionalização de gastos com aquisição e manutenção de softwares, podendo direcionar parte dos recursos financeiros para suas atividades finalísticas.</p>
+      <p>Assim, é possível constatar a dimensão do Sistema Processo Judicial Eletrônico (PJe) – projeto do Conselho Nacional de Justiça (CNJ) – e sua importância para o Poder Judiciário brasileiro.</p>
+      <p>A partir do dia 16 de maio de 2013, o Tribunal de Justiça do Rio Grande do Norte (TJRN) passou a fazer uso do sistema PJe – Processo Judicial Eletrônico. O projeto piloto do PJe foi implantado nos 1º e 2º Juizados Especiais Cíveis da Zona Sul em Natal.</p>
+      `,
+      linkprops: [
+        {title: 'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '#', lastUpdated: '08 de Fevereiro de 2022'},
+        {title: 'Comarca de Touros seleciona estagiário de pós-graduação em Direito ', link: '#', lastUpdated: '08 de Fevereiro de 2022'},
+        {title: 'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '#', lastUpdated: '08 de Fevereiro de 2022'},
+      ]
     }
   }
 }
@@ -95,18 +113,25 @@ export const getServerSideProps: GetServerSideProps = async () => {
 const breadcrumbpje1 = { label: 'PJE', link: '#' }
 
 const linksInfo = [
-  { label: 'Início', link: '/pje/0' },
-  { label: 'PJe - Primeiro grau', link: '/pje/pje1grau' },
-  { label: 'PJe - Segundo grau', link: '/pje/2' },
-  { label: 'Documentos', link: '/pje/empresas' },
+  { label: "Início", link: "/pje/0" },
+  { label: "PJe - Primeiro grau", link: "/pje/1" },
+  { label: "PJe - Segundo grau", link: "/pje/2" },
+  { label: "Documentos", link: "/pje/empresas" },
 ]
 
 const subMenu = [
-  { label: 'Sobre o PJe', link: '/pje/0' },
-  { label: 'Pje - Primeiro Grau', link: '/pje/0' },
-  { label: 'Pje - Segundo Grau', link: '/pje/0' },
-  { label: 'Documentos', link: '/pje/0' },
-  { label: 'Municípios e Procuradorias', link: '/pje/0' },
+  { label: "Sobre o PJe", link: "/pje/0" },
+  { label: "Pje - Primeiro Grau", link: "/pje/0" },
+  { label: "Pje - Segundo Grau", link: "/pje/0" },
+  { label: "Documentos", link: "/pje/0" },
+  { label: "Municípios e Procuradorias", link: "/pje/0" },
+  { label: "Comarcas Contempladas", link: "/pje/0" },
+  { label: "Empresas e Órgãos públicos", link: "/pje/0" },
+  { label: "Perguntas Frequentes", link: "/pje/0" },
+  { label: "Tabelas Processuais Unificadas", link: "https://www.cnj.jus.br/sgt/consulta_publica_classes.php" },
+  { label: "Registro de Indisponibilidade", link: "https://apps.tjrn.jus.br/siri/f/public/consultarIndisponibilidade/index.xhtml" },
+  { label: "Cadastro de Pessoa Jurídica SisCadPJ", link: "https://siscadpj.tjrn.jus.br/" },
+  { label: "Cadastro de Serviços de Informática - Agile", link: "https://agile.tjrn.jus.br/" },
 ]
 
 const basicInfo = {
@@ -132,132 +157,3 @@ const introInfo = {
   specialized_rods: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque neque nulla, egestas ut nisi quis, dictum consequat lorem. Suspendisse nulla diam, viverra cursus arcu quis, varius laoreet risus. Sed sed fermentum felis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam gravida tellus ac vulputate tempus. Morbi nec auctor tortor. Maecenas placerat felis eget quam maximus pharetra. Nam viverra ultricies ex at elementum. Aenean non cursus dui. Suspendisse egestas viverra.'
 }
 
-const pje = [
-  {
-    pid: 0,
-    title: 'Apresentação',
-    subtitle: '',
-    content: `
-    <p><strong>Apresentação</strong></p>
- 
-<p>O PJe tem como premissa básica ofertar um sistema de informação 'capaz de permitir a prática de atos processuais pelos magistrados, servidores e demais participantes da relação processual diretamente no sistema, assim como o acompanhamento desse processo judicial, independentemente de o processo tramitar na Justiça Federal, na Justiça dos Estados, na Justiça Militar dos Estados e na Justiça do Trabalho'.</p>
-
-<p>Entretanto, a adoção do PJe vai mais longe e se apresenta como uma ferramenta robusta, fundamentada em requisitos de segurança e interoperabilidade, que proporcionará aos tribunais grande racionalização de gastos com aquisição e manutenção de softwares, podendo direcionar parte dos recursos financeiros para suas atividades finalísticas.</p>
-
-<p>Assim, é possível constatar a dimensão do Sistema Processo Judicial Eletrônico (PJe) – projeto do Conselho Nacional de Justiça (CNJ) – e sua importância para o Poder Judiciário brasileiro.</p>
-
-<p>A partir do dia 16 de maio de 2013, o Tribunal de Justiça do Rio Grande do Norte (TJRN) passou a fazer uso do sistema PJe – Processo Judicial Eletrônico. O projeto piloto do PJe foi implantado nos 1º e 2º Juizados Especiais Cíveis da Zona Sul em Natal.</p>
-
- 
-
-<p>Histórico </p>
-
-<p>A história do sistema Processo Judicial eletrônico (PJe) é bem recente, mas nem por isso representa desconforto para sua adoção. O seu marco inicial, na realidade foi uma retomada, pelo CNJ, em setembro de 2009, do projeto inicial dos cinco Tribunais Regionais Federais (TRF's), a partir da continuidade do TRF da 5a. Região, sediado em Recife/PE.</p>
-
-<p>Com o compartilhamento da experiência do TRF da 5a. Região, foi constatado que ali existia um projeto propenso ao êxito, pois tinha como fundamentos: um modelo de arquitetura em fluxos configuráveis, a utilização de software aberto e a garantia da retenção do conhecimento no Judiciário, requisitos até então não adotados. Logo foi firmado um convênio entre os cinco tribunais federais.</p>
-
-<p>Em pouco tempo novos parceiros foram agregados ao PJe, em uma grande rede formada pelo CNJ, pelo Conselho Superior da Justiça do Trabalho e pelo Tribunal Superior do Trabalho, que incorporou todos os Tribunais Regionais do Trabalho (TRT's). Fechando a rede PJe, também firmaram convênio 16 tribunais de justiça estaduais e o Tribunal de Justiça Militar de Minas Gerais.</p>
-
-<p>Em abril de 2010, na Subseção Judiciária de Natal/RN, vinculada ao TRF da 5a. Região, foi implantada a primeira versão do PJe. A disseminação foi rápida e outras Subseções do TRF da 5a. Região receberam o PJe. Já em dezembro de 2010, a primeira versão nacional foi implantada no Tribunal de Justiça de Pernambuco e no Tribunal Regional Federal da 3a. Região.</p>
-
- 
-
-<p>Principais Características</p>
-
-<p>A seguir são apresentadas algumas características que sinalizam para a quebra de paradigmas com a implantação do sistema Processo Judicial eletrônico (PJe):</p>
-
-<p>Fluxos Configuráveis: Representa o meio termo entre o engessamento total e a liberdade absoluta. A alteração dos fluxos para definir os caminhos não depende da intervenção dos profissionais de Tecnologia da Informação (TI), para efetuar as constantes manutenções no sistema, mas podem ser realizadas por um servidor com conhecimento especializado em processo judicial.</p>
-
-<p>Ato e Movimento integrados: Ato e movimento ocorrem de forma paralela. O tempo de lançamento da movimentação é eliminado e, consequentemente, gera um benefício à tramitação do processo.</p>
-
-<p>Inovação para o Processo Criminal: A partir da criação de um grupo específico criado no CNJ, foram elaboradas novas funcionalidades que permitem o controle mais efetivo e abrangem todo o processo criminal. Várias informações são armazenadas individualmente e de forma detalhada, além da facilidade da emissão de certidões nacionais e do intercâmbio de informações.</p>
-
-<p>Liberdade de Uso com Segurança: Garantia, com precisão, do que pode ser acessado por um usuário, sem a necessidade de intervenção da TI.</p>
-
-<p>Múltiplos Perfis: Um usuário pode ter mais de um perfil, possibilitando a otimização dos recursos humanos.</p>
-
-<p>Modelo de Documentos: Facilidade na automação dos fluxos processuais com a classificação dos modelos de documentos e da adoção de taxonomia de tipos de documentos.</p>
-
-<p>Editor de Texto Incorporado ao Sistema: Possibilita menor custo com aquisição de editor de texto proprietário, menor espaço de armazenamento, maior velocidade de acesso e facilidade de indexação.</p>
-
-<p>Dupla Facilidade de Visualização do Processo: Maior produtividade com o visualizador que mostra as peças sequencialmente, com uso de dois monitores nos computadores e apresentação de metadados.</p>
-
-<p>Ajuda Colaborativa e Intuitiva: Ao acessar a ajuda é mostrado o texto referente a página que estava sendo utilizada no momento da solicitação. O texto da ajuda pode ser editado por usuários devidamente autorizados.</p>
-
-<p>Ferramenta de Busca: Pesquisa de dados como ocorre nas ferramentas de buscas existentes, de forma rápida e eficiente.</p>
-
-<p>Auditoria: Registro de todas das operações ocorridas no sistema.</p>
-
-<p>Unificação de Tabelas: As tabelas unificadas nacionais permitem padronização e diminuem o retrabalho.</p>
-
-<p>Transparência na Distribuição dos Processos: Distribuição objetiva, a partir de um conjunto de fatores, contemplando as mais variadas hipóteses, possibilitando medir o trabalho decorrente do processo.</p>
-
-<p>Assinatura Digital: Uso de assinatura digital certificada pela ICP-Brasil, garantindo a segurança do processo judicial eletrônico.</p>
-
-<p>Replicação Automática: Atualização de forma automática de informações na base do CNJ, sem necessidade de alocar servidores e outros recursos.</p>
-
-<p>Integração com Outros Sistemas: Possibilidade futura de integração com outros sistemas, através de comunicação realizada exclusivamente por meio eletrônico.</p>
-
- 
-
-<p>Utilização do PJe pelo Poder Judiciário</p>
-
-<p>O sistema Processo Judicial eletrônico (PJe) é o sistema padrão de toda a Justiça Federal e já está em implantação em todos os TRT's, além de contar com a adesão de 20 Tribunais Estaduais de Justiça e de 2 Tribunais de Justiça Militar.</p>
-
-<p>A premissa no processo de implantação e utilização do PJe é o trabalho que deve ser realizado de parametrização e configuração, que demanda um tempo inicial para o piloto, mas que depois de configurado sua replicação ocorre de forma rápida.</p>
-
-<p>No Tribunal de Justiça de Pernambuco, o PJe já é utilizado em 23 dos 25 juizados especiais de Recife e em 5 juizados especiais das Comarcas de Olinda, Paulista e Cabo de Santo Agostinho. No Tribunal de Justiça da Paraíba está presente em 10 Varas.</p>
-
-<p>No TRT da 21a. Região, sediado em Natal, o PJe já funciona na Vara de Trabalho de Goianinha e nas três Varas de Trabalho de Mossoró. Também funciona nos mandados de segurança que tramitam na 2a. Instância, o que, segundo informações do próprio TRT tem agilizado o andamento processual das Ações e reduzido o tempo de solução dos processos.</p>
-
-<p>A utilização do PJe em Segunda Instância também é possível e ocorre através de configuração e parametrização. O TRF da 5a. Região, sediado em Recife, já utiliza em seu colegiado e o TJ/PE também irá utilizar, além, claro, do próprio CNJ, que usará nas turmas e colegiado.</p>
-    `,
-    lastUpdate: '',
-  },
-  {
-    pid: 1,
-    title: 'Documentos',
-    subtitle: '',
-    content: `
-    <strong><p>Documentos Legais</p></strong>
-    <br/>
-    <p>O Processo Judicial eletrônico (PJe) é regulamentado pela Lei 11.419/2006 e foi desenvolvido pelo Conselho Nacional de Justiça (CNJ) com o objetivo de padronizar e unificar todas as informações e atos processuais, nas esferas das justiças federal, estadual, militar e do trabalho, em todo o país, tornando a consulta processual mais fácil e ágil.</p>`,
-    lastUpdate: ''
-  },
-  {
-    pid: 2,
-    title: 'Comarcas Contempladas',
-    subtitle: '',
-    content: ``,
-    lastUpdate: ''
-  },
-  {
-    pid: 3,
-    title: 'Empresas/Órgãos Públicos',
-    subtitle: '',
-    content: ``,
-    lastUpdate: ''
-  },
-  {
-    pid: 4,
-    title: 'Municípios - Procuradorias',
-    subtitle: '',
-    content: ``,
-    lastUpdate: ''
-  },
-  {
-    pid: 5,
-    title: 'Vídeos tutoriais e manuais - 1º Grau',
-    subtitle: '',
-    content: ``,
-    lastUpdate: ''
-  },
-  {
-    pid: 6,
-    title: 'Vídeos tutoriais e manuais - 2º Grau',
-    subtitle: '',
-    content: ``,
-    lastUpdate: ''
-  },
-
-]

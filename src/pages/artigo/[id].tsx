@@ -34,6 +34,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
   while (content.search('<h2>') != -1) {
     content = content.replace('<h2>', () => {
       headerIndex++;
+      console.log(headerIndex)
       return `<h2 id="${headerIndex}">`
     })
   }
