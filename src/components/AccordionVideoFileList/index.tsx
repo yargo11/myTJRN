@@ -11,17 +11,20 @@ interface FileAndVideoProps {
 
 interface TitleAndLinkProps {
     title: string;
-    link: string
+    link?: string
 }
 
-export default function AccordionVideoFile({ allfilesandvideos }: AllFilesAndVideosProps) {
+export default function AccordionVideoFileList({ allfilesandvideos }: AllFilesAndVideosProps) {
     return (
         <Accordion allowToggle>
             {
                 allfilesandvideos.map(filevideo =>
                     <>
-                        <AccordionItem>
-                            <AccordionButton>
+                        <AccordionItem
+                            _last={{ borderBottomWidth: '0px' }}
+                            _first={{ borderTopWidth: '0px' }}
+                        >
+                            <AccordionButton px='0px' py='24px'>
                                 <Box flex='1' textAlign='left'>
                                     <Text
                                         fontSize='200%'
@@ -42,15 +45,27 @@ export default function AccordionVideoFile({ allfilesandvideos }: AllFilesAndVid
                             <AccordionPanel pb={4}>
                                 <UnorderedList color='#336699'>
                                     {filevideo.videofiles.map(data =>
-                                        <ListItem key={data.link}>
-                                            <Link
-                                                href={data.link}
-                                                fontSize='112.5%'
-                                                fontWeight='400'
-                                                target='_blank'
-                                            >
-                                                {data.title}
-                                            </Link>
+                                        <ListItem
+                                            key={data.link}
+                                            fontSize='112.5%'
+                                            fontWeight='400'
+                                        >
+                                            {data.link ?
+                                                (
+                                                    <Link
+                                                        href={data.link}
+                                                        target='_blank'
+                                                    >
+                                                        {data.title}
+                                                    </Link>
+                                                )
+                                                :
+                                                (
+                                                    <Text color='#000000'>
+                                                        {data.title}
+                                                    </Text>
+                                                )
+                                            }
                                         </ListItem>
                                     )}
                                 </UnorderedList>

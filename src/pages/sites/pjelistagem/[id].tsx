@@ -7,8 +7,6 @@ import { Box, Flex, GridItem, SimpleGrid, Text, Accordion, AccordionItem, Accord
 import MenuCoord from '../../../components/Coordenadoria/MenuCoord';
 import Coordenadoria from '../../../components/Coordenadoria/IntroCoord';
 
-
-
 interface PageProps {
     title: string,
     areaTitle: string,
@@ -109,7 +107,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
             telefone: '+55 84 3673-9216',
             accordion: [
                 { title: 'Procuradoria Geral do Municipio de Acari', content: [{ empresa: 'Municipio de Acari', cnpj: '08097008000120' }] },
-                { title: 'Procuradoria Geral do Municipio de Acari', content: [{ empresa: 'Municipio de Acari', cnpj: '08097008000121' },{ empresa: 'Municipio de Acari', cnpj: '08097008000122' }] },
+                { title: 'Procuradoria Geral do Municipio de Acari', content: [{ empresa: 'Municipio de Acari', cnpj: '08097008000121' }, { empresa: 'Municipio de Acari', cnpj: '08097008000122' }] },
             ]
         }
     }

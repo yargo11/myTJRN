@@ -2,13 +2,13 @@ import { GetServerSideProps } from "next";
 import PageTitle, { BreadCrumbProps } from "../../../components/PageTitle";
 import AreaTitle from "../../../components/Home/AreaTitle";
 import ContainerBox from "../../../components/ContainerBox";
-import { Box, Flex, GridItem, SimpleGrid, Text, Accordion, AccordionItem, AccordionButton, AccordionIcon, AccordionPanel, Spacer, } from "@chakra-ui/react";
+import { GridItem, SimpleGrid, Spacer } from "@chakra-ui/react";
 
 import MenuCoord from "../../../components/Coordenadoria/MenuCoord";
 import Coordenadoria from "../../../components/Coordenadoria/IntroCoord";
+import AccordionVideoFileList from "../../../components/AccordionVideoFileList";
 
 import { manuaisServidor, manuaisAdovgado, manuaisMagistrado, manuaisOficiaisDeJustica, manuaisMinisterioPublico, manuaisDefensorias, manuaisPraticasJuridicas, manuaisProcuradorias, manuaisDelegacias, manuaisOutrosManuais } from "./manuais1";
-import AccordionVideoFile from "../../../components/AccordionVideoFile";
 import { manuaisAdvogado2, manuaisDefensorias2, manuaisDesembargador2, manuaisMinisterioPublico2, manuaisOficiaisDeJustica2, manuaisPraticasJuridicas2, manuaisProcuradorias2, manuaisServidor2, manuaisRedacaoJudiciaria2 } from "./manuais2";
 import { useRouter } from "next/router";
 
@@ -53,7 +53,7 @@ interface TitleAndLinkProps {
     link: string
 }
 
-export default function PjeManuais({ title, titleDescription, areaTitle, subAreaTitle, accordion, fileandvideos, breadCrumbArray, coordenacao, contato, email, telefone, lastUpdate }: PageProps) {
+export default function PjeManuais({ title, titleDescription, areaTitle, subAreaTitle, fileandvideos, breadCrumbArray, coordenacao, contato, email, telefone, lastUpdate }: PageProps) {
 
     // Implementação temporária usando useRouter para receber o id e montar a paginá de acordo com o mesmo (Será mudado quando tivermos recebendo dados do back-end)
     // *pjeid* -> remover após o back-end estar pronto para nos enviar dados e usar o {id} do getServerSideProps, proveniente do context.query
@@ -90,7 +90,7 @@ export default function PjeManuais({ title, titleDescription, areaTitle, subArea
                             subtitle={subAreaTitle[pjeid]}
                         />
                         <Spacer h="64px" />
-                        <AccordionVideoFile
+                        <AccordionVideoFileList
                             allfilesandvideos={fileandvideos[pjeid]}
                         />
                     </GridItem>
@@ -115,7 +115,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
             contato: "Av. duqe de caxias, 151, 3 andar, ribeira, natal rn",
             email: "secretariageral@jtnr.jus.br",
             telefone: "+55 84 3673-9216",
-            fileandvideos: [pjemanuais1, pjemanuais2, pjevideotutorias1],
+            fileandvideos: [pjemanuais1, pjemanuais2, pjevideotutorias1, empresas],
         }
     }
 }
@@ -154,7 +154,7 @@ const subMenu = [
     { label: "Pje - Primeiro Grau", link: "/pje/0" },
     { label: "Pje - Segundo Grau", link: "/pje/0" },
     { label: "Documentos", link: "/pje/0" },
-    { label: "Municípios e Procuradorias", link: "/pje/0" },
+    { label: "Municípios e Procuradorias", link: "/pje/3" },
     { label: "Comarcas Contempladas", link: "/pje/0" },
     { label: "Empresas e Órgãos públicos", link: "/pje/0" },
     { label: "Perguntas Frequentes", link: "/pje/0" },
@@ -167,14 +167,15 @@ const subMenu = [
 const areaTitles = [
     "Manuais - 1º grau",
     "Manuais - 2º grau",
-    "Vídeo tutoriais - 1º e 2º grau"
+    "Vídeo tutoriais - 1º e 2º grau",
+    "Municípios e Procuradorias"
 ]
 
 const subAreaTitle = [
     "Manuais de 1º grau sobre o usa das ferramentas do PJe",
     "Manuais de 2º grau sobre o usa das ferramentas do PJe",
     "Assista aos vídeos tutoriais sobre o uso das ferramentas do PJe, nos âmbitos Criminal, Crimininal e Cível.",
-    "Assista aos vídeos tutoriais sobre o uso das ferramentas do PJe, nos âmbitos Criminal, Crimininal e Cível.",
+    "",
 ]
 
 const pjemanuais1 = [
@@ -244,4 +245,16 @@ const pjevideotutorias1 = [
             { title: "20 – VINCULANDO PROCURADOR NA SESSÃO DE JULGAMENTO – 2º GRAU", link: "https://www.youtube.com/watch?v=bAgal9KHC8o?list=PLCaY5Y2kPdwn27b1-d6qFMsrK6kRb-NlY" },
         ]
     }
+]
+
+const empresas = [
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
+    {category: "Produradoria Geral do Município de Acari", videofiles:[{title: "MUNICIPIO DE ACARI - CNPJ: 08097008000120"}]},
 ]

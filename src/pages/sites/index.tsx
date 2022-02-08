@@ -101,9 +101,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
       <p>A partir do dia 16 de maio de 2013, o Tribunal de Justiça do Rio Grande do Norte (TJRN) passou a fazer uso do sistema PJe – Processo Judicial Eletrônico. O projeto piloto do PJe foi implantado nos 1º e 2º Juizados Especiais Cíveis da Zona Sul em Natal.</p>
       `,
       linkprops: [
-        {title: 'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '#', lastUpdated: '08 de Fevereiro de 2022'},
-        {title: 'Comarca de Touros seleciona estagiário de pós-graduação em Direito ', link: '#', lastUpdated: '08 de Fevereiro de 2022'},
-        {title: 'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '#', lastUpdated: '08 de Fevereiro de 2022'},
+        { title: 'CEJAI encessa ano de 2019 com recorde de adoções internacionais', link: '#', lastUpdated: '08 de Fevereiro de 2022' },
+        { title: 'Comarca de Touros seleciona estagiário de pós-graduação em Direito ', link: '#', lastUpdated: '08 de Fevereiro de 2022' },
+        { title: 'TJRN divulga edital de seleção temporária com 33 vagas para área de Tecnologia da Informação', link: '#', lastUpdated: '08 de Fevereiro de 2022' },
       ]
     }
   }
