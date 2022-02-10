@@ -14,7 +14,7 @@ export default function MenuCoord({ linkList, subMenu }) {
                     spacing="20px"
                 >
                     {linkList.map(link =>
-                        <Link key={link.link} href={link.link}>{link.label}</Link>
+                        <Link key={link.label} href={link.link}>{link.label}</Link>
                     )
                     }
                 </HStack>
@@ -33,7 +33,7 @@ export default function MenuCoord({ linkList, subMenu }) {
                 <SimpleGrid minChildWidth="306px" pb="1rem" spacing="24px" w="100%" maxW="1296px" m="auto">
                     {subMenu.map(option =>
                         <Link
-                            key={option.link}
+                            key={option.label}
                             href={option.link}
                             display="flex"
                             alignItems="center"

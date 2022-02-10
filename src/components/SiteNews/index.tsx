@@ -16,6 +16,7 @@ export default function SiteNews({ linkprops }) {
                     <ListItem
                         borderBottom="1px solid #d8d8df"
                         py="1rem"
+                        key={link.title}
                     >
                         <Link
                             href={link.link}
