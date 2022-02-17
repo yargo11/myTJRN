@@ -5,7 +5,7 @@ interface SearchButtonProps extends ButtonProps {
     actualFunction: string;
 }
 
-export default function SearchButton ({ name, actualFunction, ...others }: SearchButtonProps) {
+export default function SearchButton({ name, actualFunction, ...others }: SearchButtonProps) {
     return (
         <Button
             bgColor='white'
@@ -19,9 +19,10 @@ export default function SearchButton ({ name, actualFunction, ...others }: Searc
             overflowWrap='break-word'
             whiteSpace='normal'
             borderRadius={actualFunction === name ? '6px 6px 0 0' : 'md'}
-            boxShadow={actualFunction === name ?'0 10px #ffffff, 0 -3px #C9E880' : ''}
+            boxShadow={actualFunction === name ? '0 10px #ffffff, 0 -3px #C9E880' : ''}
+            _focus={{ boxShadow: "0 10px #ffffff, 0 -3px #C9E880" }}
             {...others}>
-                {name}
+            {name}
         </Button>
     );
 }
