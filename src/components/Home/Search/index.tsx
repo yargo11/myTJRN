@@ -3,72 +3,77 @@ import { useState } from 'react';
 import ContainerBox from '../../ContainerBox';
 import SearchButton from './SearchButton';
 
+
+interface AbasProps {
+
+    nome: string,
+    texto: string,
+    link: [
+        {
+            nome: string,
+            link: string,
+        }
+    ],
+    buttonLink: string
+
+}
+
 export default function Search() {
 
-    enum SearchBannerFunctions {
-        consultaProcessual = "Consulta Processual",
-        jurisprudencia = 'Jurisprudência',
-        diarioDeJustica = 'Diário de Justiça',
-        precedentes = 'Precedentes',
-        pje = 'Processo Judicial Eletrônico',
-    }
-
-    enum SearchBannerDescFunctions {
-        consultaProcessual = "Texto Consulta Processual",
-        jurisprudencia = 'Jurisprudência é o termo jurídico que designa o conjunto das decisões sobre interpretações das leis feitas pelos tribunais de uma determinada jurisdição.',
-        diarioDeJustica = 'O Diário da Justiça é um veículo de comunicação através do qual a Imprensa Nacional brasileira tornava públicos assuntos relacionados ao Poder Judiciário.',
-        precedentes = 'Precedentes',
-        pje = 'Processo Judicial Eletrônico',
-    }
-
-    const typeLinks = {
+    const abas = {
         consultaProcessual: {
-            links:
-                [
-                    { linkName: 'PJe 1º Grau', linkAnchor: 'teste' },
-                    { linkName: 'PJe 2º Grau', linkAnchor: '#' },
-                    { linkName: 'SAJ 1º Grau', linkAnchor: '#' },
-                    { linkName: 'SAJ 2º Grau', linkAnchor: '#' },
-                    { linkName: 'Projudi', linkAnchor: '#' },
-                ]
+            nome: "Consulta Processual",
+            texto: "Texto Consulta Processual",
+            link: [
+                { nome: "link 1", anchor: "#" },
+                { nome: "link 2", anchor: "#" },
+                { nome: "link 3", anchor: "#" },
+            ],
+            buttonLink: { nome: "Ir para consulta processual", anchor: "#" }
         },
         jurisprudencia: {
-            links:
-                [
-                    { linkName: 'Link 1', linkAnchor: '' },
-                    { linkName: 'Link 2', linkAnchor: '' },
-                    { linkName: 'Link 3', linkAnchor: '' },
-                ]
+            nome: "Jurisprudência",
+            texto: "Jurisprudência é o termo jurídico que designa o conjunto das decisões sobre interpretações das leis feitas pelos tribunais de uma determinada jurisdição.",
+            link: [
+                { nome: "link 4", anchor: "#" },
+                { nome: "link 5", anchor: "#" },
+                { nome: "link 6", anchor: "#" },
+            ],
+            buttonLink: { nome: "Ir para jurisprudência", anchor: "#" }
         },
         diarioDeJustica: {
-            links:
-                [
-                    { linkName: '', linkAnchor: '' },
-                    { linkName: '', linkAnchor: '' },
-                    { linkName: '', linkAnchor: '' },
-                ]
+            nome: "Diário de Justiça",
+            texto: "O Diário da Justiça é um veículo de comunicação através do qual a Imprensa Nacional brasileira tornava públicos assuntos relacionados ao Poder Judiciário.",
+            link: [
+                { nome: "link 1", anchor: "#" },
+                { nome: "link 2", anchor: "#" },
+                { nome: "link 3", anchor: "#" },
+            ],
+            buttonLink: { nome: "Ir para diário de justiça", anchor: "#" }
         },
         precedentes: {
-            links:
-                [
-                    { linkName: '', linkAnchor: '' },
-                    { linkName: '', linkAnchor: '' },
-                    { linkName: '', linkAnchor: '' },
-                ]
+            nome: "Precedentes",
+            texto: "Texto para precedentes",
+            link: [
+                { nome: "link 1", anchor: "#" },
+                { nome: "link 2", anchor: "#" },
+                { nome: "link 3", anchor: "#" },
+            ],
+            buttonLink: { nome: "Ir para precedentes", anchor: "#" }
         },
         pje: {
-            links:
-                [
-                    { linkName: '', linkAnchor: '' },
-                    { linkName: '', linkAnchor: '' },
-                    { linkName: '', linkAnchor: '' },
-                ]
+            nome: "Processo Judicial Eletrônico",
+            texto: "Texto para Processo Judicial Eletrônico",
+            link: [
+                { nome: "link 1", anchor: "#" },
+                { nome: "link 2", anchor: "#" },
+                { nome: "link 3", anchor: "#" },
+            ],
+            buttonLink: { nome: "Ir para PJe", anchor: "#" }
         },
     }
 
-    const [type, setType] = useState(SearchBannerFunctions.consultaProcessual);
-    const [descType, setDescType] = useState(SearchBannerDescFunctions.consultaProcessual);
-    const [typeLink, setTypeLink] = useState(typeLinks.consultaProcessual)
+    const [type, setType] = useState(abas.consultaProcessual);
 
     return (
         <Box
@@ -80,35 +85,20 @@ export default function Search() {
             <ContainerBox>
                 <Flex>
                     <SearchButton
-                        actualFunction={type} name={SearchBannerFunctions.consultaProcessual}
-                        onClick={() => {
-                            setType(SearchBannerFunctions.consultaProcessual), setDescType(SearchBannerDescFunctions.consultaProcessual),
-                                setTypeLink(typeLinks.consultaProcessual)
-                        }} />
+                        actualFunction={type.nome} name={abas.consultaProcessual.nome}
+                        onClick={() => { setType(abas.consultaProcessual) }} />
                     <SearchButton
-                        actualFunction={type} name={SearchBannerFunctions.jurisprudencia}
-                        onClick={() => {
-                            setType(SearchBannerFunctions.jurisprudencia), setDescType(SearchBannerDescFunctions.jurisprudencia),
-                                setTypeLink(typeLinks.jurisprudencia)
-                        }} />
+                        actualFunction={type.nome} name={abas.jurisprudencia.nome}
+                        onClick={() => { setType(abas.jurisprudencia) }} />
                     <SearchButton
-                        actualFunction={type} name={SearchBannerFunctions.diarioDeJustica}
-                        onClick={() => {
-                            setType(SearchBannerFunctions.diarioDeJustica), setDescType(SearchBannerDescFunctions.diarioDeJustica),
-                                setTypeLink(typeLinks.diarioDeJustica)
-                        }} />
+                        actualFunction={type.nome} name={abas.diarioDeJustica.nome}
+                        onClick={() => { setType(abas.diarioDeJustica) }} />
                     <SearchButton
-                        actualFunction={type} name={SearchBannerFunctions.precedentes}
-                        onClick={() => {
-                            setType(SearchBannerFunctions.precedentes), setDescType(SearchBannerDescFunctions.precedentes),
-                                setTypeLink(typeLinks.precedentes)
-                        }} />
+                        actualFunction={type.nome} name={abas.precedentes.nome}
+                        onClick={() => { setType(abas.precedentes) }} />
                     <SearchButton
-                        actualFunction={type} name={SearchBannerFunctions.pje}
-                        onClick={() => {
-                            setType(SearchBannerFunctions.pje), setDescType(SearchBannerDescFunctions.pje),
-                                setTypeLink(typeLinks.pje)
-                        }} />
+                        actualFunction={type.nome} name={abas.pje.nome}
+                        onClick={() => { setType(abas.pje) }} />
                 </Flex>
 
                 <Flex px='24px' pt='24px' bgColor='white' borderRadius='0 6px 0 0' direction="column">
@@ -118,7 +108,7 @@ export default function Search() {
                         lineHeight="40px"
                         color="#00384D"
                     >
-                        {type}
+                        {type.nome}
                     </Text>
                     <Flex>
                         <Text
@@ -128,9 +118,11 @@ export default function Search() {
                             lineHeight="25px"
                             color="#4F5257"
                         >
-                            {descType}
+                            {type.texto}
                         </Text>
                         <Button
+                            as={Link}
+                            href={type.buttonLink.anchor}
                             h='50px'
                             // w='167px'
                             px="24px"
@@ -143,7 +135,7 @@ export default function Search() {
                             transition='filter 0.2s'
                             _hover={{ filter: 'brightness(120%)' }}
                             _active={{ filter: 'brightness(75%)' }}>
-                            Ir para consulta processual
+                            {type.buttonLink.nome}
                         </Button>
                     </Flex>
                 </Flex>
@@ -159,8 +151,8 @@ export default function Search() {
                         color="#336699"
                         textDecor="underline"
                     >
-                        {typeLink.links.map(anchors => (
-                            <ListItem _notFirst={{ marginLeft: "1rem" }}><Link href={anchors.linkAnchor} target="_blank">{anchors.linkName}</Link></ListItem>
+                        {type.link.map(anchors => (
+                            <ListItem _notFirst={{ marginLeft: "1rem" }}><Link href={anchors.anchor} target="_blank">{anchors.nome}</Link></ListItem>
                         ))
                         }
                     </UnorderedList>
