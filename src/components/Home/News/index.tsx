@@ -14,17 +14,17 @@ export interface CategoryProps {
     nome: string
 }
 
-export default function News ({ noticias, assuntos }: NewsProps) {
+export default function News({ noticias, assuntos }: NewsProps) {
     return (
         <Box w='full' py='63px' bgColor='#F7FCEC'>
             <ContainerBox>
-                <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário'/>
+                <AreaTitle title='Notícias' subtitle='Saiba o que acontece no Poder Judiciário.' />
                 <Box w='full' mt='40px'>
-                    <NewsList newsList={noticias}/>
+                    <NewsList newsList={noticias} />
                 </Box>
 
                 <Wrap w='full' justify='end' mt='20px' spacing='32px' maxW='95%'>
-                    {assuntos? assuntos.map(
+                    {assuntos ? assuntos.map(
                         (category) =>
                             <WrapItem
                                 as={Link}
@@ -32,10 +32,10 @@ export default function News ({ noticias, assuntos }: NewsProps) {
                                 fontWeight='normal'
                                 lineHeight='121%'
                                 textDecor='underline'
-                                _hover={{textDecor:'underline'}}
+                                _hover={{ textDecor: 'underline' }}
                                 alignSelf='center'
                                 href='#'>
-                                    {category.nome}
+                                {category.nome}
                             </WrapItem>
                     ) : <></>}
                     <WrapItem>
