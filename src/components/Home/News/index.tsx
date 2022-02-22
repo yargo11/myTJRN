@@ -23,9 +23,9 @@ export default function News ({ noticias, assuntos }: NewsProps) {
                     <NewsList newsList={noticias}/>
                 </Box>
 
-                <Wrap w='full' justify='end' mt='20px' wrap='wrap' spacing='32px' maxW='95%'>
+                <Wrap w='full' justify='end' mt='20px' spacing='32px' maxW='95%'>
                     {assuntos? assuntos.map(
-                        category =>
+                        (category) =>
                             <WrapItem
                                 as={Link}
                                 key={category.id}
