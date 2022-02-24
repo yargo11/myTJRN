@@ -1,7 +1,9 @@
-import { Box, Flex, Input, Button, Text, UnorderedList, ListItem, HStack, List, Link } from '@chakra-ui/react';
+import { Box, Flex, Input, Button, Text, UnorderedList, ListItem, HStack, List, Link, Icon } from '@chakra-ui/react';
 import { useState } from 'react';
 import ContainerBox from '../../ContainerBox';
 import SearchButton from './SearchButton';
+
+import { BiLinkExternal } from 'react-icons/bi'
 
 
 interface AbasProps {
@@ -14,7 +16,11 @@ interface AbasProps {
             link: string,
         }
     ],
-    buttonLink: string
+    buttonLink: {
+        nome: string;
+        anchor: string;
+        external: Boolean
+    }
 
 }
 
@@ -29,7 +35,7 @@ export default function Search() {
                 { nome: "link 2", anchor: "#" },
                 { nome: "link 3", anchor: "#" },
             ],
-            buttonLink: { nome: "Ir para consulta processual", anchor: "#" }
+            buttonLink: { nome: "Ir para consulta processual", anchor: "#", external: false }
         },
         jurisprudencia: {
             nome: "Jurisprudência",
@@ -39,7 +45,7 @@ export default function Search() {
                 { nome: "link 5", anchor: "#" },
                 { nome: "link 6", anchor: "#" },
             ],
-            buttonLink: { nome: "Ir para jurisprudência", anchor: "#" }
+            buttonLink: { nome: "Ir para jurisprudência", anchor: "#", external: true },
         },
         diarioDeJustica: {
             nome: "Diário de Justiça",
@@ -49,7 +55,7 @@ export default function Search() {
                 { nome: "link 2", anchor: "#" },
                 { nome: "link 3", anchor: "#" },
             ],
-            buttonLink: { nome: "Ir para diário de justiça", anchor: "#" }
+            buttonLink: { nome: "Ir para diário de justiça", anchor: "#", external: true }
         },
         precedentes: {
             nome: "Precedentes",
@@ -59,7 +65,7 @@ export default function Search() {
                 { nome: "link 2", anchor: "#" },
                 { nome: "link 3", anchor: "#" },
             ],
-            buttonLink: { nome: "Ir para precedentes", anchor: "#" }
+            buttonLink: { nome: "Ir para precedentes", anchor: "#", external: false }
         },
         pje: {
             nome: "Processo Judicial Eletrônico",
@@ -69,7 +75,7 @@ export default function Search() {
                 { nome: "link 2", anchor: "#" },
                 { nome: "link 3", anchor: "#" },
             ],
-            buttonLink: { nome: "Ir para PJe", anchor: "#" }
+            buttonLink: { nome: "Ir para PJe", anchor: "#", external: false }
         },
     }
 
@@ -79,7 +85,7 @@ export default function Search() {
         <Box
             w='full'
             py='81px'
-            background='linear-gradient(95.7deg, #20A0CE 8.83%, #B8D272 145.52%)'
+            background='linear-gradient(88.07deg, #0081B5 -3.33%, #DCE36E 117.18%)'
             display='inline-block'
         >
             <ContainerBox>
@@ -101,12 +107,13 @@ export default function Search() {
                         onClick={() => { setType(abas.pje) }} />
                 </Flex>
 
-                <Flex px='24px' pt='24px' bgColor='white' borderRadius='0 6px 0 0' direction="column">
+                <Flex px='24px' pt='24px' bgColor='white' borderRadius='8px 8px 0 0' direction="column">
                     <Text
                         fontSize="200%"
                         fontWeight="700"
                         lineHeight="40px"
                         color="#00384D"
+                        mb="16px"
                     >
                         {type.nome}
                     </Text>
@@ -136,11 +143,12 @@ export default function Search() {
                             _hover={{ filter: 'brightness(120%)' }}
                             _active={{ filter: 'brightness(75%)' }}>
                             {type.buttonLink.nome}
+                            {type.buttonLink.external && <Icon as={BiLinkExternal} ml="8px" w="22px" h="22px" />}
                         </Button>
                     </Flex>
                 </Flex>
 
-                <Flex px='24px' pt='16px' pb="32px" flexWrap='wrap' bgColor='white' borderRadius='0 0 6px 6px'>
+                <Flex px='24px' pt='16px' pb="32px" flexWrap='wrap' bgColor='white' borderRadius='0 0 8px 8px'>
                     <UnorderedList
                         display='flex'
                         flexWrap='wrap'
