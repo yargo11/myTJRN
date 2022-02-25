@@ -1,7 +1,7 @@
-import { Box, Button, Flex, Input, Text, Wrap, WrapItem } from '@chakra-ui/react';
+import { Box, Button, Flex, Input, Text, Link, Wrap, WrapItem } from '@chakra-ui/react';
 import ContainerBox from '../../ContainerBox';
 
-export default function NewsLetter () {
+export default function NewsLetter() {
     return (
         <Flex w='full' minH='175px' py='16px' bgColor='tj_light_blue'>
             <ContainerBox as={Flex}
@@ -11,12 +11,14 @@ export default function NewsLetter () {
                 flexWrap='wrap'>
                 <Box my='16px'>
                     <Text
+                        as={Link}
                         fontWeight='bold'
                         fontSize='200%'
                         color='tj_light_gray'
                         lineHeight='125%'
                         href='#'>Assine para receber nossa newsletter</Text>
                     <Text
+                        as={Link}
                         mt='12px'
                         fontWeight='normal'
                         color='tj_light_gray'
@@ -25,7 +27,7 @@ export default function NewsLetter () {
                 </Box>
                 <Wrap spacing='8px' >
                     <WrapItem>
-                        <Input w='full' maxW='388px' h='45px' display='flex' placeholder='Digite seu email' bgColor='white' alt='Digite aqui o seu email para receber as newsletter do TJRN'/>
+                        <Input w='full' maxW='388px' h='45px' display='flex' placeholder='Digite seu email' bgColor='white' alt='Digite aqui o seu email para receber as newsletter do TJRN' />
                     </WrapItem>
                     <WrapItem>
                         <Button

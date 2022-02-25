@@ -7,7 +7,7 @@ interface ContainerBoxProps extends BoxProps {
 
 export default function ContainerBox ({children, ...attrs}: ContainerBoxProps) {
     return (
-        <Box w='full' maxW='1320px' m='auto' px='12px' {...attrs}>
+        <Box w='full' maxW='1320px' m='auto' px='24px' {...attrs}>
             { children }
         </Box>
     );

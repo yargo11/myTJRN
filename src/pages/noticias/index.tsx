@@ -12,10 +12,12 @@ const pageSize = 10;
 
 interface NoticiaProps {
     newsList: Array<NewsCardProps>,
-    totalPages: number
+    totalPages: number,
+    categoryFilterLabel?: string,
+    categoryFilterDescription?: string
 }
 
-export default function Noticias ({newsList, totalPages}:NoticiaProps) {
+export default function Noticias ({newsList, totalPages, categoryFilterLabel, categoryFilterDescription}:NoticiaProps) {
     const [currentPage,  setCurrentPage] = useState(0);
     const [list, setList] = useState(newsList);
 
@@ -42,7 +44,7 @@ export default function Noticias ({newsList, totalPages}:NoticiaProps) {
             <GrayBorder/>
             <ContainerBox mt='56px' mb='150px'>
                 <NewsList
-                    newsList={list}/>
+                    newsList={list} categoryFilterLabel={categoryFilterLabel} categoryFilterDescription={categoryFilterDescription}/>
                 <Pagination
                     currentPage={currentPage}
                     numberOfPages={totalPages}
@@ -52,7 +54,8 @@ export default function Noticias ({newsList, totalPages}:NoticiaProps) {
                     breakLabel='...'
                     nextLabel='Próxima Página'
                     previousLabel='Página Anterior'
-                    onClickFunction={changePage}/>
+                    onClickFunction={changePage}
+                    mt='64px'/>
             </ContainerBox>
         </>
     );
@@ -84,7 +87,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
     return {
       props: {
         newsList: newsApiResult.content,
-        totalPages: newsApiResult.totalPages
+        totalPages: newsApiResult.totalPages,
+        categoryFilterLabel: 'Decisões Judiciais',
+        categoryFilterDescription: 'Teste'
       },
     }
   }

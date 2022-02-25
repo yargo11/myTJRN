@@ -4,13 +4,22 @@ import AreaTitle from "../AreaTitle";
 import PJRNCard from "./PJRNCard";
 import CardList from '../../CardList';
 
-export default function PJRN() {
-    const unidadesList = [unidades1, unidades2, unidades3, unidades4]
+export interface PJRNProps {
+    unidadeList: Array<UnidadeProps>
+}
+
+interface UnidadeProps {
+    label: string,
+    quantity: string
+}
+
+export default function PJRN({unidadeList}: PJRNProps) {
     return (
         <Box maxW='1876px' bgImage="url('/image/tjrn-escudo.png')" bgPos='95% 0%' bgRepeat='no-repeat'>
             <ContainerBox py='64px' position='relative'>
                 <AreaTitle title="Funcionamento do PJRN" subtitle="Veja a organização do Poder Judiciário "/>
                 <CardList
+                    bg='white'
                     border='1px'
                     borderColor='#D8DBDF'
                     borderRadius='16px'
@@ -22,7 +31,7 @@ export default function PJRN() {
                     <GridItem  colSpan={[1,2,4,1,2]}>
                         <Text fontWeight='bold' fontSize='150%' lineHeight='168.75%' textDecor='underline' textAlign='center'>Presidência e Vice-presidência</Text>
                     </GridItem>
-                    {unidadesList? unidadesList.map(
+                    {unidadeList? unidadeList.map(
                         elemento => <PJRNCard key={elemento.label} quantity={elemento.quantity} label={elemento.label}/>
                     ) : <></>}
                 </CardList>
@@ -30,8 +39,3 @@ export default function PJRN() {
         </Box>
     );
 }
-
-const unidades1 = {quantity: '09', label: 'Secretarias'}
-const unidades2 = {quantity: '09', label: 'Órgãos'}
-const unidades3 = {quantity: '90', label: 'Comarcas'}
-const unidades4 = {quantity: '150', label: 'Juizados Especiais'}

@@ -13,7 +13,7 @@ export default function Info() {
                 <AreaTitle title='Precisa de outras informações?' subtitle='Entre em contato pelos nossos Canais de Atendimento'/>
                 <CardList columns={[1,2,2,4]} mt='69px' spacingX='0px'>
                     {infoList.map( info => <InfoCard key={info.label} label={info.label} info={info.info}/>)}
-                    <Flex flexDir='column' alignContent='start' justifyContent='center' textAlign='center' color='#131D57'>
+                    <Flex flexDir='column' alignContent='start' justifyContent='center' textAlign='start' color='#131D57' px='16px'>
                         <Link fontWeight='bold' fontSize='131.25%' lineHeight='133.33%' href='#' mb='21px'>Unidades Administrativas</Link>
                         <Link fontWeight='bold' fontSize='131.25%' lineHeight='133.33%' href='#' mb='21px'>Plantão Judiciário</Link>
                         <Link fontWeight='bold' fontSize='131.25%' lineHeight='133.33%' href='#'>Balcão Virtual</Link>

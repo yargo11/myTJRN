@@ -5,7 +5,7 @@ import ContainerBox from "../../ContainerBox";
 import ServiceAndInformationCard, { TopicBoxInterface } from "./ServiceAndInformationCard";
 import CardList from "../../CardList";
 
-interface ServiceAndInformationProps {
+export interface ServiceAndInformationProps {
     serviceList: Array<TopicBoxInterface>
 }
 

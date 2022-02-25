@@ -1,4 +1,4 @@
-import { Center, Spacer } from '@chakra-ui/react'
+import { Flex, Spacer } from '@chakra-ui/react'
 import { PaginationProps } from '..';
 import PaginationButton from "../PaginationButton";
 import PaginationButtonArray from '../PaginationButtonArray';
@@ -31,7 +31,7 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
     return (
         <>
             { numberOfPages > currentPage ? 
-                <Center w='full' display={{ base: 'none', md: 'flex' }}>
+                <Flex w='full' display={{ base: 'none', md: 'flex' }} justify='end'>
                     <PaginationButton
                         display={{ base: 'none', lg: 'inline-flex' }}
                         isDisabled={currentPage === 0}
@@ -73,7 +73,7 @@ export default function MidDevicesPagination ({ currentPage, numberOfPages, pagi
                         key={nextLabel}
                         label={nextLabel}
                         onClickFunction={() => onClickFunction(currentPage + 1)}/>
-                </Center>
+                </Flex>
             : <></> }
         </>
     );

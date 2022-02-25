@@ -1,10 +1,12 @@
 import { GetServerSideProps } from 'next';
 import { useRouter } from 'next/router';
 import parse from 'html-react-parser';
-import PageTitle from '../../components/PageTitle';
+import {convert} from 'html-to-text';
+import PageTitle, { BreadCrumbProps } from '../../components/PageTitle';
 import PageContentList from '../../components/Article/PageContentList';
 import AreaTitle from '../../components/Home/AreaTitle';
 import ContainerBox from '../../components/ContainerBox';
+<<<<<<< HEAD
 import { Box, Flex, GridItem, SimpleGrid, Spacer, useBreakpointValue, Text } from '@chakra-ui/react';
 import Article from '../../components/Aside/Article';
 
@@ -25,6 +27,21 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
 
   const breadcrumblist = [breadcrumbpje1];
 
+=======
+import { GridItem, SimpleGrid } from '@chakra-ui/react';
+import Article, { AsideMenuMidDevicesItemProps } from '../../components/Aside/Article';
+
+
+interface PageProps {
+    title: string,
+    subtitle: string,
+    content: string,
+    lastUpdate: string,
+    breadcrumblist: Array<BreadCrumbProps>,
+    linkList: Array<AsideMenuMidDevicesItemProps>
+}
+export default function Page({title, subtitle, content, lastUpdate, breadcrumblist, linkList}:PageProps) {
+>>>>>>> novasAbas
   const contentheader2 = content.matchAll(new RegExp('<h2>([a-z]|[A-Z]|[0-9]|\x20|[\xC0-\xFF]|\-)+</h2>', 'g'));
 
   const pageTitles = Array.from(contentheader2, value => value[0].substring(4, value[0].length - 5));
@@ -41,6 +58,7 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
 
   return (
     <>
+<<<<<<< HEAD
       <PageTitle title={pje[Number(id)].title} breadCrumbArray={breadcrumblist} showTitle={false} />
       <ContainerBox mt='56px' sx={{ '@media print': { display: 'block' } }}>
         <SimpleGrid columns={{ base: 2, md: 3 }} spacingX='30px'>
@@ -51,6 +69,19 @@ export default function Page({ title, subtitle, content, lastUpdate }: PageProps
             <AreaTitle title={title} subtitle={subtitle} />
             <PageContentList headers={pageTitles} />
             <Text>{parse(content)}</Text>
+=======
+      <PageTitle title={title} breadCrumbArray={breadcrumblist} showTitle={false}/>
+      <ContainerBox mt='56px' sx={{'@media print': {display: 'block'}}}>
+        <SimpleGrid columns={{base: 1, md: 12}} spacingX='24px'>
+          <GridItem colSpan={{base: 1, md: 3}}>
+            <Article rootLabel='Adoção' rootLink='#' linkList={linkList} lastUpdate={lastUpdate} listOfContentToRead={['Título: ' + title, 'Subtítulo: ' + subtitle, 'Corpo:' + convert(content)]}/>
+          </GridItem>
+          <GridItem colSpan={1}></GridItem>
+          <GridItem colSpan={{base: 1, md: 8, lg: 7}}>
+            <AreaTitle title={title} subtitle={subtitle}/>
+            <PageContentList headers={pageTitles}/>
+            {parse(content)}
+>>>>>>> novasAbas
           </GridItem>
         </SimpleGrid>
       </ContainerBox>
@@ -85,7 +116,9 @@ export const getServerSideProps: GetServerSideProps = async () => {
                 <p>A adoção começa no desejo de formar uma família, de acolher e ser acolhido(a). 
                 Os trâmites legais são fundamentais para a segurança de crianças, adolescentes e futuros pais e mães, mas o preparo emocional e a rede de apoio também são fundamentais! 
                 Por isso, depois (ou antes!) de ler estas orientações, você pode entrar em contato conosco pelo nosso Whatsapp, (84) 99117-7732 e marcar um atendimento. 
-                Um de nossos voluntários poderá tirar suas dúvidas e você poderá escolher participar da família Acalanto.</p>`
+                Um de nossos voluntários poderá tirar suas dúvidas e você poderá escolher participar da família Acalanto.</p>`,
+        linkList: [link0,link1,link2],
+        breadcrumblist: [breadcrumb1, breadcrumb2]
     }
   }
 }

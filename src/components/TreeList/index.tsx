@@ -1,11 +1,11 @@
-import { Box, BoxProps, Text } from "@chakra-ui/react";
+import { Box, Text } from "@chakra-ui/react";
 import TreeListItem, { ListItem } from "./TreeListItem";
 
 interface TreeListProps {
     elementList: Array<Tree>
 }
 
-interface Tree {
+export interface Tree {
     label: string,
     list: Array<ListItem>
 }
